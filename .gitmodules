@@ -1,0 +1,3 @@
+[submodule "replications/scherfler-etal"]
+	path = replications/scherfler-etal
+	url = https://github.com/LivingPark-MRI/scherfler-etal
