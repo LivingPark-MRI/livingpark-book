@@ -1,0 +1,1708 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>1. Replication: Scherfler et al, 2011 &#8212; LivingPark Book</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Introduction" href="../livingpark-utils/livingpark_utils/notebooks/mri_metadata.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="../../introduction.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">LivingPark Book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../introduction.html">
+                    <no title>
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Structural MRI
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   1. Replication: Scherfler
+   <em>
+    et al
+   </em>
+   , 2011
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  PPMI Study Data Pre-Processing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../livingpark-utils/livingpark_utils/notebooks/mri_metadata.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/chapters/scherfler-etal/scherfler-etal.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapters/scherfler-etal/scherfler-etal.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/chapters/scherfler-etal/scherfler-etal.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   1.1. Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#initial-setup">
+   1.2. Initial setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ppmi-cohort-preparation">
+   1.3. PPMI cohort preparation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#study-data-download">
+     1.3.1. Study data download
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rbd-score-computation">
+     1.3.2. RBD Score computation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inclusion-criteria">
+     1.3.3. Inclusion criteria
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cohort-matching">
+     1.3.4. Cohort matching
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#image-analysis">
+   1.4. Image analysis
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#imaging-data-download">
+     1.4.1. Imaging data download
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#image-processing">
+     1.4.2. Image processing
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#segmentation">
+       1.4.2.1. Segmentation
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dartel-template-generation-and-normalization-to-mni-space">
+       1.4.2.2. DARTEL template generation and normalization to MNI space
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#intra-cranial-volume-computation">
+       1.4.2.3. Intra-cranial volume computation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quality-control">
+     1.4.3. Quality Control
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#statistical-analysis">
+     1.4.4. Statistical analysis
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#grey-matter">
+       1.4.4.1. Grey matter
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#white-matter">
+       1.4.4.2. White matter
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Replication: Scherfler et al, 2011</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   1.1. Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#initial-setup">
+   1.2. Initial setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ppmi-cohort-preparation">
+   1.3. PPMI cohort preparation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#study-data-download">
+     1.3.1. Study data download
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rbd-score-computation">
+     1.3.2. RBD Score computation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inclusion-criteria">
+     1.3.3. Inclusion criteria
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cohort-matching">
+     1.3.4. Cohort matching
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#image-analysis">
+   1.4. Image analysis
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#imaging-data-download">
+     1.4.1. Imaging data download
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#image-processing">
+     1.4.2. Image processing
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#segmentation">
+       1.4.2.1. Segmentation
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dartel-template-generation-and-normalization-to-mni-space">
+       1.4.2.2. DARTEL template generation and normalization to MNI space
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#intra-cranial-volume-computation">
+       1.4.2.3. Intra-cranial volume computation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quality-control">
+     1.4.3. Quality Control
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#statistical-analysis">
+     1.4.4. Statistical analysis
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#grey-matter">
+       1.4.4.1. Grey matter
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#white-matter">
+       1.4.4.2. White matter
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="replication-scherfler-et-al-2011">
+<h1><span class="section-number">1. </span>Replication: Scherfler <em>et al</em>, 2011<a class="headerlink" href="#replication-scherfler-et-al-2011" title="Permalink to this headline">#</a></h1>
+<section id="introduction">
+<h2><span class="section-number">1.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<p>This notebook attempts to replicate the following paper with the <a class="reference external" href="http://ppmi-info.org">PPMI</a> dataset:</p>
+<div class="alert alert-block alert-success">
+Scherfler, Christoph, et al. <a href=https://onlinelibrary.wiley.com/doi/pdf/10.1002/ana.22245>White and gray matter abnormalities in idiopathic rapid eye movement sleep behavior disorder: a diffusion‐tensor imaging and voxel‐based morphometry study.</a> Annals of neurology 69.2 (2011): 400-407.
+</div><p>This study involved 26 patients with iRBD and confirmed iRBD diagnosis with polysomnography. Patients had no PD or dementia at time of MRI. The demographics parameters were as follows (table extracted from the paper):</p>
+<img src="images/demographics.png"/><p>The main result of the paper regarding structural MRI is that Voxel-Based Morphometry (VBM) reveals an increase of gray matter density in both hippocampi of iRBD patients, as illustrated in the following table extracted from the paper (diffusion MRI results are truncated):</p>
+<img src="images/results.png" width=800/><p>The remainder of this notebook is an attempt to replicate this result using the PPMI dataset.</p>
+</section>
+<section id="initial-setup">
+<h2><span class="section-number">1.2. </span>Initial setup<a class="headerlink" href="#initial-setup" title="Permalink to this headline">#</a></h2>
+<!-- LivingPark notebooks use a *cache* directory to store analysis inputs and outputs. Inputs typically include PPMI Study Data and imaging data whereas outputs include processed images and other derivatives. Cache directories allow LivingPark notebooks to run in a few minutes as they reuse previously computed results. However, cache directories cannot be made public due to the PPMI Data Usage Agreement (DUA). Instead, they are stored on `login.bic.mni.mcgill.ca`, which requires a specific user name and password. In case you don't have access to the cache directory of this notebook, the next sections will download all the required imaging data from PPMI and recompute the results, which will take a few hours depending on your computer configuration. In the future, we will aim at storing this cache dataset on PPMI servers so that they can be accessed with a PPMI account. -->
+<p>Let’s initialize the notebook directory and software dependencies:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">livingpark_utils</span>
+
+<span class="n">utils</span> <span class="o">=</span> <span class="n">livingpark_utils</span><span class="o">.</span><span class="n">LivingParkUtils</span><span class="p">()</span>
+<span class="n">random_seed</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">utils</span><span class="o">.</span><span class="n">notebook_init</span><span class="p">()</span>
+<span class="c1"># random_seed = 1 # to be tested</span>
+<span class="c1">#random_seed = 2  # no significant cluster</span>
+<span class="c1"># random_seed = 3 # no significant cluster</span>
+<span class="c1"># random_seed = 4 # no significant cluster</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>removing link inputs
+removing link outputs
+This notebook was run on 2022-11-04 19:17:07 UTC +0000
+</pre></div>
+</div>
+<div class="output text_html"><script>
+    code_show = true;
+    function code_toggle() {
+        if (code_show) {
+            $("div.input").hide();
+        } else {
+            $("div.input").show();
+        }
+        code_show = !code_show
+    }
+    $(document).ready(code_toggle);
+</script>
+<form action="javascript:code_toggle()">
+    <input type="submit" value="Click here to toggle on/off the Python code.">
+</form>
+</div></div>
+</div>
+</section>
+<section id="ppmi-cohort-preparation">
+<h2><span class="section-number">1.3. </span>PPMI cohort preparation<a class="headerlink" href="#ppmi-cohort-preparation" title="Permalink to this headline">#</a></h2>
+<p>We will build a PPMI cohort that matches the one used in the original study (Table 1) as much as possible. As in other LivingPark replications, we will use the same sample size as the original study. Our cohort will be built directly from PPMI Study Data files so that it can be replicated and updated whenever necessary.</p>
+<section id="study-data-download">
+<h3><span class="section-number">1.3.1. </span>Study data download<a class="headerlink" href="#study-data-download" title="Permalink to this headline">#</a></h3>
+<p>We will start by downloading the PPMI Study Data files required to build our cohort:</p>
+<ul class="simple">
+<li><p>Demographics (to retrieve sex)</p></li>
+<li><p>REM Sleep Behavior Disorder Questionnaire (for RBD score)</p></li>
+<li><p>Prodromal History (for polysomnographies)</p></li>
+<li><p>Primary Clinical Diagnosis (to include only healthy subjects)</p></li>
+<li><p>Cognitive Categorization (to exclude subjects with dementia)</p></li>
+<li><p>Medical Condition (to exclude neurological and psychiatric disorders)</p></li>
+<li><p>Concomitant Medication Log (to exclude medication known to modify REM sleep architecture and muscle tone)</p></li>
+</ul>
+<p>We will use the LivingPark utils library to download these files from the notebook. If files are already present in the notebook cache, they won’t be downloaded again. Otherwise, you will need to enter your PPMI username and password. In case you don’t have a PPMI account, you can request one <a class="reference external" href="http://ppmi-info.org">here</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">required_files</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Demographics.csv&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;REM_Sleep_Behavior_Disorder_Questionnaire.csv&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Primary_Clinical_Diagnosis.csv&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Cognitive_Categorization.csv&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Medical_Conditions_Log.csv&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Concomitant_Medication_Log.csv&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Prodromal_History.csv&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">utils</span><span class="o">.</span><span class="n">download_ppmi_metadata</span><span class="p">(</span><span class="n">required_files</span><span class="p">,</span> <span class="n">headless</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Download skipped: No missing files!
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will also need file <code class="docutils literal notranslate"><span class="pre">MRI_info.csv</span></code> produced by another LivingPark notebook available at <a class="reference external" href="https://github.com/LivingPark-MRI/livingpark-utils/blob/main/livingpark_utils/notebooks/mri_metadata.ipynb">https://github.com/LivingPark-MRI/livingpark-utils/blob/main/livingpark_utils/notebooks/mri_metadata.ipynb</a>. This file contains a list of T1-weighted MRIs usable for VBM.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">livingpark_utils.scripts</span> <span class="kn">import</span> <span class="n">mri_metadata</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>File downloaded
+[&#39;COR&#39;, &#39;Coronal&#39;, &#39;Cal Head 24&#39;, &#39;Transverse&#39;, &#39;tra_T1_MPRAGE&#39;, &#39;TRA&#39;]
+[&#39;AX&#39;, &#39;axial&#39;, &#39;Phantom&#39;]
+{&#39;Screening&#39;: &#39;SC&#39;, &#39;Baseline&#39;: &#39;BL&#39;, &#39;Month 12&#39;: &#39;V04&#39;, &#39;Month 24&#39;: &#39;V06&#39;, &#39;Month 36&#39;: &#39;V08&#39;, &#39;Month 48&#39;: &#39;V10&#39;, &#39;Symptomatic Therapy&#39;: &#39;ST&#39;, &#39;Unscheduled Visit 01&#39;: &#39;U01&#39;, &#39;Unscheduled Visit 02&#39;: &#39;U02&#39;, &#39;Premature Withdrawal&#39;: &#39;PW&#39;}
+Saved in MRI_info.csv
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="rbd-score-computation">
+<h3><span class="section-number">1.3.2. </span>RBD Score computation<a class="headerlink" href="#rbd-score-computation" title="Permalink to this headline">#</a></h3>
+<p>The original study used polysomnography to diagnose REM Sleep Behavior Disorder. While polysomnography is available in the PPMI prodromal cohort, as of July 2022 the number of subjects matching the inclusion/exclusion criteria in this cohort is not enough to replicate the original study (see also Section “Inclusion criteria”).
+Instead, we will use the REM Sleep Behavior Disorder Screening Questionnaire (RSBDSQ) <a class="reference external" href="https://movementdisorders.onlinelibrary.wiley.com/doi/10.1002/mds.21740">[1]</a> to discriminate RBD patients from controls. This questionnaire consists of 13 yes/no questions that are summed to produce an RBD score. We computed the RBD score by summing the answers to each of the 13 questions. The answers to questions Q1 to Q9 (12 questions as Q6 is sub-divided in 4 parts) are directly availble in the RSBDSQ Study Data file. We computed the answer to Q10 (“I have/had a disease of the nervous system (e.g., stroke, head trauma, parkinsonism, RLS, narcolepsy, depression, epilepsy, inflammatory disease of the brain), which?”) by taking the max of the 8 corresponding disease variables in the RSBDSQ Study Data file. We also computed the answer to Q6 as the sum of Q6.1 to Q6.4 as it will use as inclusion criterion for controls.</p>
+<p>We obtain the following distribution of RBD scores in the PPMI dataset:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Load PPMI RSBDQ data</span>
+<span class="n">rbdsq</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">utils</span><span class="o">.</span><span class="n">study_files_dir</span><span class="p">,</span> <span class="s2">&quot;REM_Sleep_Behavior_Disorder_Questionnaire.csv&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="c1"># Compute RBDSQ score</span>
+<span class="n">rbdsq</span><span class="p">[</span><span class="s2">&quot;RBDSQ&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">rbdsq</span><span class="p">[</span><span class="s2">&quot;DRMVIVID&quot;</span><span class="p">]</span>  <span class="c1"># Q1</span>
+    <span class="o">+</span> <span class="n">rbdsq</span><span class="p">[</span><span class="s2">&quot;DRMAGRAC&quot;</span><span class="p">]</span>  <span class="c1"># Q2</span>
+    <span class="o">+</span> <span class="n">rbdsq</span><span class="p">[</span><span class="s2">&quot;DRMNOCTB&quot;</span><span class="p">]</span>  <span class="c1"># Q3</span>
+    <span class="o">+</span> <span class="n">rbdsq</span><span class="p">[</span><span class="s2">&quot;SLPLMBMV&quot;</span><span class="p">]</span>  <span class="c1"># Q4</span>
+    <span class="o">+</span> <span class="n">rbdsq</span><span class="p">[</span><span class="s2">&quot;SLPINJUR&quot;</span><span class="p">]</span>  <span class="c1"># Q5</span>
+    <span class="o">+</span> <span class="n">rbdsq</span><span class="p">[</span><span class="s2">&quot;DRMVERBL&quot;</span><span class="p">]</span>  <span class="c1"># Q6.1</span>
+    <span class="o">+</span> <span class="n">rbdsq</span><span class="p">[</span><span class="s2">&quot;DRMFIGHT&quot;</span><span class="p">]</span>  <span class="c1"># Q6.2</span>
+    <span class="o">+</span> <span class="n">rbdsq</span><span class="p">[</span><span class="s2">&quot;DRMUMV&quot;</span><span class="p">]</span>  <span class="c1"># Q6.3</span>
+    <span class="o">+</span> <span class="n">rbdsq</span><span class="p">[</span><span class="s2">&quot;DRMOBJFL&quot;</span><span class="p">]</span>  <span class="c1"># Q6.4</span>
+    <span class="o">+</span> <span class="n">rbdsq</span><span class="p">[</span><span class="s2">&quot;MVAWAKEN&quot;</span><span class="p">]</span>  <span class="c1"># Q7</span>
+    <span class="o">+</span> <span class="n">rbdsq</span><span class="p">[</span><span class="s2">&quot;DRMREMEM&quot;</span><span class="p">]</span>  <span class="c1"># Q8</span>
+    <span class="o">+</span> <span class="n">rbdsq</span><span class="p">[</span><span class="s2">&quot;SLPDSTRB&quot;</span><span class="p">]</span>  <span class="c1"># Q9</span>
+    <span class="o">+</span> <span class="n">rbdsq</span><span class="p">[</span>  <span class="c1"># Q10</span>
+        <span class="p">[</span>
+            <span class="s2">&quot;BRNINFM&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;DEPRS&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;EPILEPSY&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;HETRA&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;NARCLPSY&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;PARKISM&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;RLS&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;STROKE&quot;</span><span class="p">,</span>
+        <span class="p">]</span>
+    <span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">rbdsq</span><span class="p">[</span><span class="s2">&quot;Q6&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">rbdsq</span><span class="p">[</span><span class="s2">&quot;DRMVERBL&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">rbdsq</span><span class="p">[</span><span class="s2">&quot;DRMFIGHT&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">rbdsq</span><span class="p">[</span><span class="s2">&quot;DRMUMV&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">rbdsq</span><span class="p">[</span><span class="s2">&quot;DRMOBJFL&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># Note: CNSOTHCM isn&#39;t present in data</span>
+
+<span class="c1"># Check that max RBDSQ score is &lt;= 13</span>
+<span class="k">assert</span> <span class="n">rbdsq</span><span class="p">[</span><span class="s2">&quot;RBDSQ&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mi">13</span>
+
+<span class="n">rbdsq</span> <span class="o">=</span> <span class="n">rbdsq</span><span class="p">[[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">,</span> <span class="s2">&quot;EVENT_ID&quot;</span><span class="p">,</span> <span class="s2">&quot;Q6&quot;</span><span class="p">,</span> <span class="s2">&quot;RBDSQ&quot;</span><span class="p">]]</span>
+
+<span class="n">rbdsq</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;RBDSQ&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">()</span>
+
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Number of records&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/scherfler-etal_15_0.png" src="../../_images/scherfler-etal_15_0.png" />
+</div>
+</div>
+</section>
+<section id="inclusion-criteria">
+<h3><span class="section-number">1.3.3. </span>Inclusion criteria<a class="headerlink" href="#inclusion-criteria" title="Permalink to this headline">#</a></h3>
+<p>To replicate the cohort in the original study, we used the following inclusion and exclusion criteria among PPMI subjects.</p>
+<ol class="simple">
+<li><p>No Parkinsonim: we included PPMI subjects with PRIMDIAG = 17 (no PD nor other neurological disorder) or PRIMDIAG = 25 (prodromal). <strong>TODO</strong>: check with Madeleine if prodromal is ok. Otherwise, it reduces even more the number of subjects with polysomnographies (which are currently too few anyway so not an issue).</p></li>
+<li><p>T1-weighted MRI available and usable for VBM (see <a class="reference external" href="https://github.com/LivingPark-MRI/livingpark-utils/blob/main/livingpark_utils/notebooks/mri_metadata.ipynb">MRI metadata notebook</a>).</p></li>
+<li><p>No dementia: we excluded subjects with COGSTATE = 3.</p></li>
+<li><p>No neurological or psychiatric illness and no evidence of central nervous system (CNS) comorbidities: we excluded subjects with MHCAT in [“1P”, “1Q”] (neurologic and psychiatric disease). <strong>TODO</strong> check with Madeleine if these codes also account for CNS comorbitities.</p></li>
+<li><p>RBD group: we included subjects when their RBD score is &gt;= 5.</p></li>
+<li><p>Control group: we included subjects when their RBD score is &lt; 5 and their score to Q6 of the RSBDSQ is 0. <strong>TODO</strong> ref needed, see email thread between Madeleine and Ron Postuma</p></li>
+</ol>
+<p>In case multiple visits of a given subject are included in the RBD or Control group, we randomly select one of them for inclusion in the group and exclude the other ones. This selection ensures that a given subject is included at most once in the RBD group and at most once in the control group. In Section “Cohort matching”, we will ensure that a given subjet is included in at most one group.</p>
+<p>We obtain the following group sizes:</p>
+<!-- and a cutoff score of 6 to identify RBD subjects among PD subjects, consistently with the results presented in [[2]](https://www.sciencedirect.com# /science/article/pii/S138994571100164X). --><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read data files</span>
+
+<span class="c1"># Prodromal history</span>
+<span class="n">prodr_hist</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">utils</span><span class="o">.</span><span class="n">study_files_dir</span><span class="p">,</span> <span class="s1">&#39;Prodromal_History.csv&#39;</span><span class="p">))[[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">,</span> <span class="s2">&quot;RBDDIAG&quot;</span><span class="p">,</span> <span class="s2">&quot;RBDPSG&quot;</span><span class="p">]]</span>
+
+<span class="c1"># MRI info</span>
+<span class="n">mri</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">utils</span><span class="o">.</span><span class="n">study_files_dir</span><span class="p">,</span> <span class="s2">&quot;MRI_info.csv&quot;</span><span class="p">))[</span>
+    <span class="p">[</span><span class="s2">&quot;Subject ID&quot;</span><span class="p">,</span> <span class="s2">&quot;Visit code&quot;</span><span class="p">,</span> <span class="s2">&quot;Description&quot;</span><span class="p">,</span> <span class="s2">&quot;Age&quot;</span><span class="p">]</span>
+<span class="p">]</span>
+<span class="n">mri</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Subject ID&quot;</span><span class="p">:</span> <span class="s2">&quot;PATNO&quot;</span><span class="p">,</span> <span class="s2">&quot;Visit code&quot;</span><span class="p">:</span> <span class="s2">&quot;EVENT_ID&quot;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Demographics</span>
+<span class="n">dem</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">utils</span><span class="o">.</span><span class="n">study_files_dir</span><span class="p">,</span> <span class="s2">&quot;Demographics.csv&quot;</span><span class="p">))[[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">,</span> <span class="s2">&quot;SEX&quot;</span><span class="p">]]</span>
+
+<span class="c1"># Diagnosis</span>
+<span class="n">diag</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">utils</span><span class="o">.</span><span class="n">study_files_dir</span><span class="p">,</span> <span class="s2">&quot;Primary_Clinical_Diagnosis.csv&quot;</span><span class="p">))[</span>
+    <span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">,</span> <span class="s2">&quot;EVENT_ID&quot;</span><span class="p">,</span> <span class="s2">&quot;PRIMDIAG&quot;</span><span class="p">,</span> <span class="s2">&quot;OTHNEURO&quot;</span><span class="p">]</span>
+<span class="p">]</span>
+
+<span class="c1"># Cognitive Categorization</span>
+<span class="n">cog_cat</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">utils</span><span class="o">.</span><span class="n">study_files_dir</span><span class="p">,</span> <span class="s2">&quot;Cognitive_Categorization.csv&quot;</span><span class="p">))[</span>
+    <span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">,</span> <span class="s2">&quot;EVENT_ID&quot;</span><span class="p">,</span> <span class="s2">&quot;COGSTATE&quot;</span><span class="p">]</span>
+<span class="p">]</span>
+
+<span class="c1"># Medical condition</span>
+<span class="n">med_cond</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">utils</span><span class="o">.</span><span class="n">study_files_dir</span><span class="p">,</span> <span class="s2">&quot;Medical_Conditions_Log.csv&quot;</span><span class="p">))[</span>
+    <span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">,</span> <span class="s2">&quot;EVENT_ID&quot;</span><span class="p">,</span> <span class="s2">&quot;MHCAT&quot;</span><span class="p">]</span>
+<span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;PATNO&#39;</span><span class="p">,</span> <span class="s1">&#39;EVENT_ID&#39;</span><span class="p">])[[</span><span class="s1">&#39;MHCAT&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span> <span class="c1"># aggregate all codes in a tuple</span>
+
+<span class="c1"># Medication</span>
+<span class="n">meds</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">utils</span><span class="o">.</span><span class="n">study_files_dir</span><span class="p">,</span> <span class="s2">&quot;Concomitant_Medication_Log.csv&quot;</span><span class="p">))[</span>
+    <span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">,</span> <span class="s2">&quot;EVENT_ID&quot;</span><span class="p">,</span> <span class="s2">&quot;SEQNO&quot;</span><span class="p">,</span> <span class="s2">&quot;CMTRT&quot;</span><span class="p">]</span>
+<span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;PATNO&#39;</span><span class="p">,</span> <span class="s1">&#39;EVENT_ID&#39;</span><span class="p">])[[</span><span class="s1">&#39;CMTRT&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="c1"># aggregate all meds in a tuple</span>
+
+<span class="k">def</span> <span class="nf">included</span><span class="p">(</span><span class="n">subjects</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Return subjects complying to the inclusion criteria mentioned before.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    subjects: DataFrame. Has to contain columns PATNO and EVENT_ID and PRIMDIAG</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">temp</span> <span class="o">=</span>  <span class="p">(</span><span class="n">subjects</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">dem</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;PATNO&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">)</span> <span class="c1"># Sex is available</span>
+     <span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">diag</span><span class="p">[</span><span class="n">diag</span><span class="p">[</span><span class="s1">&#39;PRIMDIAG&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="mi">17</span><span class="p">,</span> <span class="mi">25</span><span class="p">])],</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">,</span> <span class="s2">&quot;EVENT_ID&quot;</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">)</span> <span class="c1"># Subject is healthy or prodromal</span>
+     <span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">mri</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">,</span> <span class="s2">&quot;EVENT_ID&quot;</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">)</span>  <span class="c1"># MRI usable for VBM is available</span>
+     <span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">cog_cat</span><span class="p">[</span><span class="n">cog_cat</span><span class="p">[</span><span class="s2">&quot;COGSTATE&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">,</span> <span class="s2">&quot;EVENT_ID&quot;</span><span class="p">])</span>  <span class="c1"># No dementia</span>
+     <span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">med_cond</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">,</span> <span class="s2">&quot;EVENT_ID&quot;</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)</span>
+     <span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">meds</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">,</span> <span class="s2">&quot;EVENT_ID&quot;</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)</span>
+     
+             <span class="p">[</span>
+        <span class="p">[</span>
+            <span class="s2">&quot;PATNO&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;EVENT_ID&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;RBDSQ&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Q6&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;SEX&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Age&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Description&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;PRIMDIAG&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;COGSTATE&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;MHCAT&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;CMTRT&quot;</span><span class="p">,</span>
+        <span class="p">]</span>
+    <span class="p">]</span>
+            <span class="p">)</span>
+    
+    <span class="c1"># Check medical condition and return</span>
+    <span class="k">def</span> <span class="nf">check_mhcat</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="nb">tuple</span><span class="p">:</span>
+            <span class="k">return</span> <span class="ow">not</span> <span class="p">(</span><span class="s2">&quot;1P&quot;</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="s2">&quot;1Q&quot;</span> <span class="ow">in</span> <span class="n">x</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        
+    <span class="k">return</span> <span class="n">temp</span><span class="p">[(</span><span class="n">temp</span><span class="p">[</span><span class="s2">&quot;MHCAT&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">check_mhcat</span><span class="p">))]</span>  <span class="c1"># No neurological or psychiatric illness and no evidence of central nervous system (CNS) comorbidities</span>
+
+<span class="c1"># Extract RBD subjects and controls according to inclusion criteria</span>
+<span class="c1"># Sample one entry (event and T1 description) per subject in each group so that a subject happens at most once in a group (between-group consistency will be ensured in cohort matching)</span>
+<span class="c1"># Sort entries by PATNO to improve reproducibility of this notebook</span>
+
+<span class="n">rbds_poly</span> <span class="o">=</span>  <span class="n">included</span><span class="p">((</span><span class="n">prodr_hist</span><span class="p">[(</span><span class="n">prodr_hist</span><span class="p">[</span><span class="s1">&#39;RBDDIAG&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">prodr_hist</span><span class="p">[</span><span class="s1">&#39;RBDPSG&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">)]</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">rbdsq</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;PATNO&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">)))</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">rbds_poly</span><span class="p">)</span> <span class="o">!=</span><span class="mi">0</span> <span class="p">:</span> 
+    <span class="n">rbds_poly</span> <span class="o">=</span> <span class="p">(</span><span class="n">rbds_poly</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;PATNO&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random_seed</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;PATNO&quot;</span><span class="p">))</span>
+
+<span class="n">rbds_sq</span> <span class="o">=</span> <span class="p">(</span><span class="n">included</span><span class="p">(</span><span class="n">rbdsq</span><span class="p">[(</span><span class="n">rbdsq</span><span class="p">[</span><span class="s2">&quot;RBDSQ&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">5</span><span class="p">)])</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;PATNO&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random_seed</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;PATNO&quot;</span><span class="p">))</span>
+<span class="n">controls</span> <span class="o">=</span> <span class="p">(</span><span class="n">included</span><span class="p">(</span><span class="n">rbdsq</span><span class="p">[(</span><span class="n">rbdsq</span><span class="p">[</span><span class="s2">&quot;RBDSQ&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">rbdsq</span><span class="p">[</span><span class="s2">&quot;Q6&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)])</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;PATNO&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random_seed</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;PATNO&quot;</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of RBD subjects with polysomnography: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">rbds_poly</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of RBD subjects w/o polysomnography: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">rbds_sq</span><span class="p">[</span><span class="s1">&#39;PATNO&#39;</span><span class="p">])</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of control subjects: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">controls</span><span class="p">[</span><span class="s1">&#39;PATNO&#39;</span><span class="p">])</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">rbds_poly</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">26</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;We don&#39;t have enough RBD subjects with polysomnography. Let&#39;s use RBD subjects without polysomnography in this replication.&quot;</span><span class="p">)</span>
+    <span class="n">rbds</span> <span class="o">=</span> <span class="n">rbds_sq</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;We have enough RBD subjects with polysomnography to use them in this replication.&quot;</span><span class="p">)</span>
+    <span class="n">rbds</span> <span class="o">=</span> <span class="n">rbds_poly</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of RBD subjects with polysomnography: 8
+Number of RBD subjects w/o polysomnography: 44
+Number of control subjects: 105
+We don&#39;t have enough RBD subjects with polysomnography. Let&#39;s use RBD subjects without polysomnography in this replication.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="cohort-matching">
+<h3><span class="section-number">1.3.4. </span>Cohort matching<a class="headerlink" href="#cohort-matching" title="Permalink to this headline">#</a></h3>
+<p>The RBD and Control groups built previously give us a lot of flexibility to build a cohort that matches the one in the original study, due to their large sample size compared to the original cohort. We adopted the following approach to construct a matching cohort:</p>
+<ol class="simple">
+<li><p>Randomly select 4 control women and 10 control men, to reproduce the F/M balance in the original study</p></li>
+<li><p>Find 26 subjects from the RBD group that best match age and sex in the selected control group. We matched sex by direct sampling of males and females using the same proportion as in the original study. We matched age using a nearest-neighbor approach.</p></li>
+</ol>
+<p>We obtain the following cohort:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nn_match</span><span class="p">(</span><span class="n">sample1</span><span class="p">,</span> <span class="n">df_2</span><span class="p">,</span> <span class="n">n2</span><span class="p">,</span> <span class="n">cat_variables</span><span class="p">,</span> <span class="n">num_variables</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random_seed</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Find len(sample1) rows in df_2 such that variables are matched with sample1.</span>
+
+<span class="sd">    sample1: samples in group1</span>
+<span class="sd">    df_2: dataframe with subjects in group 2</span>
+<span class="sd">    n2: desired sample size for group 2</span>
+<span class="sd">    cat_variables: categorical variables to match</span>
+<span class="sd">    num_variables: numerical variables to match</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">nn</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">variables</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Find index of nearest neighbor of x in df</span>
+
+<span class="sd">        * x: a dataframe row</span>
+<span class="sd">        * df: a dataframe</span>
+<span class="sd">        * variables: variables to match. Should be normalized.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">df</span><span class="p">[</span><span class="s2">&quot;dist&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">df</span><span class="p">[</span><span class="n">var</span><span class="p">]</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="n">var</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">variables</span><span class="p">)</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;dist&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">[</span>
+            <span class="mi">0</span>
+        <span class="p">]</span>  <span class="c1">## there&#39;s probably a better way to do it but it works</span>
+
+    <span class="c1"># Check assumptions</span>
+    <span class="n">n1</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">sample1</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">n1</span> <span class="o">&lt;=</span> <span class="n">n2</span>
+    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">num_variables</span> <span class="o">+</span> <span class="n">cat_variables</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">sample1</span> <span class="ow">and</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">df_2</span>
+
+    <span class="c1"># Copy original dataframe to leave it untouched</span>
+    <span class="n">df_2_</span> <span class="o">=</span> <span class="n">df_2</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">sample1_</span> <span class="o">=</span> <span class="n">sample1</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="c1"># Remove from df_2 all subjects that are in sample1</span>
+    <span class="n">df_2_</span> <span class="o">=</span> <span class="n">df_2_</span><span class="p">[</span><span class="o">~</span><span class="n">df_2_</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">sample1</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">])]</span>
+
+    <span class="c1"># Normalize variables to match to compute meaningful distances</span>
+    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">num_variables</span><span class="p">:</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="n">df_2_</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">df_2_</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">df</span> <span class="ow">in</span> <span class="p">(</span><span class="n">df_2_</span><span class="p">,</span> <span class="n">sample1_</span><span class="p">):</span>
+            <span class="n">df</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">-</span> <span class="n">m</span><span class="p">)</span> <span class="o">/</span> <span class="n">s</span>
+
+    <span class="c1"># For each subject in sampled group 1,</span>
+    <span class="c1"># find one or more subject in sampled group 2, without replacement.</span>
+    <span class="n">indices</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n2</span><span class="p">):</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">%</span> <span class="n">n1</span>  <span class="c1"># loop over sample1</span>
+        <span class="n">df_2_cat</span> <span class="o">=</span> <span class="n">df_2_</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">cat_variables</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_2_cat</span><span class="p">[</span><span class="n">df_2_cat</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">==</span> <span class="n">sample1_</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">c</span><span class="p">]])</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">df_2_cat</span> <span class="o">=</span> <span class="n">df_2_cat</span><span class="p">[</span><span class="n">df_2_cat</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">==</span> <span class="n">sample1_</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">c</span><span class="p">]]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Warning: cannot find subject with </span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s2">==</span><span class="si">{</span><span class="n">sample1_</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">c</span><span class="p">]</span><span class="si">}</span><span class="s2"> in sample 2. Removing constraint.&quot;</span>
+                <span class="p">)</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="n">nn</span><span class="p">(</span><span class="n">sample1_</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">df_2_cat</span><span class="p">,</span> <span class="n">num_variables</span><span class="p">)</span>
+        <span class="n">df_2_</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">indices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+
+    <span class="n">sample2</span> <span class="o">=</span> <span class="n">df_2</span><span class="p">[</span><span class="n">df_2</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">indices</span><span class="p">)]</span>
+
+    <span class="k">return</span> <span class="n">sample2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Randomly select 4 control women and 10 control men, to reproduce F/M balance in original paper</span>
+<span class="n">controls</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="n">controls</span><span class="p">[</span><span class="n">controls</span><span class="p">[</span><span class="s2">&quot;SEX&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span>
+            <span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random_seed</span>
+        <span class="p">),</span>  <span class="c1"># 4/10 doesn&#39;t work for RBDs</span>
+        <span class="n">controls</span><span class="p">[</span><span class="n">controls</span><span class="p">[</span><span class="s2">&quot;SEX&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random_seed</span><span class="p">),</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># Match with RBD subjects</span>
+<span class="n">rbds</span> <span class="o">=</span> <span class="n">nn_match</span><span class="p">(</span><span class="n">controls</span><span class="p">,</span> <span class="n">rbds</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;SEX&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Age&quot;</span><span class="p">],</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random_seed</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">cohort_stats</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;iRBD Patients&quot;</span><span class="p">,</span> <span class="s2">&quot;Controls&quot;</span><span class="p">])</span>
+
+<span class="n">cohort_stats</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;Subjects, No.&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">rbds</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">controls</span><span class="p">)]</span>
+<span class="n">cohort_stats</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;F/M, No.&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">rbds</span><span class="p">[</span><span class="n">rbds</span><span class="p">[</span><span class="s1">&#39;SEX&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">])</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">rbds</span><span class="p">[</span><span class="n">rbds</span><span class="p">[</span><span class="s1">&#39;SEX&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">])</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">controls</span><span class="p">[</span><span class="n">controls</span><span class="p">[</span><span class="s1">&#39;SEX&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">])</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">controls</span><span class="p">[</span><span class="n">controls</span><span class="p">[</span><span class="s1">&#39;SEX&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">])</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="n">cohort_stats</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;Age, mean +/- SD&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">rbds</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">rbds</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">(),</span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">controls</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">controls</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">(),</span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">cohort_stats</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>iRBD Patients</th>
+      <th>Controls</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Subjects, No.</th>
+      <td>26</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>F/M, No.</th>
+      <td>10/16</td>
+      <td>5/9</td>
+    </tr>
+    <tr>
+      <th>Age, mean +/- SD</th>
+      <td>61.8 +/- 7.0</td>
+      <td>61.1 +/- 7.1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The demographics parameters of the selected PPMI subjects seem comparable to the ones in the initial study.</p>
+<p>Let’s do basic sanity checks in this cohort:</p>
+<ul class="simple">
+<li><p>A subject appears at most once in each group</p></li>
+<li><p>A subject does not appear in more than one group</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">rbds</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">]))</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span>
+    <span class="n">rbds</span>
+<span class="p">),</span> <span class="s2">&quot;Some subjects are present more than once in RBD group&quot;</span>
+<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">controls</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">]))</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span>
+    <span class="n">controls</span>
+<span class="p">),</span> <span class="s2">&quot;Some subjects are present more than once in controls&quot;</span>
+<span class="k">assert</span> <span class="p">(</span>
+    <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">controls</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">])</span> <span class="o">&amp;</span> <span class="nb">set</span><span class="p">(</span><span class="n">rbds</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">]))</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="p">),</span> <span class="sa">f</span><span class="s1">&#39;Some subjects are present in controls and rbd group </span><span class="si">{</span><span class="nb">set</span><span class="p">(</span><span class="n">controls</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">])</span> <span class="o">&amp;</span> <span class="nb">set</span><span class="p">(</span><span class="n">rbds</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">])</span><span class="si">}</span><span class="s1">&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All sanity checks passed.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>All sanity checks passed.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Concatenate both groups in cohort DataFrame</span>
+<span class="n">rbds</span><span class="p">[</span><span class="s2">&quot;group&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;RBD&quot;</span>
+<span class="n">controls</span><span class="p">[</span><span class="s2">&quot;group&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Control&quot;</span>
+<span class="n">cohort</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">rbds</span><span class="p">,</span> <span class="n">controls</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, we generate a cohort id that uniquely identifies the cohort built previously. We will use this id to avoid recomputing the same results multiple times:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cohort_id</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">cohort_id</span><span class="p">(</span><span class="n">cohort</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cohort id: </span><span class="si">{</span><span class="n">cohort_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cohort id: 5708939757235123991
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Save patient ids</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;scherfler-etal-patnos-</span><span class="si">{</span><span class="n">cohort_id</span><span class="si">}</span><span class="s2">.csv&quot;</span>
+<span class="n">cohort</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cohort patient ids saved in </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">. Do not share this file publicly!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cohort patient ids saved in scherfler-etal-patnos-5708939757235123991.csv. Do not share this file publicly!
+</pre></div>
+</div>
+</div>
+</div>
+<p>The following concommittant medication have been found in the cohort. Make sure that they don’t violate the following exclusion criteria from the original paper:</p>
+<p><em>No current treatment with medications known to modify REM sleep architecture and muscle tone such as serotonin reuptake inhibitors.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cohort</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;CMTRT&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()[[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PATNO</th>
+    </tr>
+    <tr>
+      <th>CMTRT</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+<section id="image-analysis">
+<h2><span class="section-number">1.4. </span>Image analysis<a class="headerlink" href="#image-analysis" title="Permalink to this headline">#</a></h2>
+<p>Structural MRI analysis in the original paper is a straightforward VBM analysis implemented with SPM using the DARTEL toolbox. To replicate it, we mostly followed the excellent tutorial on VBM in SPM available at <a class="reference external" href="https://www.fil.ion.ucl.ac.uk/~john/misc/VBMclass15.pdf">https://www.fil.ion.ucl.ac.uk/~john/misc/VBMclass15.pdf</a></p>
+<section id="imaging-data-download">
+<h3><span class="section-number">1.4.1. </span>Imaging data download<a class="headerlink" href="#imaging-data-download" title="Permalink to this headline">#</a></h3>
+<p>Let’s first download the missing Nifti image files associated with the subjects and visits selected in our cohort:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">utils</span><span class="o">.</span><span class="n">download_missing_nifti_files</span><span class="p">(</span><span class="n">cohort</span><span class="p">,</span> <span class="n">link_in_outputs</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of available subjects: 40
+Number of missing subjects: 0
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LivingPark-utils|DEBUG|ppmi_downloader.py:68 in __init__()
+                       self.config_file: &#39;.ppmi_config&#39;
+                       config_file: &#39;.ppmi_config&#39;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading image data of 0 subjects
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="image-processing">
+<h3><span class="section-number">1.4.2. </span>Image processing<a class="headerlink" href="#image-processing" title="Permalink to this headline">#</a></h3>
+<p>Image processing consists of:</p>
+<ol class="simple">
+<li><p>Segmentation of grey and white matter tissues,</p></li>
+<li><p>DARTEL template generation and normalization to MNI space</p></li>
+<li><p>Intra-cranial volume computation (to be used as covariates in the statistical model)</p></li>
+<li><p>Statistical model</p></li>
+</ol>
+<p>We implemented each of these steps as an SPM batch. For each batch, we created a template where file names will be inserted. Batch templates are available in <code class="docutils literal notranslate"><span class="pre">code/templates</span></code> or in <code class="docutils literal notranslate"><span class="pre">livingpark-utils/templates</span></code> if they are re-used in other notebooks.</p>
+<section id="segmentation">
+<h4><span class="section-number">1.4.2.1. </span>Segmentation<a class="headerlink" href="#segmentation" title="Permalink to this headline">#</a></h4>
+<p>We used the default parameters in SPM Segment. Our pre-processing batch template is in <code class="docutils literal notranslate"><span class="pre">livingpark-utils/templates/segmentation_job.m</span></code>. We only segment images for which an existing segmentation is not found in directory <code class="docutils literal notranslate"><span class="pre">outputs</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">utils</span><span class="o">.</span><span class="n">spm_compute_missing_segmentations</span><span class="p">(</span><span class="n">cohort</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Missing segmentations: 0
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can now run the pre-processing batch. To ensure that it will run on this computer, we containerized it with Docker and wrapped it in a Boutiques descriptor. If it’s the first time that you run this notebook, the Docker container will be downloaded to your computer:</p>
+</section>
+<section id="dartel-template-generation-and-normalization-to-mni-space">
+<h4><span class="section-number">1.4.2.2. </span>DARTEL template generation and normalization to MNI space<a class="headerlink" href="#dartel-template-generation-and-normalization-to-mni-space" title="Permalink to this headline">#</a></h4>
+<p>DARTEL template generation needs to be computed for each cohort as it builds templates from all the subjects in the cohort. We used the default parameters in SPM DARTEL, and Normalise to MNI Space modules, except for the Gaussian smoothing kernel size (FWHM) in the Normalise module that we set to 4 mm <span class="math notranslate nohighlight">\(\times\)</span> 4 mm <span class="math notranslate nohighlight">\(\times\)</span> 4 mm consistently with the original study. Our pre-processing batch template is in <code class="docutils literal notranslate"><span class="pre">code/templates/dartel_normalization_job.m</span></code>.</p>
+<p>We will now add our cohort subjects to the pre-processing batch template:</p>
+<p><strong>TODO</strong>: cleanup u_rc1 files because:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Continuing registration from pre-existing parameters (/home/glatard/code/livingpark/scherfler-etal/outputs/pre_processing/sub-100890/ses-BL/anat/u_rc1PPMI_100890_MR_3D_T1-weighted_br_raw_20210916214027681_1_S1063522_I1493049_Template.nii)
+</pre></div>
+</div>
+<p>We can now run the pre-processing batch:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">utils</span><span class="o">.</span><span class="n">spm_compute_dartel_normalization</span><span class="p">(</span><span class="n">cohort</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Job batch file written in dartel_norm_5708939757235123991_job.m
+Batch file written in dartel_norm_5708939757235123991_batch.m
+Log file dartel_norm_5708939757235123991.log exists, skipping batch execution (remove file or use force=True to force execution)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="intra-cranial-volume-computation">
+<h4><span class="section-number">1.4.2.3. </span>Intra-cranial volume computation<a class="headerlink" href="#intra-cranial-volume-computation" title="Permalink to this headline">#</a></h4>
+<p>We compute intra-cranial volumes by (1) computing tissue volumes using the corresponding tool in SPM, (2) summing the grey-matter, white-matter, and CSF volumes.</p>
+<p>First, let’s run the tissue volumes batch:</p>
+<p>We obtain the following distribution of intra-cranial volumes:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">icvs</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">spm_compute_intra_cranial_volumes</span><span class="p">(</span><span class="n">cohort</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">([</span><span class="n">icvs</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">icvs</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;ICV (litres)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Number of samples&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Job batch file written in tissue_volumes_5708939757235123991_job.m
+Batch file written in tissue_volumes_5708939757235123991_batch.m
+Log file tissue_volumes_5708939757235123991.log exists, skipping batch execution (remove file or use force=True to force execution)
+</pre></div>
+</div>
+<img alt="../../_images/scherfler-etal_48_1.png" src="../../_images/scherfler-etal_48_1.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="quality-control">
+<h3><span class="section-number">1.4.3. </span>Quality Control<a class="headerlink" href="#quality-control" title="Permalink to this headline">#</a></h3>
+<p>The following animation displays the white and grey matter probabilities as estimated by SPM. We can check their correct alignment with the MNI template, as well as their anatomical plausability.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">utils</span><span class="o">.</span><span class="n">qc_spm_segmentations</span><span class="p">(</span><span class="n">cohort</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Wrote qc_5708939757235123991/animation.gif
+</pre></div>
+</div>
+<img alt="../../_images/scherfler-etal_50_1.png" src="../../_images/scherfler-etal_50_1.png" />
+</div>
+</div>
+</section>
+<section id="statistical-analysis">
+<h3><span class="section-number">1.4.4. </span>Statistical analysis<a class="headerlink" href="#statistical-analysis" title="Permalink to this headline">#</a></h3>
+<p>Our statistical batch implements a two-sample T-test between the RBD and control groups with age and intra-cranial volume as covariates and an absolute masking threshold of 0.2. It estimates two contrasts (RBD vs Control and Control vs RBD) and uses a Family-Wise Error (FWE) threshold with p=0.0005. We used this p value as the original study mentioned that it used a statistical threshold of p = 0.001 corrected for multiple comparisons (2 contrasts).</p>
+<section id="grey-matter">
+<h4><span class="section-number">1.4.4.1. </span>Grey matter<a class="headerlink" href="#grey-matter" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">utils</span><span class="o">.</span><span class="n">spm_compute_vbm_stats</span><span class="p">(</span><span class="n">cohort</span><span class="p">,</span> <span class="s2">&quot;gm&quot;</span><span class="p">,</span> <span class="n">rbds</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">],</span> <span class="n">controls</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">],</span> <span class="n">icvs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Job batch file written in stats_gm_5708939757235123991_job.m
+Batch file written in stats_gm_5708939757235123991_batch.m
+Log file stats_gm_5708939757235123991.log exists, skipping batch execution (remove file or use force=True to force execution)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: check ordering of covariates once again</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We obtain the following significant clusters:</p>
+<p><strong>Contrast 1 (RBD-Controls)</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">glob</span>
+
+<span class="n">design_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;outputs&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;results-gm-</span><span class="si">{</span><span class="n">cohort_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">results_files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">design_dir</span><span class="p">,</span> <span class="s2">&quot;spm_*_001.csv&quot;</span><span class="p">))</span>
+<span class="k">assert</span> <span class="p">(</span>
+    <span class="nb">len</span><span class="p">(</span><span class="n">results_files</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+<span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;Expected exactly 1 result file, got </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">results_files</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">results_files</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>set</th>
+      <th>set.1</th>
+      <th>cluster</th>
+      <th>cluster.1</th>
+      <th>cluster.2</th>
+      <th>cluster.3</th>
+      <th>peak</th>
+      <th>peak.1</th>
+      <th>peak.2</th>
+      <th>peak.3</th>
+      <th>peak.4</th>
+      <th>Unnamed: 11</th>
+      <th>Unnamed: 12</th>
+      <th>Unnamed: 13</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>p</td>
+      <td>c</td>
+      <td>p(FWE-corr)</td>
+      <td>p(FDR-corr)</td>
+      <td>equivk</td>
+      <td>p(unc)</td>
+      <td>p(FWE-corr)</td>
+      <td>p(FDR-corr)</td>
+      <td>T</td>
+      <td>equivZ</td>
+      <td>p(unc)</td>
+      <td>x</td>
+      <td>y</td>
+      <td>z {mm}</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="si">}</span><span class="s2"> significant clusters found&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 significant clusters found
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Contrast 2 (Controls-RBD)</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results_files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">design_dir</span><span class="p">,</span> <span class="s2">&quot;spm_*_002.csv&quot;</span><span class="p">))</span>
+<span class="k">assert</span> <span class="p">(</span>
+    <span class="nb">len</span><span class="p">(</span><span class="n">results_files</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+<span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;Expected exactly 1 result file, got </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">results_files</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">results_files</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>set</th>
+      <th>set.1</th>
+      <th>cluster</th>
+      <th>cluster.1</th>
+      <th>cluster.2</th>
+      <th>cluster.3</th>
+      <th>peak</th>
+      <th>peak.1</th>
+      <th>peak.2</th>
+      <th>peak.3</th>
+      <th>peak.4</th>
+      <th>Unnamed: 11</th>
+      <th>Unnamed: 12</th>
+      <th>Unnamed: 13</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>p</td>
+      <td>c</td>
+      <td>p(FWE-corr)</td>
+      <td>p(FDR-corr)</td>
+      <td>equivk</td>
+      <td>p(unc)</td>
+      <td>p(FWE-corr)</td>
+      <td>p(FDR-corr)</td>
+      <td>T</td>
+      <td>equivZ</td>
+      <td>p(unc)</td>
+      <td>x</td>
+      <td>y</td>
+      <td>z {mm}</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="si">}</span><span class="s2"> significant clusters found&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 significant clusters found
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="white-matter">
+<h4><span class="section-number">1.4.4.2. </span>White matter<a class="headerlink" href="#white-matter" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">utils</span><span class="o">.</span><span class="n">spm_compute_vbm_stats</span><span class="p">(</span><span class="n">cohort</span><span class="p">,</span> <span class="s2">&quot;wm&quot;</span><span class="p">,</span> <span class="n">rbds</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">],</span> <span class="n">controls</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">],</span> <span class="n">icvs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Job batch file written in stats_wm_5708939757235123991_job.m
+Batch file written in stats_wm_5708939757235123991_batch.m
+Log file stats_wm_5708939757235123991.log exists, skipping batch execution (remove file or use force=True to force execution)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We obtain the following significant clusters:</p>
+<p><strong>Contrast 1 (RBD-Controls)</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">design_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;outputs&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;results-wm-</span><span class="si">{</span><span class="n">cohort_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">results_files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">design_dir</span><span class="p">,</span> <span class="s2">&quot;spm_*_001.csv&quot;</span><span class="p">))</span>
+<span class="k">assert</span> <span class="p">(</span>
+    <span class="nb">len</span><span class="p">(</span><span class="n">results_files</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+<span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;Expected exactly 1 result file, got </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">results_files</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">results_files</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>set</th>
+      <th>set.1</th>
+      <th>cluster</th>
+      <th>cluster.1</th>
+      <th>cluster.2</th>
+      <th>cluster.3</th>
+      <th>peak</th>
+      <th>peak.1</th>
+      <th>peak.2</th>
+      <th>peak.3</th>
+      <th>peak.4</th>
+      <th>Unnamed: 11</th>
+      <th>Unnamed: 12</th>
+      <th>Unnamed: 13</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>p</td>
+      <td>c</td>
+      <td>p(FWE-corr)</td>
+      <td>p(FDR-corr)</td>
+      <td>equivk</td>
+      <td>p(unc)</td>
+      <td>p(FWE-corr)</td>
+      <td>p(FDR-corr)</td>
+      <td>T</td>
+      <td>equivZ</td>
+      <td>p(unc)</td>
+      <td>x</td>
+      <td>y</td>
+      <td>z {mm}</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="si">}</span><span class="s2"> significant clusters found&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 significant clusters found
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Contrast 2 (Controls-RBD)</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results_files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">design_dir</span><span class="p">,</span> <span class="s2">&quot;spm_*_002.csv&quot;</span><span class="p">))</span>
+<span class="k">assert</span> <span class="p">(</span>
+    <span class="nb">len</span><span class="p">(</span><span class="n">results_files</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+<span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;Expected exactly 1 result file, got </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">results_files</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">results_files</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>set</th>
+      <th>set.1</th>
+      <th>cluster</th>
+      <th>cluster.1</th>
+      <th>cluster.2</th>
+      <th>cluster.3</th>
+      <th>peak</th>
+      <th>peak.1</th>
+      <th>peak.2</th>
+      <th>peak.3</th>
+      <th>peak.4</th>
+      <th>Unnamed: 11</th>
+      <th>Unnamed: 12</th>
+      <th>Unnamed: 13</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>p</td>
+      <td>c</td>
+      <td>p(FWE-corr)</td>
+      <td>p(FDR-corr)</td>
+      <td>equivk</td>
+      <td>p(unc)</td>
+      <td>p(FWE-corr)</td>
+      <td>p(FDR-corr)</td>
+      <td>T</td>
+      <td>equivZ</td>
+      <td>p(unc)</td>
+      <td>x</td>
+      <td>y</td>
+      <td>z {mm}</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="si">}</span><span class="s2"> significant clusters found&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 significant clusters found
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapters/scherfler-etal"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../../introduction.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">&lt;no title&gt;</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../livingpark-utils/livingpark_utils/notebooks/mri_metadata.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Introduction</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The LivingPark Project<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
