@@ -1,3 +1,33 @@
-[submodule "replications/scherfler-etal"]
-	path = replications/scherfler-etal
+[submodule "replications/agosta-etal-2013"]
+	path = replications/agosta-etal-2013
+	url = https://github.com/LivingPark-MRI/agosta-etal
+[submodule "replications/hanganu-etal-2014"]
+	path = replications/hanganu-etal-2014
+	url = https://github.com/LivingPark-MRI/hanganu-etal-2014
+[submodule "replications/mak-etal-2015"]
+	path = replications/mak-etal-2015
+	url = https://github.com/LivingPark-MRI/mak-etal-2015
+[submodule "replications/mak-etal-2017"]
+	path = replications/mak-etal-2017
+	url = https://github.com/LivingPark-MRI/mak-etal
+[submodule "replications/rahayel-etal-2018"]
+	path = replications/rahayel-etal-2018
+	url = https://github.com/LivingPark-MRI/rahayel-etal
+[submodule "replications/scherfler-etal-2011"]
+	path = replications/scherfler-etal-2011
 	url = https://github.com/LivingPark-MRI/scherfler-etal
+[submodule "replications/shu-etal-2021"]
+	path = replications/shu-etal-2021
+	url = https://github.com/LivingPark-MRI/shu-etal
+[submodule "replications/sterling-etal-2016"]
+	path = replications/sterling-etal-2016
+	url = https://github.com/LivingPark-MRI/sterling-etal-2016
+[submodule "replications/tessa-etal-2014"]
+	path = replications/tessa-etal-2014
+	url = https://github.com/LivingPark-MRI/tessa-etal-2014
+[submodule "replications/zeighami-etal-2015"]
+	path = replications/zeighami-etal-2015
+	url = https://github.com/LivingPark-MRI/zeighami-etal-2015
+[submodule "replications/zeighami-etal-2019"]
+	path = replications/zeighami-etal-2019
+	url = https://github.com/LivingPark-MRI/zeighami-etal-2019
