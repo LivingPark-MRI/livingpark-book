@@ -1,0 +1,15 @@
+matplotlib
+pandas
+ppmi_downloader
+datalad
+jupyter
+numpy
+boutiques
+livingpark_utils
+nilearn
+wget
+pyradiomics
+ipython
+nibabel
+tqdm
+scipy
