@@ -1,9 +1,0 @@
-boutiques
-ipywidgets
-livingpark-utils
-jupyterlab
-matplotlib
-numpy
-pandas
-rich
-tqdm
