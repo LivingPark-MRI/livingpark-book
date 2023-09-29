@@ -7,6 +7,9 @@ parts:
 - caption: Overview
   chapters:
   - file: overview
+    title: Reproducibility challenges
+  - file: technical_challenges
+    title: Technical challenges
 
 - caption: Reproducibility studies
   chapters:
@@ -82,8 +85,8 @@ parts:
 
 - caption: Utility packages
   chapters:
-  - file: packages/livingpark_utils.md
   - file: packages/ppmi_downloader.md
+  - file: packages/livingpark_utils.md
 
 - caption: About LivingPark
   chapters:

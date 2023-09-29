@@ -1,4 +1,4 @@
-# .
+# Cite
 <!-- TODO -->
 <!-- 
 - Add the jupyter book on Zenodo (or similar)
