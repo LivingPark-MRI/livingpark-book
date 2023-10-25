@@ -1,0 +1,96 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+- caption: Overview
+  chapters:
+  - file: overview
+    title: Reproducibility challenges
+  - file: technical_challenges
+    title: Technical challenges
+
+- caption: Reproducibility studies
+  chapters:
+  - file: replications/agosta-etal-2013/README.md
+    title: F. Agosta et al., 2013
+    sections:
+    - file: replications/agosta-etal-2013/agosta-etal.ipynb
+      title: Replication
+
+  - file: replications/hanganu-etal-2014/README.md
+    title: A. Hanganu et al., 2014
+    sections:
+    - file: replications/hanganu-etal-2014/hanganu-etal-2014.ipynb
+      title: Replication
+
+  - file: replications/mak-etal-2015/README.md
+    title: E. Mak et al., 2015
+    sections:
+    - file: replications/mak-etal-2015/mak-etal-2015.ipynb
+      title: Replication
+
+  - file: replications/mak-etal-2017/README.md
+    title: E. Mak et al., 2017
+    sections:
+    - file: replications/mak-etal-2017/cohort_definition.ipynb
+      title: Replication
+    - file: replications/mak-etal-2017/fsl_siena.ipynb
+      title: FSL SIENA
+    - file: replications/mak-etal-2017/stat_analysis.ipynb
+      title: Statistical analysis
+
+  - file: replications/rahayel-etal-2018/README.md
+    title: S. Rahayel et al., 2018
+    sections:
+    - file: replications/rahayel-etal-2018/rahayel-etal-2018.ipynb
+      title: Replication
+
+  - file: replications/scherfler-etal-2011/README.md
+    title: C. Scherfler et al., 2011
+    sections:
+    - file: replications/scherfler-etal-2011/scherfler-etal.ipynb
+      title: Replication
+
+  - file: replications/shu-etal-2021/README.md
+    title: Z. Shu et al., 2021
+    sections:
+    - file: replications/shu-etal-2021/shu-etal.ipynb
+      title: Replication
+
+  - file: replications/sterling-etal-2016/README.md
+    title: N. W. Sterling et al., 2016
+    sections:
+    - file: replications/sterling-etal-2016/sterling-etal-2016.ipynb
+      title: Replication
+
+  - file: replications/tessa-etal-2014/README.md
+    title: C. Tessa et al., 2014
+    sections:
+    - file: replications/tessa-etal-2014/Replication -  Tessa et al. 2014.ipynb
+      title: Replication
+
+  - file: replications/zeighami-etal-2015/README.md
+    title: Y. Zeighami et al., 2015
+    sections:
+    - file: replications/zeighami-etal-2015/Yashar et. al 2015.ipynb
+      title: Replication
+      
+  - file: replications/zeighami-etal-2019/README.md
+    title: Y. Zeighami et al., 2019
+    sections:
+    - file: replications/zeighami-etal-2019/zeighami-etal-2019.ipynb
+      title: Replication
+
+- caption: Utility packages
+  chapters:
+  - file: packages/ppmi_downloader.md
+  - file: packages/livingpark_utils.md
+
+- caption: About LivingPark
+  chapters:
+  - url: https://github.com/LivingPark-MRI/
+    title: Organization repository
+  - file: cite
+
