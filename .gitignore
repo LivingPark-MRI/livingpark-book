@@ -2,3 +2,4 @@
 .mypy_cache
 
 book/_build
+.DS_Store
