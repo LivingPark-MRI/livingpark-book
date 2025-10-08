@@ -11,7 +11,7 @@ parts:
   - file: technical_challenges
     title: Technical challenges
 
-- caption: Reproducibility studies
+- caption: Reproducibility studies (Harmonization [WIP])
   chapters:
   - file: replications/agosta-etal-2013/README.md
     title: F. Agosta et al., 2013
