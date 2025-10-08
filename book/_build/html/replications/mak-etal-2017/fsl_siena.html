@@ -1,0 +1,897 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Failed DICOM to NIfTI conversion &#8212; LivingPark Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'replications/mak-etal-2017/fsl_siena';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Comparisons of percentage brain volume change and ventricular enlargement" href="stat_analysis.html" />
+    <link rel="prev" title="Replication: Mak et al., 2017" href="cohort_definition.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="LivingPark Book - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="LivingPark Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    LivingPark
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">A note on Reproducibility vs. Replicability</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../../technical_challenges.html">Data Usage Agreement</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reproducibility studies (Harmonization [WIP])</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../agosta-etal-2013/README.html">F. Agosta et al., 2013</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../agosta-etal-2013/agosta-etal.html">Replication</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../hanganu-etal-2014/README.html">A. Hanganu et al., 2014</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../hanganu-etal-2014/hanganu-etal-2014.html">Replication: Hanganu <em>et al.</em>, 2014</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../mak-etal-2015/README.html">E. Mak et al., 2015</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../mak-etal-2015/mak-etal-2015.html">Mak et al, 2015</a></li>
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="README.html">E. Mak et al., 2017</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="cohort_definition.html">Replication: Mak et al., 2017</a></li>
+
+
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Failed DICOM to NIfTI conversion</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="stat_analysis.html">Comparisons of percentage brain volume change and ventricular enlargement</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../rahayel-etal-2018/README.html">S. Rahayel et al., 2018</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../rahayel-etal-2018/rahayel-etal-2018.html">Replication</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../scherfler-etal-2011/README.html">C. Scherfler et al., 2011</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../scherfler-etal-2011/scherfler-etal.html">Replication</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../shu-etal-2021/README.html">Z. Shu et al., 2021</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../shu-etal-2021/shu-etal.html">Replication: Shu <em>et al</em>, 2020</a></li>
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../sterling-etal-2016/README.html">N. W. Sterling et al., 2016</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sterling-etal-2016/sterling-etal-2016.html">Replication</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tessa-etal-2014/README.html">C. Tessa et al., 2014</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tessa-etal-2014/Replication%20-%20%20Tessa%20et%20al.%202014.html">Introduction</a></li>
+
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../zeighami-etal-2015/README.html">Y. Zeighami et al., 2015</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../zeighami-etal-2015/Yashar%20et.%20al%202015.html">Replication</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../zeighami-etal-2019/README.html">Y. Zeighami et al., 2019</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../zeighami-etal-2019/zeighami-etal-2019.html">Replication</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Utility packages</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../packages/ppmi_downloader.html">PPMI_Downloader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packages/livingpark_utils.html">LivingPark_Utils</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">About LivingPark</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://github.com/LivingPark-MRI/">Organization repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cite.html">Cite</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/LivingPark-MRI/livingpark-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/LivingPark-MRI/livingpark-book/issues/new?title=Issue%20on%20page%20%2Freplications/mak-etal-2017/fsl_siena.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/replications/mak-etal-2017/fsl_siena.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Failed DICOM to NIfTI conversion</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Failed DICOM to NIfTI conversion</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-processing">Pre-processing</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slurm">Slurm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#local">Local</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">livingpark_utils.dataset.ppmi</span><span class="w"> </span><span class="kn">import</span> <span class="n">find_nifti_file_in_cache</span>
+
+
+<span class="n">cohort_file</span> <span class="o">=</span> <span class="s2">&quot;mak-etal-2017-mixed-2630194534343638755.csv&quot;</span>
+<span class="n">cohort</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">cohort_file</span><span class="p">)</span>
+
+<span class="n">cohort</span><span class="p">[</span><span class="s2">&quot;filename&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cohort</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+    <span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">find_nifti_file_in_cache</span><span class="p">(</span>
+        <span class="n">row</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;EVENT_ID&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;Description&quot;</span><span class="p">],</span> <span class="n">debug</span><span class="o">=</span><span class="kc">False</span>
+    <span class="p">),</span>
+    <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Missing T1 nifti files: </span><span class="si">{</span><span class="n">cohort</span><span class="p">[</span><span class="n">cohort</span><span class="p">[</span><span class="s1">&#39;filename&#39;</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">]</span><span class="o">.</span><span class="fm">__len__</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Missing T1 nifti files: 0
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="failed-dicom-to-nifti-conversion">
+<h1>Failed DICOM to NIfTI conversion<a class="headerlink" href="#failed-dicom-to-nifti-conversion" title="Link to this heading">#</a></h1>
+<p>Some images failed the automatic conversion, when using <code class="docutils literal notranslate"><span class="pre">livingpark_utils</span></code>.
+We fixed those images manually using <code class="docutils literal notranslate"><span class="pre">dcm2niix</span></code> then mapped them using the code below</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uncomment to run the DICOM to NIfTI conversion manually</span>
+<span class="c1"># ! for f in $(find PPMI -mindepth 4 -type d); do dcm2niix $f &amp;; done</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os.path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">livingpark_utils.dataset.ppmi</span><span class="w"> </span><span class="kn">import</span> <span class="n">clean_protocol_description</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">livingpark_utils.download.ppmi</span><span class="w"> </span><span class="kn">import</span> <span class="n">find_dicom</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">fix_conversion</span><span class="p">(</span>
+    <span class="n">sub_id</span><span class="p">,</span>
+    <span class="n">event_id</span><span class="p">,</span>
+    <span class="n">desc</span><span class="p">,</span>
+<span class="p">):</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">find_dicom</span><span class="p">(</span><span class="n">sub_id</span><span class="p">,</span> <span class="n">event_id</span><span class="p">,</span> <span class="n">desc</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">parent</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">l</span> <span class="o">:=</span> <span class="nb">list</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.nii&quot;</span><span class="p">)))</span> <span class="o">!=</span> <span class="p">[]:</span>
+        <span class="n">nifti_file</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="n">l</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">in_file</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;inputs&quot;</span><span class="p">)</span>
+        <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;sub-</span><span class="si">{</span><span class="n">sub_id</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;ses-</span><span class="si">{</span><span class="n">event_id</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="o">/</span> <span class="s2">&quot;anat&quot;</span>
+        <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;PPMI_</span><span class="si">{</span><span class="n">sub_id</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">clean_protocol_description</span><span class="p">(</span><span class="n">desc</span><span class="p">)</span><span class="si">}</span><span class="s2">.nii.gz&quot;</span>
+    <span class="p">)</span>
+    <span class="n">out_file</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;outputs&quot;</span><span class="p">)</span>
+        <span class="o">/</span> <span class="s2">&quot;pre_processing&quot;</span>
+        <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;sub-</span><span class="si">{</span><span class="n">sub_id</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;ses-</span><span class="si">{</span><span class="n">event_id</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="o">/</span> <span class="s2">&quot;anat&quot;</span>
+        <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;PPMI_</span><span class="si">{</span><span class="n">sub_id</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">clean_protocol_description</span><span class="p">(</span><span class="n">desc</span><span class="p">)</span><span class="si">}</span><span class="s2">.nii.gz&quot;</span>
+    <span class="p">)</span>
+
+    <span class="n">nifti_file</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">in_file</span><span class="p">)</span>
+
+    <span class="n">in_file</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="mo">0o755</span><span class="p">)</span>
+    <span class="n">out_file</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="mo">0o755</span><span class="p">)</span>
+
+    <span class="n">relative_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">in_file</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="n">out_file</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">out_file</span><span class="o">.</span><span class="n">is_symlink</span><span class="p">():</span>
+        <span class="n">out_file</span><span class="o">.</span><span class="n">unlink</span><span class="p">()</span>
+    <span class="n">out_file</span><span class="o">.</span><span class="n">symlink_to</span><span class="p">(</span><span class="n">relative_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
+
+<span class="n">cohort</span><span class="p">[</span><span class="n">cohort</span><span class="p">[</span><span class="s1">&#39;filename&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">][[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">,</span> <span class="s2">&quot;EVENT_ID&quot;</span><span class="p">,</span> <span class="s2">&quot;Description&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+    <span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> 
+    <span class="n">fix_conversion</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;EVENT_ID&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;Description&quot;</span><span class="p">]),</span>
+    <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cohort</span><span class="p">[</span><span class="s2">&quot;filename&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cohort</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+    <span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">find_nifti_file_in_cache</span><span class="p">(</span>
+        <span class="n">row</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;EVENT_ID&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;Description&quot;</span><span class="p">],</span> <span class="n">debug</span><span class="o">=</span><span class="kc">False</span>
+    <span class="p">),</span>
+    <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Missing T1 nifti files: </span><span class="si">{</span><span class="n">cohort</span><span class="p">[</span><span class="n">cohort</span><span class="p">[</span><span class="s1">&#39;filename&#39;</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">]</span><span class="o">.</span><span class="fm">__len__</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Missing T1 nifti files: 0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="pre-processing">
+<h1>Pre-processing<a class="headerlink" href="#pre-processing" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">filter_cached_patnos</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">pipeline</span><span class="p">,</span> <span class="n">use_cache</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="n">exitcodes</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;.exitcodes&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">use_cache</span> <span class="ow">and</span> <span class="n">exitcodes</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+        <span class="n">regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(?P&lt;pipeline&gt;.*)\.(?P&lt;patno&gt;\d*)\.(?P&lt;state&gt;.*)&quot;</span><span class="p">)</span>
+        <span class="n">cached_patnos</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="nb">int</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="s2">&quot;patno&quot;</span><span class="p">])</span>
+            <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">exitcodes</span><span class="o">.</span><span class="n">iterdir</span><span class="p">()</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">m</span> <span class="o">:=</span> <span class="n">regex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">filename</span><span class="o">.</span><span class="n">name</span><span class="p">))</span> <span class="ow">and</span> <span class="n">m</span><span class="p">[</span><span class="s2">&quot;pipeline&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">pipeline</span>
+        <span class="p">]</span>
+        <span class="k">return</span> <span class="n">df</span><span class="p">[</span><span class="o">~</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">cached_patnos</span><span class="p">)]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+<span class="c1"># We drop duplicated patno as FSL SIENA computes a longitudinal metric between both visits.</span>
+<span class="n">fsl_data</span> <span class="o">=</span> <span class="n">cohort</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="s2">&quot;PATNO&quot;</span><span class="p">)[[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">,</span> <span class="s2">&quot;filename&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+    <span class="n">cohort</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="s2">&quot;PATNO&quot;</span><span class="p">,</span> <span class="n">keep</span><span class="o">=</span><span class="s2">&quot;last&quot;</span><span class="p">)[[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">,</span> <span class="s2">&quot;filename&quot;</span><span class="p">]],</span>
+    <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">],</span>
+    <span class="n">suffixes</span><span class="o">=</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;_2&quot;</span><span class="p">),</span>
+<span class="p">)</span>
+
+<span class="n">fsl_data</span> <span class="o">=</span> <span class="n">filter_cached_patnos</span><span class="p">(</span><span class="n">fsl_data</span><span class="p">,</span> <span class="s2">&quot;fsl_siena&quot;</span><span class="p">)</span>
+
+<span class="n">json_data</span> <span class="o">=</span> <span class="n">fsl_data</span><span class="p">[[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">,</span> <span class="s2">&quot;filename&quot;</span><span class="p">,</span> <span class="s2">&quot;filename_2&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">to_json</span><span class="p">()</span>
+<span class="n">meta</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">json_data</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;fsl_siena.json&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fout</span><span class="p">:</span>
+    <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">meta</span><span class="p">,</span> <span class="n">fout</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> fsl_siena.py
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">boutiques.descriptor2func</span><span class="w"> </span><span class="kn">import</span> <span class="n">function</span>
+
+
+<span class="n">zenodo_id</span> <span class="o">=</span> <span class="s2">&quot;zenodo.7435009&quot;</span>
+<span class="n">fsl_siena</span> <span class="o">=</span> <span class="n">function</span><span class="p">(</span><span class="n">zenodo_id</span><span class="p">)</span>
+
+<span class="n">task_id</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;fsl_siena.json&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fin</span><span class="p">:</span>
+    <span class="n">jobs</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fin</span><span class="p">)</span>
+
+<span class="n">output_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;outputs&quot;</span><span class="p">,</span> <span class="s2">&quot;fsl_siena&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">jobs</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">][</span><span class="n">task_id</span><span class="p">]))</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
+<span class="n">output_dir</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="mo">0o755</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">output</span> <span class="o">=</span> <span class="n">fsl_siena</span><span class="p">(</span>
+    <span class="s2">&quot;--imagepath&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;fsl-6.0.4.sif&quot;</span><span class="p">,</span>
+    <span class="n">input1</span><span class="o">=</span><span class="n">jobs</span><span class="p">[</span><span class="s2">&quot;filename&quot;</span><span class="p">][</span><span class="n">task_id</span><span class="p">],</span>
+    <span class="n">input2</span><span class="o">=</span><span class="n">jobs</span><span class="p">[</span><span class="s2">&quot;filename_2&quot;</span><span class="p">][</span><span class="n">task_id</span><span class="p">],</span>
+    <span class="n">output_dir</span><span class="o">=</span><span class="n">output_dir</span><span class="o">.</span><span class="n">as_posix</span><span class="p">(),</span>
+    <span class="n">viena</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">exitcode</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">exit_code</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="o">.</span><span class="n">stderr</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+
+<span class="c1"># Write successful computations</span>
+<span class="k">if</span> <span class="n">exitcode</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">patno</span> <span class="o">=</span> <span class="n">jobs</span><span class="p">[</span><span class="s1">&#39;PATNO&#39;</span><span class="p">][</span><span class="n">task_id</span><span class="p">]</span>
+    <span class="n">exitcode_file</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;.exitcodes&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;fsl_siena.</span><span class="si">{</span><span class="n">patno</span><span class="si">}</span><span class="s2">.success&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
+    <span class="n">exitcode_file</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="mo">0o755</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">Path</span><span class="o">.</span><span class="n">touch</span><span class="p">(</span><span class="n">exitcode_file</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="mo">0o644</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting fsl_siena.py
+</pre></div>
+</div>
+</div>
+</div>
+<section id="slurm">
+<h2>Slurm<a class="headerlink" href="#slurm" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> fsl_siena.slurm
+<span class="ch">#!/bin/sh</span>
+
+<span class="c1">#SBATCH -J fsl_siena</span>
+<span class="c1">#SBATCH --nodes=1</span>
+<span class="c1">#SBATCH --mem=8G</span>
+<span class="c1">#SBATCH --cpus-per-task=2</span>
+<span class="c1"># Outputs ----------------------------------</span>
+<span class="c1">#SBATCH -o log/%x-%A-%a.out</span>
+<span class="c1">#SBATCH -e log/%x-%A-%a.err</span>
+<span class="c1"># ------------------------------------------</span>
+
+<span class="n">module</span> <span class="n">load</span> <span class="n">singularity</span>
+<span class="n">source</span> <span class="o">.</span><span class="n">venv</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
+<span class="n">python</span> <span class="n">fsl_siena</span><span class="o">.</span><span class="n">py</span> <span class="err">$</span><span class="p">{</span><span class="n">SLURM_ARRAY_TASK_ID</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting fsl_siena.slurm
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Path(&quot;log&quot;).mkdir(mode=0o755, exist_ok=True)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ! sbatch --array=0-$(( $(jq &quot;.PATNO | length&quot; fsl_siena.json) - 1 ))%60 --account=rrg-glatard fsl_siena.slurm</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="local">
+<h2>Local<a class="headerlink" href="#local" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tqdm.contrib.concurrent</span><span class="w"> </span><span class="kn">import</span> <span class="n">thread_map</span>
+
+
+<span class="k">with</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;fsl_siena.json&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">open</span><span class="p">()</span> <span class="k">as</span> <span class="n">fin</span><span class="p">:</span>
+    <span class="n">jobs</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fin</span><span class="p">)</span>
+
+<span class="n">processes</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;python fsl_siena.py </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">jobs</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">]))]</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">thread_map</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">,</span> <span class="n">processes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "87c41b506f924106bbb3259bd30fff26", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./replications/mak-etal-2017"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="cohort_definition.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Replication: Mak et al., 2017</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="stat_analysis.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Comparisons of percentage brain volume change and ventricular enlargement</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Failed DICOM to NIfTI conversion</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-processing">Pre-processing</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slurm">Slurm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#local">Local</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The LivingPark Project
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

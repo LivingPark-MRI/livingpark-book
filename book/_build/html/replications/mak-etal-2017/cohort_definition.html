@@ -1,0 +1,1575 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Replication: Mak et al., 2017 &#8212; LivingPark Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'replications/mak-etal-2017/cohort_definition';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Failed DICOM to NIfTI conversion" href="fsl_siena.html" />
+    <link rel="prev" title="Replication of [E. Mak et al., 2017]" href="README.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="LivingPark Book - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="LivingPark Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    LivingPark
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">A note on Reproducibility vs. Replicability</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../../technical_challenges.html">Data Usage Agreement</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reproducibility studies (Harmonization [WIP])</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../agosta-etal-2013/README.html">F. Agosta et al., 2013</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../agosta-etal-2013/agosta-etal.html">Replication</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../hanganu-etal-2014/README.html">A. Hanganu et al., 2014</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../hanganu-etal-2014/hanganu-etal-2014.html">Replication: Hanganu <em>et al.</em>, 2014</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../mak-etal-2015/README.html">E. Mak et al., 2015</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../mak-etal-2015/mak-etal-2015.html">Mak et al, 2015</a></li>
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="README.html">E. Mak et al., 2017</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Replication: Mak et al., 2017</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="fsl_siena.html">Failed DICOM to NIfTI conversion</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="stat_analysis.html">Comparisons of percentage brain volume change and ventricular enlargement</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../rahayel-etal-2018/README.html">S. Rahayel et al., 2018</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../rahayel-etal-2018/rahayel-etal-2018.html">Replication</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../scherfler-etal-2011/README.html">C. Scherfler et al., 2011</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../scherfler-etal-2011/scherfler-etal.html">Replication</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../shu-etal-2021/README.html">Z. Shu et al., 2021</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../shu-etal-2021/shu-etal.html">Replication: Shu <em>et al</em>, 2020</a></li>
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../sterling-etal-2016/README.html">N. W. Sterling et al., 2016</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sterling-etal-2016/sterling-etal-2016.html">Replication</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tessa-etal-2014/README.html">C. Tessa et al., 2014</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tessa-etal-2014/Replication%20-%20%20Tessa%20et%20al.%202014.html">Introduction</a></li>
+
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../zeighami-etal-2015/README.html">Y. Zeighami et al., 2015</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../zeighami-etal-2015/Yashar%20et.%20al%202015.html">Replication</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../zeighami-etal-2019/README.html">Y. Zeighami et al., 2019</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../zeighami-etal-2019/zeighami-etal-2019.html">Replication</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Utility packages</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../packages/ppmi_downloader.html">PPMI_Downloader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packages/livingpark_utils.html">LivingPark_Utils</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">About LivingPark</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://github.com/LivingPark-MRI/">Organization repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cite.html">Cite</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/LivingPark-MRI/livingpark-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/LivingPark-MRI/livingpark-book/issues/new?title=Issue%20on%20page%20%2Freplications/mak-etal-2017/cohort_definition.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/replications/mak-etal-2017/cohort_definition.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Replication: Mak et al., 2017</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Replication: Mak et al., 2017</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ppmi-metadata-download">PPMI Metadata Download</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-livingpark-utility-notebook">Download LivingPark utility notebook</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cohort-matching">Cohort Matching</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preparation">Data preparation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cohort-definition">Cohort Definition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cognitive-state">Cognitive state</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diseases-duration">Diseases duration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mri-availability">MRI availability</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examination-scores">Examination scores</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hoehn-and-yahr-h-y">Hoehn and Yahr (H&amp;Y)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unified-parkinso-s-disease-rating-scale-part-iii-udprs-iii">Unified Parkinso’s Disease Rating Scale, Part III (UDPRS III)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#montreal-cognitive-assessment-moca">Montreal Cognitive Assessment (MoCA)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ledd-mg-d-baseline">LEDD (mg/d) baseline</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#demographics">Demographics</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sex">Sex</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#age-at-visit">Age at visit</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#education">Education</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#patient-exclusion">Patient exclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-aggregation">Data aggregation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#find-acceptable-visit-pairs">Find acceptable visit pairs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cohort-with-follow-up-after-12-months">Cohort with follow-up after 12 months</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cohort-with-follow-up-after-24-months">Cohort with follow-up after 24 months</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mixed-cohort-with-follow-up-after-12-months-and-24-months-for-some-pd-mci">Mixed cohort with follow-up after 12 months (and 24 months for some PD-MCI)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cohort-summary">Cohort Summary</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#save-cohort-definition">Save Cohort Definition</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="replication-mak-et-al-2017">
+<h1>Replication: Mak et al., 2017<a class="headerlink" href="#replication-mak-et-al-2017" title="Link to this heading">#</a></h1>
+<p>This notebook attempts to replicate the following paper, using the <a class="reference external" href="http://ppmi-info.org/">PPMI</a> dataset:</p>
+<div class="alert alert-block alert-success">
+   	E. Mak et al., <a href="https://www.sciencedirect.com/science/article/pii/S0197458017300830"> “Longitudinal whole-brain atrophy and ventricular enlargement in nondemented Parkinson’s disease”</a>, Neurobiology of aging, vol. 55, pp. 78–90, 2017.
+</div>
+<p>This study included PD subjects (<span class="math notranslate nohighlight">\(n=104\)</span>) and healthy controls (<span class="math notranslate nohighlight">\(n=38\)</span>) who completed a baseline and and follow-up T1 MRI at 18 months.
+The demographic of the studied population was as follow (table extracted from the paper).</p>
+<div><img src="figures/table1.png" width="1200px"></div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO</span>
+<span class="c1"># - Brief summary of image analysis to be reproduced</span>
+<span class="c1"># - Key results to be reproduced</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">livingpark_utils</span>
+
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;PIP_REQUIRE_VIRTUALENV&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;False&quot;</span>
+<span class="n">utils</span> <span class="o">=</span> <span class="n">livingpark_utils</span><span class="o">.</span><span class="n">LivingParkUtils</span><span class="p">()</span>
+<span class="n">utils</span><span class="o">.</span><span class="n">notebook_init</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This notebook was run on 2023-06-21 02:19:53 UTC +0000
+</pre></div>
+</div>
+<div class="output text_html"><script>
+    code_show = true;
+    function code_toggle() {
+        if (code_show) {
+            $("div.input").hide();
+        } else {
+            $("div.input").show();
+        }
+        code_show = !code_show
+    }
+    $(document).ready(code_toggle);
+</script>
+<form action="javascript:code_toggle()">
+    <input type="submit" value="Click here to toggle on/off the Python code.">
+</form>
+</div></div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="ppmi-metadata-download">
+<h1>PPMI Metadata Download<a class="headerlink" href="#ppmi-metadata-download" title="Link to this heading">#</a></h1>
+<p>We download metadata file from the PPMI database, using <a class="reference external" href="https://pypi.org/project/ppmi-downloader/"><code class="docutils literal notranslate"><span class="pre">ppmi-downloader</span></code></a> available on PyPi.
+</br>Your PPMI credentials will be asked before download.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">livingpark_utils.download</span><span class="w"> </span><span class="kn">import</span> <span class="n">ppmi</span>
+
+<span class="n">ppmi_downloader</span> <span class="o">=</span> <span class="n">ppmi</span><span class="o">.</span><span class="n">Downloader</span><span class="p">(</span><span class="n">utils</span><span class="o">.</span><span class="n">study_files_dir</span><span class="p">)</span>
+
+<span class="n">required_files</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Demographics.csv&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Age_at_visit.csv&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;MDS-UPDRS_Part_III.csv&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Socio-Economics.csv&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Montreal_Cognitive_Assessment__MoCA_.csv&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;PD_Diagnosis_History.csv&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Cognitive_Categorization.csv&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Participant_Status.csv&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;LEDD_Concomitant_Medication_Log.csv&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Pilot_Biospecimen_Analysis_Results.csv&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">utils</span><span class="o">.</span><span class="n">get_study_files</span><span class="p">(</span><span class="n">required_files</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">ppmi_downloader</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Download skipped: No missing files!
+</pre></div>
+</div>
+</div>
+</div>
+<section id="download-livingpark-utility-notebook">
+<h2>Download LivingPark utility notebook<a class="headerlink" href="#download-livingpark-utility-notebook" title="Link to this heading">#</a></h2>
+<p>Here below, we download and execute utility notebook from the LivingPark project.
+</br>These notebook will create cleaned up metadate file needed throughout this notebook.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">livingpark_utils.scripts</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">mri_metadata</span><span class="p">,</span>
+    <span class="n">pd_status</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="cohort-matching">
+<h1>Cohort Matching<a class="headerlink" href="#cohort-matching" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">livingpark_utils.dataset</span><span class="w"> </span><span class="kn">import</span> <span class="n">ppmi</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">livingpark_utils.visualization</span><span class="w"> </span><span class="kn">import</span> <span class="n">reformat_plot_labels</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="data-preparation">
+<h2>Data preparation<a class="headerlink" href="#data-preparation" title="Link to this heading">#</a></h2>
+<section id="cohort-definition">
+<h3>Cohort Definition<a class="headerlink" href="#cohort-definition" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cohort_def</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">utils</span><span class="o">.</span><span class="n">study_files_dir</span><span class="p">,</span> <span class="s2">&quot;Participant_Status.csv&quot;</span><span class="p">))[</span>
+    <span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">,</span> <span class="s2">&quot;COHORT&quot;</span><span class="p">]</span>
+<span class="p">]</span>
+<span class="n">cohort_def</span> <span class="o">=</span> <span class="n">cohort_def</span><span class="p">[</span><span class="n">cohort_def</span><span class="p">[</span><span class="s2">&quot;COHORT&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])]</span>  <span class="c1"># Only keep PD and HC.</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">dist</span> <span class="o">=</span> <span class="n">cohort_def</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;COHORT&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">dist</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">),</span> <span class="n">dist</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Distribution of Cohort&quot;</span><span class="p">)</span>
+
+<span class="n">reformat_plot_labels</span><span class="p">(</span><span class="n">dist</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([</span><span class="s2">&quot;PD&quot;</span><span class="p">,</span> <span class="s2">&quot;HC&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Text(0, 0, &#39;PD&#39;), Text(1, 0, &#39;HC&#39;)]
+</pre></div>
+</div>
+<img alt="../../_images/80f766ecd61b8c9f24294da010c030569bfa71437007cba7f1e47ba6400f72dd.png" src="../../_images/80f766ecd61b8c9f24294da010c030569bfa71437007cba7f1e47ba6400f72dd.png" />
+</div>
+</div>
+</section>
+<section id="cognitive-state">
+<h3>Cognitive state<a class="headerlink" href="#cognitive-state" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cog_state</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">utils</span><span class="o">.</span><span class="n">study_files_dir</span><span class="p">,</span> <span class="s2">&quot;Cognitive_Categorization.csv&quot;</span><span class="p">)</span>
+<span class="p">)[[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">,</span> <span class="s2">&quot;EVENT_ID&quot;</span><span class="p">,</span> <span class="s2">&quot;COGSTATE&quot;</span><span class="p">]]</span>
+<span class="n">cog_state</span> <span class="o">=</span> <span class="n">cog_state</span><span class="p">[</span><span class="n">cog_state</span><span class="p">[</span><span class="s2">&quot;COGSTATE&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">]</span>  <span class="c1"># Drop all cases of PDD</span>
+
+<span class="n">cog_state_dist</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">cog_state</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;COGSTATE&quot;</span><span class="p">,</span> <span class="s2">&quot;EVENT_ID&quot;</span><span class="p">])[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;NC&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s2">&quot;MCI&quot;</span><span class="p">})</span>
+<span class="p">)</span>
+<span class="n">shared_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">intersect1d</span><span class="p">(</span><span class="n">cog_state_dist</span><span class="p">[</span><span class="s2">&quot;NC&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">cog_state_dist</span><span class="p">[</span><span class="s2">&quot;MCI&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<span class="n">cog_state_dist</span><span class="p">[</span><span class="s2">&quot;NC&quot;</span><span class="p">][</span><span class="n">shared_index</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Distribution of Cognitive state (NC)&quot;</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">cog_state_dist</span><span class="p">[</span><span class="s2">&quot;MCI&quot;</span><span class="p">][</span><span class="n">shared_index</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Distribution of Cognitive state (MCI)&quot;</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/bca24ace7fa9c2903565fd61c31ff8de1996f65c8e75d53eaaaa51958a081f70.png" src="../../_images/bca24ace7fa9c2903565fd61c31ff8de1996f65c8e75d53eaaaa51958a081f70.png" />
+<img alt="../../_images/2a1af4f4fb28f2dd1397f905e05da736a364cf9e46b5f1602b66cb4bdbdbd536.png" src="../../_images/2a1af4f4fb28f2dd1397f905e05da736a364cf9e46b5f1602b66cb4bdbdbd536.png" />
+</div>
+</div>
+<p>We observe that NC subjects account for a majority of the PPMI cohort.
+</br>Therefore, in our following steps, we will focus on obtaining MCI subjects before NC ones.</p>
+</section>
+<section id="diseases-duration">
+<h3>Diseases duration<a class="headerlink" href="#diseases-duration" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pdxdur</span> <span class="o">=</span> <span class="n">ppmi</span><span class="o">.</span><span class="n">disease_duration</span><span class="p">(</span><span class="n">utils</span><span class="o">.</span><span class="n">study_files_dir</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Download skipped: No missing files!
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="mri-availability">
+<h3>MRI availability<a class="headerlink" href="#mri-availability" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mri</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">utils</span><span class="o">.</span><span class="n">study_files_dir</span><span class="p">,</span> <span class="s2">&quot;MRI_info.csv&quot;</span><span class="p">))</span>
+<span class="n">mri</span><span class="p">[</span><span class="s2">&quot;EVENT_ID&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mri</span><span class="p">[</span><span class="s2">&quot;Visit code&quot;</span><span class="p">]</span>
+<span class="n">mri</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mri</span><span class="p">[</span><span class="s2">&quot;Subject ID&quot;</span><span class="p">]</span>
+<span class="n">mri</span><span class="p">[</span><span class="s2">&quot;Sex&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mri</span><span class="p">[</span><span class="s2">&quot;Sex&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s2">&quot;F&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;M&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
+<span class="n">mri</span> <span class="o">=</span> <span class="n">mri</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;Subject ID&quot;</span><span class="p">,</span> <span class="s2">&quot;Visit code&quot;</span><span class="p">,</span> <span class="s2">&quot;Visit&quot;</span><span class="p">,</span> <span class="s2">&quot;Age&quot;</span><span class="p">,</span> <span class="s2">&quot;Sex&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">mri</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;EVENT_ID&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>EVENT_ID
+BL     2114
+V10     457
+V04     398
+V06     342
+ST       10
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>The only visits with enough MRI available to replicate the study are: BL (baseline), V04, V06, and V10. Therefore we will only consider these visits.</p>
+</section>
+<section id="examination-scores">
+<h3>Examination scores<a class="headerlink" href="#examination-scores" title="Link to this heading">#</a></h3>
+<section id="hoehn-and-yahr-h-y">
+<h4>Hoehn and Yahr (H&amp;Y)<a class="headerlink" href="#hoehn-and-yahr-h-y" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">updrs3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">utils</span><span class="o">.</span><span class="n">study_files_dir</span><span class="p">,</span> <span class="s2">&quot;MDS_UPDRS_Part_III_clean.csv&quot;</span><span class="p">)</span>
+<span class="p">)[[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">,</span> <span class="s2">&quot;EVENT_ID&quot;</span><span class="p">,</span> <span class="s2">&quot;PDSTATE&quot;</span><span class="p">,</span> <span class="s2">&quot;PDTRTMNT&quot;</span><span class="p">,</span> <span class="s2">&quot;NP3TOT&quot;</span><span class="p">,</span> <span class="s2">&quot;NHY&quot;</span><span class="p">]]</span>
+<span class="n">dist</span> <span class="o">=</span> <span class="n">updrs3</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;NHY&quot;</span><span class="p">],</span> <span class="n">dropna</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">dist</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">),</span> <span class="n">dist</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Distribution of H&amp;Y scores&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Distribution of H&amp;Y scores&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/78e1d0469c1436f75dad578634d1efe0c9def8b20a35576b70da1bc04cc4ce0a.png" src="../../_images/78e1d0469c1436f75dad578634d1efe0c9def8b20a35576b70da1bc04cc4ce0a.png" />
+</div>
+</div>
+<p>We remove the subjects which clinicians were unable to rate the H&amp;Y score (UR)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">updrs3</span> <span class="o">=</span> <span class="n">updrs3</span><span class="p">[</span><span class="n">updrs3</span><span class="p">[</span><span class="s2">&quot;NHY&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;UR&quot;</span><span class="p">]</span>
+<span class="n">updrs3</span><span class="p">[</span><span class="s2">&quot;NHY&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">updrs3</span><span class="p">[</span><span class="s2">&quot;NHY&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="unified-parkinso-s-disease-rating-scale-part-iii-udprs-iii">
+<h4>Unified Parkinso’s Disease Rating Scale, Part III (UDPRS III)<a class="headerlink" href="#unified-parkinso-s-disease-rating-scale-part-iii-udprs-iii" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">dist</span> <span class="o">=</span> <span class="n">updrs3</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;NP3TOT&quot;</span><span class="p">],</span> <span class="n">dropna</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">dist</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">),</span> <span class="n">dist</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Distribution of UDPRS3 scores&quot;</span><span class="p">)</span>
+
+<span class="n">reformat_plot_labels</span><span class="p">(</span><span class="n">dist</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/9327d775220294aa34880894fb9dc26a295de299ddd812f9f828d71d74303730.png" src="../../_images/9327d775220294aa34880894fb9dc26a295de299ddd812f9f828d71d74303730.png" />
+</div>
+</div>
+</section>
+<section id="montreal-cognitive-assessment-moca">
+<h4>Montreal Cognitive Assessment (MoCA)<a class="headerlink" href="#montreal-cognitive-assessment-moca" title="Link to this heading">#</a></h4>
+<p>Due to the low amount of MRI availability at baseline, we consider the MoCA scores at screening as substitute for baseline.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">moca</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">utils</span><span class="o">.</span><span class="n">study_files_dir</span><span class="p">,</span> <span class="s2">&quot;Montreal_Cognitive_Assessment__MoCA_.csv&quot;</span><span class="p">)</span>
+<span class="p">)[[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">,</span> <span class="s2">&quot;EVENT_ID&quot;</span><span class="p">,</span> <span class="s2">&quot;MCATOT&quot;</span><span class="p">]]</span>
+
+<span class="c1"># Use screening instead of baseline.</span>
+<span class="n">moca</span> <span class="o">=</span> <span class="n">moca</span><span class="p">[</span><span class="n">moca</span><span class="p">[</span><span class="s2">&quot;EVENT_ID&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;BL&quot;</span><span class="p">]</span>
+<span class="n">moca</span><span class="p">[</span><span class="s2">&quot;EVENT_ID&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mask</span><span class="p">(</span><span class="n">moca</span><span class="p">[</span><span class="s2">&quot;EVENT_ID&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;SC&quot;</span><span class="p">,</span> <span class="s2">&quot;BL&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">dist</span> <span class="o">=</span> <span class="n">moca</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;MCATOT&quot;</span><span class="p">],</span> <span class="n">dropna</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">dist</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">),</span> <span class="n">dist</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Distribution of MoCA scores&quot;</span><span class="p">)</span>
+
+<span class="n">reformat_plot_labels</span><span class="p">(</span><span class="n">dist</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/2a531091fb2010a4fae3599cacf2880833ebc386585fae8454898800926c574a.png" src="../../_images/2a531091fb2010a4fae3599cacf2880833ebc386585fae8454898800926c574a.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">livingpark_utils.clinical</span><span class="w"> </span><span class="kn">import</span> <span class="n">moca2mmse</span>
+
+<span class="n">moca</span><span class="p">[</span><span class="s2">&quot;MMSETOT&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">moca</span><span class="p">[</span><span class="s2">&quot;MCATOT&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">moca2mmse</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">dist</span> <span class="o">=</span> <span class="n">moca</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;MMSETOT&quot;</span><span class="p">],</span> <span class="n">dropna</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">dist</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">),</span> <span class="n">dist</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Distribution of MMSE scores&quot;</span><span class="p">)</span>
+
+<span class="n">reformat_plot_labels</span><span class="p">(</span><span class="n">dist</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
+</pre></div>
+</div>
+<img alt="../../_images/3c634465c9e78dd16ff6ec254cfd8c3cd277f9228c4c97f5462e2930c893bbac.png" src="../../_images/3c634465c9e78dd16ff6ec254cfd8c3cd277f9228c4c97f5462e2930c893bbac.png" />
+</div>
+</div>
+</section>
+<section id="ledd-mg-d-baseline">
+<h4>LEDD (mg/d) baseline<a class="headerlink" href="#ledd-mg-d-baseline" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mri_info</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">utils</span><span class="o">.</span><span class="n">study_files_dir</span><span class="p">,</span> <span class="s2">&quot;3D_mri_info.csv&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+    <span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Subject ID&quot;</span><span class="p">:</span> <span class="s2">&quot;PATNO&quot;</span><span class="p">,</span> <span class="s2">&quot;Visit&quot;</span><span class="p">:</span> <span class="s2">&quot;EVENT_ID&quot;</span><span class="p">}</span>
+<span class="p">)[[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">,</span> <span class="s2">&quot;EVENT_ID&quot;</span><span class="p">,</span> <span class="s2">&quot;Study Date&quot;</span><span class="p">]]</span>
+
+<span class="n">mri_info</span><span class="p">[</span><span class="s2">&quot;EVENT_ID&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mri_info</span><span class="p">[</span><span class="s2">&quot;EVENT_ID&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;Screening&quot;</span><span class="p">:</span> <span class="s2">&quot;SC&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Baseline&quot;</span><span class="p">:</span> <span class="s2">&quot;BL&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Month 6&quot;</span><span class="p">:</span> <span class="s2">&quot;V02&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Month 12&quot;</span><span class="p">:</span> <span class="s2">&quot;V04&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Month 24&quot;</span><span class="p">:</span> <span class="s2">&quot;V06&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Month 36&quot;</span><span class="p">:</span> <span class="s2">&quot;V08&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Month 48&quot;</span><span class="p">:</span> <span class="s2">&quot;V10&quot;</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+<span class="n">mri_info</span><span class="p">[</span><span class="s2">&quot;Study Date&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">mri_info</span><span class="p">[</span><span class="s2">&quot;Study Date&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ledd</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">utils</span><span class="o">.</span><span class="n">study_files_dir</span><span class="p">,</span> <span class="s2">&quot;LEDD_Concomitant_Medication_Log.csv&quot;</span><span class="p">)</span>
+<span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;EVENT_ID&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">ledd</span><span class="p">[</span><span class="s2">&quot;STARTDT&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">ledd</span><span class="p">[</span><span class="s2">&quot;STARTDT&quot;</span><span class="p">])</span>
+<span class="n">ledd</span><span class="p">[</span><span class="s2">&quot;STOPDT&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">ledd</span><span class="p">[</span><span class="s2">&quot;STOPDT&quot;</span><span class="p">])</span>
+<span class="n">ledd</span><span class="p">[</span><span class="s2">&quot;STOPDT&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ledd</span><span class="p">[</span><span class="s2">&quot;STOPDT&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mask</span><span class="p">(</span>
+    <span class="n">ledd</span><span class="p">[</span><span class="s2">&quot;STOPDT&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="s2">&quot;now&quot;</span><span class="p">)</span>
+<span class="p">)</span>  <span class="c1"># Include in progress dates.</span>
+
+<span class="n">ledd</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ledd</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+
+<span class="n">ledd</span> <span class="o">=</span> <span class="n">ledd</span><span class="p">[</span><span class="o">~</span><span class="n">ledd</span><span class="p">[</span><span class="s2">&quot;LEDD&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s2">&quot;LD x 0.33&quot;</span><span class="p">,</span> <span class="s2">&quot;LD x 0.5&quot;</span><span class="p">])]</span>
+<span class="n">ledd</span><span class="p">[</span><span class="s2">&quot;LEDD&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ledd</span><span class="p">[</span><span class="s2">&quot;LEDD&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float16</span><span class="p">)</span>
+
+<span class="n">visit_ledd</span> <span class="o">=</span> <span class="n">ledd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">mri_info</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">])</span>
+<span class="n">ledd_clean</span> <span class="o">=</span> <span class="n">visit_ledd</span><span class="p">[</span>
+    <span class="p">(</span><span class="n">visit_ledd</span><span class="p">[</span><span class="s2">&quot;STARTDT&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">visit_ledd</span><span class="p">[</span><span class="s2">&quot;Study Date&quot;</span><span class="p">])</span>
+    <span class="o">&amp;</span> <span class="p">(</span><span class="n">visit_ledd</span><span class="p">[</span><span class="s2">&quot;Study Date&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">visit_ledd</span><span class="p">[</span><span class="s2">&quot;STOPDT&quot;</span><span class="p">])</span>
+<span class="p">]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+<span class="n">ledd</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">ledd_clean</span><span class="p">[</span><span class="n">ledd_clean</span><span class="p">[</span><span class="s2">&quot;LEDD&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()]</span>
+    <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;PATNO&quot;</span><span class="p">,</span> <span class="s2">&quot;EVENT_ID&quot;</span><span class="p">])[</span><span class="s2">&quot;LEDD&quot;</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">to_frame</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="p">)</span>
+<span class="n">ledd</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ledd</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
+
+<span class="n">ledd</span><span class="p">[</span><span class="s2">&quot;LEDD&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s2">&quot;hist&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Distribution of daily LEDD dosage&quot;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;Distribution of daily LEDD dosage&#39;}, ylabel=&#39;Frequency&#39;&gt;
+</pre></div>
+</div>
+<img alt="../../_images/36e7fe6b9380c0d858763fd87c36d8584e9b546787101331f8f48ab14550fc9a.png" src="../../_images/36e7fe6b9380c0d858763fd87c36d8584e9b546787101331f8f48ab14550fc9a.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="demographics">
+<h3>Demographics<a class="headerlink" href="#demographics" title="Link to this heading">#</a></h3>
+<section id="sex">
+<h4>Sex<a class="headerlink" href="#sex" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">demo</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">utils</span><span class="o">.</span><span class="n">study_files_dir</span><span class="p">,</span> <span class="s2">&quot;Demographics.csv&quot;</span><span class="p">))[</span>
+    <span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">,</span> <span class="s2">&quot;SEX&quot;</span><span class="p">]</span>
+<span class="p">]</span>
+<span class="n">demo</span><span class="p">[</span><span class="s2">&quot;SEX&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">demo</span><span class="p">[</span><span class="s2">&quot;SEX&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Distribution of Sex&quot;</span><span class="p">)</span>
+<span class="n">demo</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;SEX&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="mi">0</span><span class="p">:</span> <span class="s2">&quot;Female&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;Male&quot;</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Distribution of Sex
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SEX
+Female    1294
+Male      1755
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="age-at-visit">
+<h4>Age at visit<a class="headerlink" href="#age-at-visit" title="Link to this heading">#</a></h4>
+<p>We consider the age at specific visits. However for simplicity, we only plot the age distribution at baseline.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">utils</span><span class="o">.</span><span class="n">study_files_dir</span><span class="p">,</span> <span class="s2">&quot;Age_at_visit.csv&quot;</span><span class="p">))[</span>
+    <span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">,</span> <span class="s2">&quot;EVENT_ID&quot;</span><span class="p">,</span> <span class="s2">&quot;AGE_AT_VISIT&quot;</span><span class="p">]</span>
+<span class="p">]</span>
+
+<span class="n">age</span><span class="p">[</span><span class="n">age</span><span class="p">[</span><span class="s2">&quot;EVENT_ID&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;BL&quot;</span><span class="p">][</span><span class="s2">&quot;AGE_AT_VISIT&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span>
+    <span class="n">bins</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Distribution of Age at Baseline&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;Distribution of Age at Baseline&#39;}, ylabel=&#39;Frequency&#39;&gt;
+</pre></div>
+</div>
+<img alt="../../_images/e4b3a4d62bf8b20c3b0cd1ddd81a1dfd388c85db406ea611c8380c71ae9d76b4.png" src="../../_images/e4b3a4d62bf8b20c3b0cd1ddd81a1dfd388c85db406ea611c8380c71ae9d76b4.png" />
+</div>
+</div>
+</section>
+<section id="education">
+<h4>Education<a class="headerlink" href="#education" title="Link to this heading">#</a></h4>
+<p>We only use the education years at screening since most of the other visits do not have records of it and most likely did not change.
+</br>Moreover, when present, the education years at further visits showed incositency limiting the possibility to perform data imputation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">socio</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">utils</span><span class="o">.</span><span class="n">study_files_dir</span><span class="p">,</span> <span class="s2">&quot;Socio-Economics.csv&quot;</span><span class="p">))[</span>
+    <span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">,</span> <span class="s2">&quot;EVENT_ID&quot;</span><span class="p">,</span> <span class="s2">&quot;EDUCYRS&quot;</span><span class="p">]</span>
+<span class="p">]</span>
+
+<span class="n">socio</span> <span class="o">=</span> <span class="n">socio</span><span class="p">[</span><span class="n">socio</span><span class="p">[</span><span class="s2">&quot;EVENT_ID&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;SC&quot;</span><span class="p">]</span>
+<span class="n">socio</span> <span class="o">=</span> <span class="n">socio</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;EVENT_ID&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">dist</span> <span class="o">=</span> <span class="n">socio</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;EDUCYRS&quot;</span><span class="p">],</span> <span class="n">dropna</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">dist</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">),</span> <span class="n">dist</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Distribution of Education years at Baseline&quot;</span><span class="p">)</span>
+
+<span class="n">reformat_plot_labels</span><span class="p">(</span><span class="n">dist</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/fd7d9e959eb2ea78b7b93ddabec5a9a83fd1369aadd541d6d858b6c4a376c95f.png" src="../../_images/fd7d9e959eb2ea78b7b93ddabec5a9a83fd1369aadd541d6d858b6c4a376c95f.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="patient-exclusion">
+<h2>Patient exclusion<a class="headerlink" href="#patient-exclusion" title="Link to this heading">#</a></h2>
+<p>Some patient failed the preprocessing steps. We therefore exclude from our cohort definition.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">livingpark_utils.ignore</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">insert_hash</span><span class="p">,</span>
+    <span class="n">remove_ignored</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">mri</span> <span class="o">=</span> <span class="n">insert_hash</span><span class="p">(</span><span class="n">mri</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">,</span> <span class="s2">&quot;EVENT_ID&quot;</span><span class="p">,</span> <span class="s2">&quot;Description&quot;</span><span class="p">])</span>
+<span class="n">mri</span> <span class="o">=</span> <span class="n">remove_ignored</span><span class="p">(</span>
+    <span class="n">mri</span><span class="p">,</span>
+    <span class="n">ignore_file</span><span class="o">=</span><span class="s2">&quot;.ppmiignore&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="data-aggregation">
+<h2>Data aggregation<a class="headerlink" href="#data-aggregation" title="Link to this heading">#</a></h2>
+<p>We merge the data ingested above to obtain a set of data with available</p>
+<ul class="simple">
+<li><p>MRI image</p></li>
+<li><p>Disease duration</p></li>
+<li><p>Cognitive and PD State</p></li>
+<li><p>UPDRS III, MoCA, and MMSE scores</p></li>
+<li><p>Socio-economic and demographic data</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">,</span> <span class="s2">&quot;EVENT_ID&quot;</span><span class="p">]</span>
+<span class="n">pd_df</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">mri</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">cohort_def</span><span class="p">[</span><span class="n">cohort_def</span><span class="p">[</span><span class="s2">&quot;COHORT&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">cog_state</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="n">keys</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">age</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="n">keys</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">demo</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">])</span>
+    <span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">socio</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">])</span>
+    <span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">updrs3</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="n">keys</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">moca</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="n">keys</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">pdxdur</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="n">keys</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">ledd</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="n">keys</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;PATNO&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">g</span><span class="p">:</span> <span class="n">g</span><span class="p">[</span><span class="s2">&quot;EVENT_ID&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">hc_df</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">mri</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">cohort_def</span><span class="p">[</span><span class="n">cohort_def</span><span class="p">[</span><span class="s2">&quot;COHORT&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">])</span>
+    <span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">age</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="n">keys</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">demo</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">])</span>
+    <span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">socio</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">])</span>
+    <span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">moca</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="n">keys</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nc_patno</span> <span class="o">=</span> <span class="n">pd_df</span><span class="p">[</span><span class="n">pd_df</span><span class="p">[</span><span class="s2">&quot;COGSTATE&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">][</span><span class="s2">&quot;PATNO&quot;</span><span class="p">]</span>
+<span class="n">mci_patno</span> <span class="o">=</span> <span class="n">pd_df</span><span class="p">[</span><span class="n">pd_df</span><span class="p">[</span><span class="s2">&quot;COGSTATE&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">][</span><span class="s2">&quot;PATNO&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-block alert-warning">
+    <span style="font-weight: bold">Note:</span> Patients can transition from NC to MCI between visits.
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unique number of HC patients: </span><span class="si">{</span><span class="n">hc_df</span><span class="p">[</span><span class="s1">&#39;PATNO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unique number of NC patients: </span><span class="si">{</span><span class="n">nc_patno</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unique number of MCI patients: </span><span class="si">{</span><span class="n">mci_patno</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">pd_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;COGSTATE&quot;</span><span class="p">,</span> <span class="s2">&quot;EVENT_ID&quot;</span><span class="p">])[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;NC&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s2">&quot;MCI&quot;</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Unique number of HC patients: 212
+Unique number of NC patients: 111
+Unique number of MCI patients: 33
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>COGSTATE  EVENT_ID
+NC        BL          19
+          V04         61
+          V06         92
+          V10         78
+MCI       BL           2
+          V04         10
+          V06         19
+          V10         20
+Name: PATNO, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-block alert-danger">
+    <span style="font-weight: bold">Issue:</span> At any visit, the amount of patients with MCI is lower than in the initial study (27).
+</div>
+</section>
+<section id="find-acceptable-visit-pairs">
+<h2>Find acceptable visit pairs<a class="headerlink" href="#find-acceptable-visit-pairs" title="Link to this heading">#</a></h2>
+<p>The inital study assess subjects at baseline and a follow-up visit at 18 month.
+</br>Here below, we find the pairs of visits with the largest amount of MCI subject.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">livingpark_utils.maketal.maketal</span><span class="w"> </span><span class="kn">import</span> <span class="n">find_acceptable_visit_pairs</span>
+
+<span class="n">find_acceptable_visit_pairs</span><span class="p">(</span><span class="n">pd_df</span><span class="p">,</span> <span class="n">hc_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Unique PD-MCI subjects per visit pairs:
+BL  &amp; V06 =   2 | Month difference:                 24
+BL  &amp; V10 =   1 | Month difference:                 48
+V04 &amp; V06 =   9 | Month difference:                 12
+V04 &amp; V10 =   7 | Month difference:                 36
+V06 &amp; V10 =  14 | Month difference:                 24
+
+Unique PD-NC subjects per visit pairs:
+BL  &amp; V04 =   5 | Month difference:                 12
+BL  &amp; V06 =  15 | Month difference:                 24
+BL  &amp; V10 =  10 | Month difference:                 48
+V04 &amp; V06 =  55 | Month difference:                 12
+V04 &amp; V10 =  48 | Month difference:                 36
+V06 &amp; V10 =  74 | Month difference:                 24
+
+Unique HC subjects per visit pairs:
+BL  &amp; V04 =  55 | Month difference:                 12
+BL  &amp; V06 =   9 | Month difference:                 24
+BL  &amp; V08 =   2 | Month difference:                 36
+BL  &amp; V10 =  12 | Month difference:                 48
+V04 &amp; V06 =   8 | Month difference:                 12
+V04 &amp; V08 =   1 | Month difference:                 24
+V04 &amp; V10 =  11 | Month difference:                 36
+V06 &amp; V08 =   2 | Month difference:                 12
+V06 &amp; V10 =   2 | Month difference:                 24
+</pre></div>
+</div>
+</div>
+</div>
+<p>The pairs of visit with 12 or 24 months of interval have the most amount of MCI patients.
+</br>We will explore the possibility of using those time interval for our replication cohort.</p>
+</section>
+<section id="cohort-with-follow-up-after-12-months">
+<h2>Cohort with follow-up after 12 months<a class="headerlink" href="#cohort-with-follow-up-after-12-months" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">livingpark_utils.maketal.maketal</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_cohort</span>
+
+<span class="n">mci</span><span class="p">,</span> <span class="n">nc</span><span class="p">,</span> <span class="n">hc</span> <span class="o">=</span> <span class="n">create_cohort</span><span class="p">(</span><span class="n">pd_df</span><span class="o">=</span><span class="n">pd_df</span><span class="p">,</span> <span class="n">hc_df</span><span class="o">=</span><span class="n">hc_df</span><span class="p">,</span> <span class="n">months</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;&quot;&quot;Unique number of:</span>
+<span class="s2">  - HC subjects:     </span><span class="si">{</span><span class="n">hc</span><span class="p">[</span><span class="s1">&#39;PATNO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">size</span><span class="si">}</span><span class="s2"> (/37)</span>
+<span class="s2">  - PD-NC subjects:  </span><span class="si">{</span><span class="n">nc</span><span class="p">[</span><span class="s1">&#39;PATNO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">size</span><span class="si">}</span><span class="s2"> (/64)</span>
+<span class="s2">  - PD-MCI subjects: </span><span class="si">{</span><span class="n">mci</span><span class="p">[</span><span class="s1">&#39;PATNO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">size</span><span class="si">}</span><span class="s2"> (/36)</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Unique number of:
+  - HC subjects:     37 (/37)
+  - PD-NC subjects:  56 (/64)
+  - PD-MCI subjects: 9 (/36)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-block alert-danger">
+    <span style="font-weight: bold">Issue:</span> With a follow-up after 12 months, the replication cohort is missing both PD-MCI patients.
+</div>
+</section>
+<section id="cohort-with-follow-up-after-24-months">
+<h2>Cohort with follow-up after 24 months<a class="headerlink" href="#cohort-with-follow-up-after-24-months" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mci_</span><span class="p">,</span> <span class="n">nc_</span><span class="p">,</span> <span class="n">hc_</span> <span class="o">=</span> <span class="n">create_cohort</span><span class="p">(</span><span class="n">pd_df</span><span class="o">=</span><span class="n">pd_df</span><span class="p">,</span> <span class="n">hc_df</span><span class="o">=</span><span class="n">hc_df</span><span class="p">,</span> <span class="n">months</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;&quot;&quot;Unique number of:</span>
+<span class="s2">  - HC subjects:     </span><span class="si">{</span><span class="n">hc_</span><span class="p">[</span><span class="s1">&#39;PATNO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">size</span><span class="si">}</span><span class="s2"> (/37)</span>
+<span class="s2">  - PD-NC subjects:  </span><span class="si">{</span><span class="n">nc_</span><span class="p">[</span><span class="s1">&#39;PATNO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">size</span><span class="si">}</span><span class="s2"> (/64)</span>
+<span class="s2">  - PD-MCI subjects: </span><span class="si">{</span><span class="n">mci_</span><span class="p">[</span><span class="s1">&#39;PATNO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">size</span><span class="si">}</span><span class="s2"> (/36)</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Unique number of:
+  - HC subjects:     9 (/37)
+  - PD-NC subjects:  64 (/64)
+  - PD-MCI subjects: 16 (/36)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-block alert-danger">
+    <span style="font-weight: bold">Issue:</span> With a follow-up after 24 months, the replication cohort is missing both HC and PD-MCI patients.
+</div>
+</section>
+<section id="mixed-cohort-with-follow-up-after-12-months-and-24-months-for-some-pd-mci">
+<h2>Mixed cohort with follow-up after 12 months (and 24 months for some PD-MCI)<a class="headerlink" href="#mixed-cohort-with-follow-up-after-12-months-and-24-months-for-some-pd-mci" title="Link to this heading">#</a></h2>
+<p>Take PD-MCI patients from the 24 months cohort and add them to the 12 months cohort.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sample_cohort</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="n">_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">])</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">_df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+
+<span class="c1"># Find unique new PD-MCI subjects</span>
+<span class="n">new_mci</span> <span class="o">=</span> <span class="n">mci_</span><span class="p">[</span>
+    <span class="o">~</span><span class="n">mci_</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">mci</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">])</span>
+    <span class="o">&amp;</span> <span class="o">~</span><span class="n">mci_</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">nc</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">])</span>
+    <span class="o">&amp;</span> <span class="o">~</span><span class="n">mci_</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">hc</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">])</span>
+<span class="p">]</span>
+<span class="n">new_nc</span> <span class="o">=</span> <span class="n">nc_</span><span class="p">[</span>
+    <span class="o">~</span><span class="n">nc_</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">new_mci</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">])</span>
+    <span class="o">&amp;</span> <span class="o">~</span><span class="n">nc_</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">nc</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">])</span>
+    <span class="o">&amp;</span> <span class="o">~</span><span class="n">nc_</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">hc</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">])</span>
+<span class="p">]</span>
+
+<span class="n">mixed_hc</span> <span class="o">=</span> <span class="n">hc</span>
+<span class="n">mixed_nc</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">nc</span><span class="p">,</span> <span class="n">new_nc</span><span class="p">],</span>
+    <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">join</span><span class="o">=</span><span class="s2">&quot;outer&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">mixed_mci</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">mci</span><span class="p">,</span> <span class="n">new_mci</span><span class="p">],</span>
+    <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">join</span><span class="o">=</span><span class="s2">&quot;outer&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">mixed_nc</span> <span class="o">=</span> <span class="n">sample_cohort</span><span class="p">(</span><span class="n">mixed_nc</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">64</span><span class="p">)</span>
+<span class="n">mixed_mci</span> <span class="o">=</span> <span class="n">sample_cohort</span><span class="p">(</span><span class="n">mixed_mci</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">36</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;&quot;&quot;Unique number of:</span>
+<span class="s2">  - HC subjects:     </span><span class="si">{</span><span class="n">mixed_hc</span><span class="p">[</span><span class="s1">&#39;PATNO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">size</span><span class="si">}</span><span class="s2"> (/37)</span>
+<span class="s2">  - PD-NC subjects:  </span><span class="si">{</span><span class="n">mixed_nc</span><span class="p">[</span><span class="s1">&#39;PATNO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">size</span><span class="si">}</span><span class="s2"> (/64)</span>
+<span class="s2">  - PD-MCI subjects: </span><span class="si">{</span><span class="n">mixed_mci</span><span class="p">[</span><span class="s1">&#39;PATNO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">size</span><span class="si">}</span><span class="s2"> (/36)</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Unique number of:
+  - HC subjects:     37 (/37)
+  - PD-NC subjects:  64 (/64)
+  - PD-MCI subjects: 16 (/36)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="cohort-summary">
+<h2>Cohort Summary<a class="headerlink" href="#cohort-summary" title="Link to this heading">#</a></h2>
+<p>We replicate the table from the initial study with the PPMI data for both of our replication cohorts.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Iterable</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">rich</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rich.console</span><span class="w"> </span><span class="kn">import</span> <span class="n">Console</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rich.table</span><span class="w"> </span><span class="kn">import</span> <span class="n">Table</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">cohort_summary</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">hc</span><span class="p">,</span> <span class="n">nc</span><span class="p">,</span> <span class="n">mci</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">gen_row</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">agg</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">f</span><span class="o">=</span><span class="s2">&quot;4.1f&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot; ± &quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">agg</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">agg</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">):</span>
+            <span class="k">return</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sep</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">d</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">col</span><span class="p">]</span><span class="si">:{</span><span class="n">f</span><span class="si">}}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">agg</span><span class="p">])</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">D</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">d</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">agg</span><span class="p">][</span><span class="n">col</span><span class="p">]</span><span class="si">:{</span><span class="n">f</span><span class="si">}}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">D</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">gender_ratio</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+        <span class="n">male_count</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;SEX&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">][</span><span class="s2">&quot;PATNO&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">male_count</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">male_count</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;PATNO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%&quot;</span>
+
+    <span class="n">D</span> <span class="o">=</span> <span class="p">[</span><span class="n">hc</span><span class="o">.</span><span class="n">describe</span><span class="p">(),</span> <span class="n">nc</span><span class="o">.</span><span class="n">describe</span><span class="p">(),</span> <span class="n">mci</span><span class="o">.</span><span class="n">describe</span><span class="p">()]</span>
+
+    <span class="n">table</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span> <span class="n">box</span><span class="o">=</span><span class="n">rich</span><span class="o">.</span><span class="n">box</span><span class="o">.</span><span class="n">SIMPLE_HEAVY</span><span class="p">,</span> <span class="n">show_footer</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">table</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="s2">&quot;Subject groups&quot;</span><span class="p">,</span> <span class="n">footer</span><span class="o">=</span><span class="s2">&quot;Values expressed as mean ± SD.&quot;</span><span class="p">)</span>
+    <span class="n">table</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="s2">&quot;HC&quot;</span><span class="p">)</span>
+    <span class="n">table</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="s2">&quot;PD-NC&quot;</span><span class="p">)</span>
+    <span class="n">table</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="s2">&quot;PD-MCI&quot;</span><span class="p">)</span>
+    <span class="c1"># table.add_column(&quot;[italic]p&quot;)  # TODO</span>
+
+    <span class="n">table</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span><span class="s2">&quot;n&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">gen_row</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">agg</span><span class="o">=</span><span class="s2">&quot;count&quot;</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s2">&quot;PATNO&quot;</span><span class="p">,</span> <span class="n">f</span><span class="o">=</span><span class="s2">&quot;.0f&quot;</span><span class="p">))</span>
+    <span class="n">table</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span><span class="s2">&quot;Age (y)&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">gen_row</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">agg</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;std&quot;</span><span class="p">],</span> <span class="n">col</span><span class="o">=</span><span class="s2">&quot;AGE_AT_VISIT&quot;</span><span class="p">))</span>
+    <span class="n">table</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span>
+        <span class="s2">&quot;Age range&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">gen_row</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">agg</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;min&quot;</span><span class="p">,</span> <span class="s2">&quot;max&quot;</span><span class="p">],</span> <span class="n">col</span><span class="o">=</span><span class="s2">&quot;AGE_AT_VISIT&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot; - &quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">table</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span>
+        <span class="s2">&quot;Gender (male, %)&quot;</span><span class="p">,</span> <span class="n">gender_ratio</span><span class="p">(</span><span class="n">hc</span><span class="p">),</span> <span class="n">gender_ratio</span><span class="p">(</span><span class="n">nc</span><span class="p">),</span> <span class="n">gender_ratio</span><span class="p">(</span><span class="n">mci</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">table</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span><span class="s2">&quot;Education (y)&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">gen_row</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">agg</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;std&quot;</span><span class="p">],</span> <span class="n">col</span><span class="o">=</span><span class="s2">&quot;EDUCYRS&quot;</span><span class="p">))</span>
+    <span class="n">table</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span>
+        <span class="s2">&quot;Disease duration (mo)&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">gen_row</span><span class="p">(</span><span class="n">D</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">agg</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;std&quot;</span><span class="p">],</span> <span class="n">col</span><span class="o">=</span><span class="s2">&quot;PDXDUR&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">table</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span>
+        <span class="s2">&quot;LEDD (mg/d) baseline&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">gen_row</span><span class="p">(</span><span class="n">D</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">agg</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;std&quot;</span><span class="p">],</span> <span class="n">col</span><span class="o">=</span><span class="s2">&quot;LEDD&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">table</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span><span class="s2">&quot;H&amp;Y baseline&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">gen_row</span><span class="p">(</span><span class="n">D</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">agg</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;std&quot;</span><span class="p">],</span> <span class="n">col</span><span class="o">=</span><span class="s2">&quot;NHY&quot;</span><span class="p">))</span>
+    <span class="n">table</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span>
+        <span class="s2">&quot;H&amp;Y follow-up&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">gen_row</span><span class="p">(</span><span class="n">D</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">agg</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;std&quot;</span><span class="p">],</span> <span class="n">col</span><span class="o">=</span><span class="s2">&quot;NHY_NX&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">table</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span>
+        <span class="s2">&quot;UPDRS III baseline&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">gen_row</span><span class="p">(</span><span class="n">D</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">agg</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;std&quot;</span><span class="p">],</span> <span class="n">col</span><span class="o">=</span><span class="s2">&quot;NP3TOT&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">table</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span>
+        <span class="s2">&quot;UPDRS III follow-up&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">gen_row</span><span class="p">(</span><span class="n">D</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">agg</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;std&quot;</span><span class="p">],</span> <span class="n">col</span><span class="o">=</span><span class="s2">&quot;NP3TOT_NX&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">table</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span><span class="s2">&quot;MMSE baseline&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">gen_row</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">agg</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;std&quot;</span><span class="p">],</span> <span class="n">col</span><span class="o">=</span><span class="s2">&quot;MMSETOT&quot;</span><span class="p">))</span>
+    <span class="n">table</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span><span class="s2">&quot;MMSE follow-up&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">gen_row</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">agg</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;std&quot;</span><span class="p">],</span> <span class="n">col</span><span class="o">=</span><span class="s2">&quot;MMSETOT_NX&quot;</span><span class="p">))</span>
+    <span class="n">table</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span><span class="s2">&quot;MoCA baseline&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">gen_row</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">agg</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;std&quot;</span><span class="p">],</span> <span class="n">col</span><span class="o">=</span><span class="s2">&quot;MCATOT&quot;</span><span class="p">))</span>
+    <span class="n">table</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span><span class="s2">&quot;MoCA follow-up&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">gen_row</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">agg</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;std&quot;</span><span class="p">],</span> <span class="n">col</span><span class="o">=</span><span class="s2">&quot;MCATOT_NX&quot;</span><span class="p">))</span>
+
+    <span class="n">console</span> <span class="o">=</span> <span class="n">Console</span><span class="p">()</span>
+    <span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cohort_summary</span><span class="p">(</span>
+    <span class="n">hc</span><span class="o">=</span><span class="n">mixed_hc</span><span class="p">,</span>
+    <span class="n">nc</span><span class="o">=</span><span class="n">mixed_nc</span><span class="p">,</span>
+    <span class="n">mci</span><span class="o">=</span><span class="n">mixed_mci</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Demographic and clinical characteristics</span><span class="se">\n</span><span class="s2">(Mixed cohort 12 &amp; 24 months)&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-style: italic">                    Demographic and clinical characteristics                    </span>
+<span style="font-style: italic">                         (Mixed cohort 12 &amp; 24 months)                          </span>
+                                                                                
+ <span style="font-weight: bold"> Subject groups                 </span> <span style="font-weight: bold"> HC          </span> <span style="font-weight: bold"> PD-NC         </span> <span style="font-weight: bold"> PD-MCI        </span> 
+ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 
+  n                                37            64              16             
+  Age (y)                          59.7 ± 10.3   62.4 ±  7.8     67.7 ±  7.3    
+  Age range                        40.5 - 76.8   48.1 - 78.2     50.4 - 76.6    
+  Gender (male, %)                 23, 62.2%     39, 60.9%       12, 75.0%      
+  Education (y)                    15.1 ±  2.8   15.4 ±  2.6     14.5 ±  2.4    
+  Disease duration (mo)                          25.2 ± 13.0     25.9 ±  7.3    
+  LEDD (mg/d) baseline                           324.4 ± 171.2   461.9 ± 381.5  
+  H&amp;Y baseline                                    1.8 ±  0.5      1.9 ±  0.3    
+  H&amp;Y follow-up                                   1.8 ±  0.5      1.9 ±  0.4    
+  UPDRS III baseline                             21.2 ± 10.4     21.9 ±  7.7    
+  UPDRS III follow-up                            21.3 ± 10.4     25.2 ± 12.3    
+  MMSE baseline                    29.7 ±  0.5   29.2 ±  1.2     28.2 ±  0.9    
+  MMSE follow-up                   29.3 ±  0.8   29.2 ±  1.1     28.6 ±  1.2    
+  MoCA baseline                    28.4 ±  1.1   27.3 ±  2.5     25.0 ±  1.6    
+  MoCA follow-up                   27.4 ±  1.9   27.2 ±  2.3     25.8 ±  2.1    
+ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 
+ <span style="font-weight: bold"> Values expressed as mean ± SD. </span> <span style="font-weight: bold">             </span> <span style="font-weight: bold">               </span> <span style="font-weight: bold">               </span> 
+                                                                                
+</pre>
+</div></div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="save-cohort-definition">
+<h1>Save Cohort Definition<a class="headerlink" href="#save-cohort-definition" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">livingpark_utils.dataset</span><span class="w"> </span><span class="kn">import</span> <span class="n">ppmi</span>
+
+<span class="c1"># Decide which subjects to include in cohort.</span>
+<span class="n">hc</span><span class="p">,</span> <span class="n">nc</span><span class="p">,</span> <span class="n">mci</span> <span class="o">=</span> <span class="n">mixed_hc</span><span class="p">,</span> <span class="n">mixed_nc</span><span class="p">,</span> <span class="n">mixed_mci</span>
+
+<span class="c1"># Setup cohort for export.</span>
+<span class="n">hc</span><span class="p">[</span><span class="s2">&quot;group&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;hc&quot;</span>
+<span class="n">nc</span><span class="p">[</span><span class="s2">&quot;group&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;pd-nc&quot;</span>
+<span class="n">mci</span><span class="p">[</span><span class="s2">&quot;group&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;pd-mci&quot;</span>
+<span class="n">cohort</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">hc</span><span class="p">,</span> <span class="n">nc</span><span class="p">,</span> <span class="n">mci</span><span class="p">])</span>
+
+<span class="n">cohort</span><span class="p">[</span><span class="s2">&quot;MRI_ID&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cohort</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;_Baseline&quot;</span>
+<span class="n">follow_up</span> <span class="o">=</span> <span class="n">cohort</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;Description&quot;</span><span class="p">,</span> <span class="s2">&quot;EVENT_ID&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">follow_up</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+    <span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Description_NX&quot;</span><span class="p">:</span> <span class="s2">&quot;Description&quot;</span><span class="p">,</span> <span class="s2">&quot;EVENT_ID_NX&quot;</span><span class="p">:</span> <span class="s2">&quot;EVENT_ID&quot;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+<span class="n">follow_up</span><span class="p">[</span><span class="s2">&quot;MRI_ID&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">follow_up</span><span class="p">[</span><span class="s2">&quot;PATNO&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;_Follow-up&quot;</span>
+<span class="n">cohort</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">cohort</span><span class="p">,</span> <span class="n">follow_up</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">join</span><span class="o">=</span><span class="s2">&quot;outer&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Save patient ids</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;mak-etal-2017-mixed-</span><span class="si">{</span><span class="n">ppmi</span><span class="o">.</span><span class="n">cohort_id</span><span class="p">(</span><span class="n">cohort</span><span class="p">)</span><span class="si">}</span><span class="s2">.csv&quot;</span>
+<span class="n">cohort</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cohort saved in </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">. Do not share this file publicly!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cohort saved in mak-etal-2017-mixed-2630194534343638755.csv. Do not share this file publicly!
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./replications/mak-etal-2017"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="README.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Replication of [E. Mak et al., 2017]</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="fsl_siena.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Failed DICOM to NIfTI conversion</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Replication: Mak et al., 2017</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ppmi-metadata-download">PPMI Metadata Download</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-livingpark-utility-notebook">Download LivingPark utility notebook</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cohort-matching">Cohort Matching</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preparation">Data preparation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cohort-definition">Cohort Definition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cognitive-state">Cognitive state</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diseases-duration">Diseases duration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mri-availability">MRI availability</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examination-scores">Examination scores</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hoehn-and-yahr-h-y">Hoehn and Yahr (H&amp;Y)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unified-parkinso-s-disease-rating-scale-part-iii-udprs-iii">Unified Parkinso’s Disease Rating Scale, Part III (UDPRS III)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#montreal-cognitive-assessment-moca">Montreal Cognitive Assessment (MoCA)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ledd-mg-d-baseline">LEDD (mg/d) baseline</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#demographics">Demographics</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sex">Sex</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#age-at-visit">Age at visit</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#education">Education</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#patient-exclusion">Patient exclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-aggregation">Data aggregation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#find-acceptable-visit-pairs">Find acceptable visit pairs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cohort-with-follow-up-after-12-months">Cohort with follow-up after 12 months</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cohort-with-follow-up-after-24-months">Cohort with follow-up after 24 months</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mixed-cohort-with-follow-up-after-12-months-and-24-months-for-some-pd-mci">Mixed cohort with follow-up after 12 months (and 24 months for some PD-MCI)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cohort-summary">Cohort Summary</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#save-cohort-definition">Save Cohort Definition</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The LivingPark Project
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

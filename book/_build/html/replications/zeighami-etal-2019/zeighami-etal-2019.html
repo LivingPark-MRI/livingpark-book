@@ -1,0 +1,1797 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Replication: Zeighami et al, 2019 &#8212; LivingPark Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'replications/zeighami-etal-2019/zeighami-etal-2019';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="PPMI_Downloader" href="../../packages/ppmi_downloader.html" />
+    <link rel="prev" title="Replication of [Paper name &amp; link]" href="README.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="LivingPark Book - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="LivingPark Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    LivingPark
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">A note on Reproducibility vs. Replicability</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../../technical_challenges.html">Data Usage Agreement</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reproducibility studies (Harmonization [WIP])</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../agosta-etal-2013/README.html">F. Agosta et al., 2013</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../agosta-etal-2013/agosta-etal.html">Replication</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../hanganu-etal-2014/README.html">A. Hanganu et al., 2014</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../hanganu-etal-2014/hanganu-etal-2014.html">Replication: Hanganu <em>et al.</em>, 2014</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../mak-etal-2015/README.html">E. Mak et al., 2015</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../mak-etal-2015/mak-etal-2015.html">Mak et al, 2015</a></li>
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../mak-etal-2017/README.html">E. Mak et al., 2017</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../mak-etal-2017/cohort_definition.html">Replication: Mak et al., 2017</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../mak-etal-2017/fsl_siena.html">Failed DICOM to NIfTI conversion</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../mak-etal-2017/stat_analysis.html">Comparisons of percentage brain volume change and ventricular enlargement</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../rahayel-etal-2018/README.html">S. Rahayel et al., 2018</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../rahayel-etal-2018/rahayel-etal-2018.html">Replication</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../scherfler-etal-2011/README.html">C. Scherfler et al., 2011</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../scherfler-etal-2011/scherfler-etal.html">Replication</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../shu-etal-2021/README.html">Z. Shu et al., 2021</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../shu-etal-2021/shu-etal.html">Replication: Shu <em>et al</em>, 2020</a></li>
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../sterling-etal-2016/README.html">N. W. Sterling et al., 2016</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sterling-etal-2016/sterling-etal-2016.html">Replication</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tessa-etal-2014/README.html">C. Tessa et al., 2014</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tessa-etal-2014/Replication%20-%20%20Tessa%20et%20al.%202014.html">Introduction</a></li>
+
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../zeighami-etal-2015/README.html">Y. Zeighami et al., 2015</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../zeighami-etal-2015/Yashar%20et.%20al%202015.html">Replication</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="README.html">Y. Zeighami et al., 2019</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Replication</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Utility packages</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../packages/ppmi_downloader.html">PPMI_Downloader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packages/livingpark_utils.html">LivingPark_Utils</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">About LivingPark</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://github.com/LivingPark-MRI/">Organization repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cite.html">Cite</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/LivingPark-MRI/livingpark-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/LivingPark-MRI/livingpark-book/issues/new?title=Issue%20on%20page%20%2Freplications/zeighami-etal-2019/zeighami-etal-2019.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/replications/zeighami-etal-2019/zeighami-etal-2019.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Replication: Zeighami et al, 2019</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-setup">Initial setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ppmi-cohort-preparation">PPMI cohort preparation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#study-data-download">Study data download</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subjects-with-t1-mri-available">Subjects with T1 MRI available</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-subjects-with-no-follow-up-data-available">Remove subjects with no follow-up data available</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#global-composite-outcome-gco-measure">Global composite outcome (GCO) measure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-cohorts">Final cohorts</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cohort-id">Cohort ID</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-dbm-ica-results-from-bic-server">Download DBM/ICA results from BIC server</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="replication-zeighami-et-al-2019">
+<h1>Replication: Zeighami <em>et al</em>, 2019<a class="headerlink" href="#replication-zeighami-et-al-2019" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>This notebook attempts to reproduce the following paper (which already uses the <a class="reference external" href="http://ppmi-info.org">PPMI</a> dataset):</p>
+<div class="alert alert-block alert-success">
+Zeighami, Yashar, et al. <a href=https://doi.org/10.1016/j.nicl.2019.101986>Assessment of a prognostic MRI biomarker in early de novo Parkinson's disease.</a> NeuroImage: Clinical 24 (2019): 101986.
+</div><p>This study used longitudinal MRI data from 362 patients with de novo PD (i.e., patients not yet taking any medication) and 112 healthy controls. Subjects were split into a main cohort with 3T MRI scans (222 PD patients, 112 healthy controls) and a validation cohort with 1.5T MRI scans (140 PD patients).</p>
+<p>The demographics parameters for the PD patients were as follows (table extracted from the paper):</p>
+<img src="images/demographics.png" width=800/><p>This paper used a method introduced in <a class="reference external" href="https://doi.org/10.7554/eLife.08440">Zeighami <em>et al</em> (2015)</a> consisting of applying Independent Component Analysis (ICA) to Deformation-Based Morphometry (DBM) maps to identify an atrophy network related to PD. The main result is atrophy measures from this PD network is significantly correlated with disease progression as measured by differences in clinical and/or cognitive scores between the baseline visit and the most recent follow-up visit. This is illustrated in the top row of the following table (extracted from the paper):</p>
+<img src="images/results_correlations.png" width=600/><p>The authors also showed that the PD-related atrophy score can be used to identify patients who have a 1.5 standard deviation change in the global composite outcome (a measure they defined) between baseline and follow-up visits. The PD-related atrophy biomarker achieved an area under the receiver operating characteristics (ROC) curve of 0.63, out-performing other biomarkers, as shown in the figure below (extracted from the paper):</p>
+<img src="images/results_AUC.png" width=500/><p>The remainder of this notebook is an attempt to reproduce these results using the same PPMI dataset.</p>
+</section>
+<section id="initial-setup">
+<h2>Initial setup<a class="headerlink" href="#initial-setup" title="Link to this heading">#</a></h2>
+<p>We first initialize the notebook cache and install dependencies:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">livingpark_utils</span>
+
+<span class="n">utils</span> <span class="o">=</span> <span class="n">livingpark_utils</span><span class="o">.</span><span class="n">LivingParkUtils</span><span class="p">()</span>
+<span class="n">utils</span><span class="o">.</span><span class="n">notebook_init</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This notebook was run on 2023-01-26 22:26:49 UTC +0000
+</pre></div>
+</div>
+<div class="output text_html"><script>
+    code_show = true;
+    function code_toggle() {
+        if (code_show) {
+            $("div.input").hide();
+        } else {
+            $("div.input").show();
+        }
+        code_show = !code_show
+    }
+    $(document).ready(code_toggle);
+</script>
+<form action="javascript:code_toggle()">
+    <input type="submit" value="Click here to toggle on/off the Python code.">
+</form>
+</div></div>
+</div>
+<p>We import required libraries/functions and load some useful constants and helper functions from the <code class="docutils literal notranslate"><span class="pre">zeighamietal</span></code> module of <code class="docutils literal notranslate"><span class="pre">livingpark_utils</span></code>. The code used to create the initial cohorts based on T1 data availability is reused in another notebook.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">functools</span><span class="w"> </span><span class="kn">import</span> <span class="n">reduce</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">livingpark_utils.zeighamietal.constants</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">FILENAME_PARTICIPANT_STATUS</span><span class="p">,</span>
+    <span class="n">FILENAME_DEMOGRAPHICS</span><span class="p">,</span>
+    <span class="n">FILENAME_PD_HISTORY</span><span class="p">,</span>
+    <span class="n">FILENAME_AGE</span><span class="p">,</span>
+    <span class="n">FILENAME_MOCA</span><span class="p">,</span>
+    <span class="n">FILENAME_UPDRS1A</span><span class="p">,</span>
+    <span class="n">FILENAME_UPDRS1B</span><span class="p">,</span>
+    <span class="n">FILENAME_UPDRS2</span><span class="p">,</span>
+    <span class="n">FILENAME_UPDRS3</span><span class="p">,</span>
+    <span class="n">FILENAME_ADL</span><span class="p">,</span>
+    <span class="n">FILENAME_T1_INFO</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">livingpark_utils.zeighamietal.constants</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">COL_PAT_ID</span><span class="p">,</span>
+    <span class="n">COL_STATUS</span><span class="p">,</span>
+    <span class="n">COL_VISIT_TYPE</span><span class="p">,</span>
+    <span class="n">COL_DATE_INFO</span><span class="p">,</span>
+    <span class="n">COL_DATE_BIRTH</span><span class="p">,</span>
+    <span class="n">COL_DATE_PD</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">livingpark_utils.zeighamietal.constants</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">STATUS_PD</span><span class="p">,</span>
+    <span class="n">STATUS_HC</span><span class="p">,</span>
+    <span class="n">MAIN_COHORT</span><span class="p">,</span>
+    <span class="n">VALIDATION_COHORT</span><span class="p">,</span>
+    <span class="n">VISIT_BASELINE</span><span class="p">,</span>
+    <span class="n">VISIT_SCREENING</span><span class="p">,</span>
+    <span class="n">REGEX_VISIT_FOLLOWUP</span><span class="p">,</span>
+    <span class="n">SEX_MALE</span><span class="p">,</span>
+    <span class="n">MAX_DATES</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">livingpark_utils.zeighamietal.constants</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">COL_PD_STATE</span><span class="p">,</span>
+    <span class="n">COL_SEX</span><span class="p">,</span>
+    <span class="n">COL_UPDRS1A</span><span class="p">,</span>
+    <span class="n">COL_UPDRS1B</span><span class="p">,</span>
+    <span class="n">COL_UPDRS2</span><span class="p">,</span>
+    <span class="n">COL_UPDRS3</span><span class="p">,</span>
+    <span class="n">COL_MOCA</span><span class="p">,</span>
+    <span class="n">COL_ADL</span><span class="p">,</span>
+    <span class="n">COL_UPDRS1</span><span class="p">,</span>
+    <span class="n">COL_PIGD</span><span class="p">,</span>
+    <span class="n">COL_GCO</span><span class="p">,</span>
+    <span class="n">COLS_PIGD_COMPONENTS_UPDRS2</span><span class="p">,</span>
+    <span class="n">COLS_PIGD_COMPONENTS_UPDRS3</span><span class="p">,</span>
+    <span class="n">COLS_PIGD_COMPONENTS</span><span class="p">,</span>
+    <span class="n">COLS_SCORES_WITHOUT_GCO</span><span class="p">,</span>
+    <span class="n">COL_FOLLOWUP</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">livingpark_utils.zeighamietal</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">load_ppmi_csv</span><span class="p">,</span>
+    <span class="n">get_t1_cohort</span><span class="p">,</span>
+    <span class="n">mean_impute</span><span class="p">,</span>
+    <span class="n">filter_date</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ppmi-cohort-preparation">
+<h2>PPMI cohort preparation<a class="headerlink" href="#ppmi-cohort-preparation" title="Link to this heading">#</a></h2>
+<p>We will build a PPMI cohort that matches the one used in the original study (Table 1) as closely as possible. Our cohort will be built directly from PPMI Study Data files so that it can be replicated and updated whenever necessary.</p>
+<section id="study-data-download">
+<h3>Study data download<a class="headerlink" href="#study-data-download" title="Link to this heading">#</a></h3>
+<p>We will start by downloading the PPMI Study Data files required to build our cohort:</p>
+<ul class="simple">
+<li><p>Participant status (Parkinson’s disease, healthy control, etc.)</p></li>
+<li><p>Demographics</p></li>
+<li><p>Age at visit</p></li>
+<li><p>Clinical/cognitive assessment results:</p>
+<ul>
+<li><p>Montreal Cognitive Assessment (MoCA)</p></li>
+<li><p>Unified Parkinson’s Disease Rating Scale (UPDRS) Parts I, II and III</p></li>
+<li><p>Modified Schwab and England Activities of Daily Living scale</p></li>
+</ul>
+</li>
+</ul>
+<p>We will use the LivingPark utils library to download these files from the notebook. If files are already present in the notebook cache, they won’t be downloaded again. Otherwise, a PPMI username and password are required to obtain the files. New PPMI accounts can be requested <a class="reference external" href="http://ppmi-info.org">here</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">required_files</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">FILENAME_PARTICIPANT_STATUS</span><span class="p">,</span>
+    <span class="n">FILENAME_PD_HISTORY</span><span class="p">,</span>
+    <span class="n">FILENAME_DEMOGRAPHICS</span><span class="p">,</span>
+    <span class="n">FILENAME_AGE</span><span class="p">,</span>
+    <span class="n">FILENAME_MOCA</span><span class="p">,</span>
+    <span class="n">FILENAME_UPDRS1A</span><span class="p">,</span>
+    <span class="n">FILENAME_UPDRS1B</span><span class="p">,</span>
+    <span class="n">FILENAME_UPDRS2</span><span class="p">,</span>
+    <span class="n">FILENAME_UPDRS3</span><span class="p">,</span>
+    <span class="n">FILENAME_ADL</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">downloader</span> <span class="o">=</span> <span class="n">livingpark_utils</span><span class="o">.</span><span class="n">download</span><span class="o">.</span><span class="n">ppmi</span><span class="o">.</span><span class="n">Downloader</span><span class="p">(</span><span class="n">utils</span><span class="o">.</span><span class="n">study_files_dir</span><span class="p">)</span>
+<span class="n">utils</span><span class="o">.</span><span class="n">get_study_files</span><span class="p">(</span><span class="n">required_files</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">downloader</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Download skipped: No missing files!
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="subjects-with-t1-mri-available">
+<h3>Subjects with T1 MRI available<a class="headerlink" href="#subjects-with-t1-mri-available" title="Link to this heading">#</a></h3>
+<p>The paper uses a main cohort and a validation cohort. The <strong>main cohort</strong> consists of subjects with 3T T1 scans and is a subset of the cohort the authors used in the 2015 paper. The <strong>validation cohort</strong> consists of subjects with 1.5T T1 scans.</p>
+<p><em><strong>Main cohort</strong></em></p>
+<p>The main cohort was made up of of 222 PD patients and 112 healthy controls. In the 2015 paper, the authors used data from 237 PD patients and 118 healthy controls. MRI processing failure led to the exclusion of 5 PD patients and 1 healthy control, and so the final cohort consisted of 232 PD patients and 117 healthy controls. In the 2019 paper, an additional 10 PD patients and 5 healthy controls were excluded due to lack of follow-up data required in the analysis.</p>
+<p><em>Note</em>: In the 2015 paper, the authors state that they used scans acquired from September 2013 to January 2014. However, if we restrict our search to this time period, the number of available scans is much lower than expected (38 PD patients instead of 237, 1 healthy control instead of 118). If we instead use all subjects with 3T scans from January 31st 2014 and before, we obtain 236 PD patients and 113 healthy controls, which is closer to what we expect thought still not exactly the same.</p>
+<p><em><strong>Validation cohort</strong></em></p>
+<p>The validation cohort was made up of 140 PD patients. The paper states that data were downloaded in October 2017, so we use all subjects with 1.5T scans from October 31st 2017 and before.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_status</span> <span class="o">=</span> <span class="n">load_ppmi_csv</span><span class="p">(</span><span class="n">utils</span><span class="p">,</span> <span class="n">FILENAME_PARTICIPANT_STATUS</span><span class="p">)</span>
+
+<span class="n">cohort_t1_map</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">cohort_name</span> <span class="ow">in</span> <span class="p">[</span><span class="n">MAIN_COHORT</span><span class="p">,</span> <span class="n">VALIDATION_COHORT</span><span class="p">]:</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;=============== </span><span class="si">{</span><span class="n">cohort_name</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="si">}</span><span class="s2"> cohort ===============&quot;</span><span class="p">)</span>
+
+    <span class="n">df_t1_subset</span> <span class="o">=</span> <span class="n">get_t1_cohort</span><span class="p">(</span>
+        <span class="n">utils</span><span class="p">,</span>
+        <span class="n">cohort_name</span><span class="o">=</span><span class="n">cohort_name</span><span class="p">,</span>
+        <span class="n">filename</span><span class="o">=</span><span class="n">FILENAME_T1_INFO</span><span class="p">,</span>
+        <span class="n">sagittal_only</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">cohort_t1_map</span><span class="p">[</span><span class="n">cohort_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_t1_subset</span>
+
+    <span class="c1"># cohort composition: number of PD patients/healthy controls</span>
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="n">df_status</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+            <span class="n">df_status</span><span class="p">[</span><span class="n">COL_PAT_ID</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">df_t1_subset</span><span class="p">[</span><span class="n">COL_PAT_ID</span><span class="p">]),</span> <span class="n">COL_STATUS</span>
+        <span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=============== Main cohort ===============
+Removing extra scans for 1 subjects
+Parkinson&#39;s Disease    236
+Healthy Control        113
+Name: COHORT_DEFINITION, dtype: int64
+=============== Validation cohort ===============
+Removing extra scans for 3 subjects
+Parkinson&#39;s Disease    130
+Name: COHORT_DEFINITION, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="remove-subjects-with-no-follow-up-data-available">
+<h3>Remove subjects with no follow-up data available<a class="headerlink" href="#remove-subjects-with-no-follow-up-data-available" title="Link to this heading">#</a></h3>
+<p>The original paper excluded participants with less than 1 year of follow-up:</p>
+<ul class="simple">
+<li><p>10 PD patients and 5 healthy controls from their main cohort</p></li>
+<li><p>No subjects were removed from the validation cohort</p></li>
+</ul>
+<p>We will identify subjects with less than 1 year of follow-up for the PD progression measures.</p>
+<p>First, we load/compute and merge all the required clinical/cognitive measures:</p>
+<ul class="simple">
+<li><p>UPDRS Part I</p></li>
+<li><p>UPDRS Part II</p></li>
+<li><p>UPDRS Part III</p></li>
+<li><p>Modified Schwab and England Activities of Daily Living (ADL) scale</p></li>
+<li><p>Postural instability and gait disturbance (PIGD) score</p></li>
+<li><p>MoCA</p></li>
+</ul>
+<p>Missing values are imputed with the mean across the entire dataset, except for the MoCA score (handled below).</p>
+<p>There are two files associated with UPDRS Part I (IA: Complex behaviors; IB: Partipant questionnaire). We use the sum of the total score in each file.</p>
+<p>The PIGD score is defined in <a class="reference external" href="https://doi.org/10.1002/mds.25383">Stebbins et al. 2013</a> and consists of the mean of a subset of UPDRS (Part II and III) measures.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cols_for_merge</span> <span class="o">=</span> <span class="p">[</span><span class="n">COL_PAT_ID</span><span class="p">,</span> <span class="n">COL_DATE_INFO</span><span class="p">,</span> <span class="n">COL_VISIT_TYPE</span><span class="p">]</span>
+
+<span class="n">df_updrs1a</span> <span class="o">=</span> <span class="n">load_ppmi_csv</span><span class="p">(</span><span class="n">utils</span><span class="p">,</span> <span class="n">FILENAME_UPDRS1A</span><span class="p">,</span> <span class="n">cols_to_impute</span><span class="o">=</span><span class="n">COL_UPDRS1A</span><span class="p">)</span>
+<span class="n">df_updrs1b</span> <span class="o">=</span> <span class="n">load_ppmi_csv</span><span class="p">(</span><span class="n">utils</span><span class="p">,</span> <span class="n">FILENAME_UPDRS1B</span><span class="p">,</span> <span class="n">cols_to_impute</span><span class="o">=</span><span class="n">COL_UPDRS1B</span><span class="p">)</span>
+<span class="n">df_updrs2</span> <span class="o">=</span> <span class="n">load_ppmi_csv</span><span class="p">(</span>
+    <span class="n">utils</span><span class="p">,</span> <span class="n">FILENAME_UPDRS2</span><span class="p">,</span> <span class="n">cols_to_impute</span><span class="o">=</span><span class="n">COLS_PIGD_COMPONENTS_UPDRS2</span> <span class="o">+</span> <span class="p">[</span><span class="n">COL_UPDRS2</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">df_updrs3</span> <span class="o">=</span> <span class="n">load_ppmi_csv</span><span class="p">(</span>
+    <span class="n">utils</span><span class="p">,</span> <span class="n">FILENAME_UPDRS3</span><span class="p">,</span> <span class="n">cols_to_impute</span><span class="o">=</span><span class="n">COLS_PIGD_COMPONENTS_UPDRS3</span> <span class="o">+</span> <span class="p">[</span><span class="n">COL_UPDRS3</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">df_adl</span> <span class="o">=</span> <span class="n">load_ppmi_csv</span><span class="p">(</span><span class="n">utils</span><span class="p">,</span> <span class="n">FILENAME_ADL</span><span class="p">,</span> <span class="n">cols_to_impute</span><span class="o">=</span><span class="n">COL_ADL</span><span class="p">)</span>
+<span class="n">df_moca</span> <span class="o">=</span> <span class="n">load_ppmi_csv</span><span class="p">(</span><span class="n">utils</span><span class="p">,</span> <span class="n">FILENAME_MOCA</span><span class="p">)</span>  <span class="c1"># do not impute</span>
+
+<span class="n">df_updrs1</span> <span class="o">=</span> <span class="n">df_updrs1a</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_updrs1b</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="n">cols_for_merge</span><span class="p">)</span>
+<span class="n">df_updrs1</span><span class="p">[</span><span class="n">COL_UPDRS1</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_updrs1</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="n">COL_UPDRS1A</span><span class="p">,</span> <span class="n">COL_UPDRS1B</span><span class="p">]]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;columns&quot;</span><span class="p">)</span>
+
+<span class="c1"># some subjects in the validation cohort have multiple entries on the same date</span>
+<span class="c1"># one for PDSTATE=ON and one for PDSTATE=OFF</span>
+<span class="c1"># we drop rows where PDSTATE is ON</span>
+<span class="c1"># PDSTATE=OFF is the typical functional state when participants have a poor response in spite of taking medications</span>
+<span class="c1"># PDSTATE=ON is the typical functional state when patients are receiving medication and have a good response</span>
+<span class="n">df_updrs3</span> <span class="o">=</span> <span class="n">df_updrs3</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_updrs3</span><span class="p">[</span><span class="n">COL_PD_STATE</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;ON&quot;</span><span class="p">]</span>
+
+<span class="c1"># PIGD score is build from UPDRS (Stebbins et al. 2013)</span>
+<span class="n">df_pigd</span> <span class="o">=</span> <span class="n">df_updrs2</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_updrs3</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="n">cols_for_merge</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">)</span>
+<span class="n">df_pigd</span><span class="p">[</span><span class="n">COL_PIGD</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_pigd</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">COLS_PIGD_COMPONENTS</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;columns&quot;</span><span class="p">)</span>
+
+<span class="n">df_updrs1</span> <span class="o">=</span> <span class="n">df_updrs1</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">cols_for_merge</span> <span class="o">+</span> <span class="p">[</span><span class="n">COL_UPDRS1</span><span class="p">]]</span>
+<span class="n">df_updrs2</span> <span class="o">=</span> <span class="n">df_updrs2</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">cols_for_merge</span> <span class="o">+</span> <span class="p">[</span><span class="n">COL_UPDRS2</span><span class="p">]]</span>
+<span class="n">df_updrs3</span> <span class="o">=</span> <span class="n">df_updrs3</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">cols_for_merge</span> <span class="o">+</span> <span class="p">[</span><span class="n">COL_UPDRS3</span><span class="p">]]</span>
+<span class="n">df_adl</span> <span class="o">=</span> <span class="n">df_adl</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">cols_for_merge</span> <span class="o">+</span> <span class="p">[</span><span class="n">COL_ADL</span><span class="p">]]</span>
+<span class="n">df_pigd</span> <span class="o">=</span> <span class="n">df_pigd</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">cols_for_merge</span> <span class="o">+</span> <span class="p">[</span><span class="n">COL_PIGD</span><span class="p">]]</span>
+<span class="n">df_moca</span> <span class="o">=</span> <span class="n">df_moca</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">cols_for_merge</span> <span class="o">+</span> <span class="p">[</span><span class="n">COL_MOCA</span><span class="p">]]</span>
+
+<span class="n">df_assessments_all</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span>
+    <span class="k">lambda</span> <span class="n">df1</span><span class="p">,</span> <span class="n">df2</span><span class="p">:</span> <span class="n">df1</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="n">cols_for_merge</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;outer&quot;</span><span class="p">),</span>
+    <span class="p">[</span><span class="n">df_updrs2</span><span class="p">,</span> <span class="n">df_updrs3</span><span class="p">,</span> <span class="n">df_adl</span><span class="p">,</span> <span class="n">df_pigd</span><span class="p">,</span> <span class="n">df_updrs1</span><span class="p">,</span> <span class="n">df_moca</span><span class="p">],</span>
+<span class="p">)</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+
+<span class="c1"># some missing values remain even if we use the screening visit score</span>
+<span class="c1"># we will impute these using the original mean</span>
+<span class="n">mean_moca</span> <span class="o">=</span> <span class="n">df_moca</span><span class="p">[</span><span class="n">COL_MOCA</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="n">cols_to_impute</span> <span class="o">=</span> <span class="p">[</span><span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">COLS_SCORES_WITHOUT_GCO</span> <span class="k">if</span> <span class="n">col</span> <span class="o">!=</span> <span class="n">COL_MOCA</span><span class="p">]</span>
+<span class="n">df_assessments_all</span> <span class="o">=</span> <span class="n">mean_impute</span><span class="p">(</span><span class="n">df_assessments_all</span><span class="p">,</span> <span class="n">cols_to_impute</span><span class="p">)</span>
+
+<span class="c1"># keep only subjects who have a T1</span>
+<span class="n">cohort_assessments_map_orig</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">cohort_name</span><span class="p">,</span> <span class="n">df_t1_subset</span> <span class="ow">in</span> <span class="n">cohort_t1_map</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">cohort_assessments_map_orig</span><span class="p">[</span><span class="n">cohort_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_assessments_all</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+        <span class="n">df_assessments_all</span><span class="p">[</span><span class="n">COL_PAT_ID</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">df_t1_subset</span><span class="p">[</span><span class="n">COL_PAT_ID</span><span class="p">])</span>
+    <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Most subjects (including all subjects in the main cohort) took the MoCA during the screening visit, not the baseline visit. We replace the baseline MoCA score by the one from the screening visit. We plot a histogram for the number of days between baseline and screening visits, so check whether it was reasonable to use the screening visit score if the baseline score was not available.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">col_date_diff</span> <span class="o">=</span> <span class="s2">&quot;date_diff&quot;</span>
+<span class="n">max_date_followup</span> <span class="o">=</span> <span class="n">MAX_DATES</span><span class="p">[</span><span class="n">VALIDATION_COHORT</span><span class="p">]</span>
+
+<span class="n">re_followup_compiled</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">REGEX_VISIT_FOLLOWUP</span><span class="p">)</span>
+
+<span class="n">cohort_assessments_map</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">cohort_name</span> <span class="ow">in</span> <span class="n">cohort_assessments_map_orig</span><span class="p">:</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;========== </span><span class="si">{</span><span class="n">cohort_name</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2"> COHORT ==========&quot;</span><span class="p">)</span>
+
+    <span class="n">date_diffs</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="n">df_assessments_cohort</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">=</span> <span class="n">cohort_assessments_map_orig</span><span class="p">[</span><span class="n">cohort_name</span><span class="p">]</span>
+    <span class="n">df_assessments_baseline</span> <span class="o">=</span> <span class="n">df_assessments_cohort</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+        <span class="n">df_assessments_cohort</span><span class="p">[</span><span class="n">COL_VISIT_TYPE</span><span class="p">]</span> <span class="o">==</span> <span class="n">VISIT_BASELINE</span>
+    <span class="p">]</span>
+    <span class="n">df_assessments_screening</span> <span class="o">=</span> <span class="n">df_assessments_cohort</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+        <span class="n">df_assessments_cohort</span><span class="p">[</span><span class="n">COL_VISIT_TYPE</span><span class="p">]</span> <span class="o">==</span> <span class="n">VISIT_SCREENING</span>
+    <span class="p">]</span>
+
+    <span class="c1"># try to fill in missing baseline data</span>
+    <span class="k">for</span> <span class="n">idx_row_baseline</span><span class="p">,</span> <span class="n">row_baseline</span> <span class="ow">in</span> <span class="n">df_assessments_baseline</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+
+        <span class="n">subject</span> <span class="o">=</span> <span class="n">row_baseline</span><span class="p">[</span><span class="n">COL_PAT_ID</span><span class="p">]</span>
+        <span class="n">date_baseline</span> <span class="o">=</span> <span class="n">row_baseline</span><span class="p">[</span><span class="n">COL_DATE_INFO</span><span class="p">]</span>
+
+        <span class="c1"># for each score columns</span>
+        <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="p">[</span><span class="n">COL_MOCA</span><span class="p">]:</span>
+
+            <span class="c1"># fill missing values with screening data</span>
+            <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isna</span><span class="p">(</span><span class="n">row_baseline</span><span class="p">[</span><span class="n">col</span><span class="p">]):</span>
+
+                <span class="n">df_screening_subject</span> <span class="o">=</span> <span class="n">df_assessments_screening</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+                    <span class="n">df_assessments_screening</span><span class="p">[</span><span class="n">COL_PAT_ID</span><span class="p">]</span> <span class="o">==</span> <span class="n">subject</span>
+                <span class="p">]</span>
+
+                <span class="c1"># some subjects in validation set had multiple screening visits</span>
+                <span class="c1"># in this case we sort them by how close they are to the baseline visit</span>
+                <span class="n">n_screening</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_screening_subject</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">n_screening</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="n">df_screening_subject</span><span class="p">[</span><span class="n">col_date_diff</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+                        <span class="n">date_baseline</span> <span class="o">-</span> <span class="n">df_screening_subject</span><span class="p">[</span><span class="n">COL_DATE_INFO</span><span class="p">]</span>
+                    <span class="p">)</span>
+                    <span class="n">df_screening_subject</span> <span class="o">=</span> <span class="n">df_screening_subject</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span>
+                        <span class="n">col_date_diff</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span>
+                    <span class="p">)</span>
+
+                <span class="c1"># find corresponding assessment score in screening visits</span>
+                <span class="k">for</span> <span class="n">idx_row_screening</span><span class="p">,</span> <span class="n">row_screening</span> <span class="ow">in</span> <span class="n">df_screening_subject</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+                    <span class="n">new_value</span> <span class="o">=</span> <span class="n">row_screening</span><span class="p">[</span><span class="n">col</span><span class="p">]</span>
+                    <span class="n">date_diff</span> <span class="o">=</span> <span class="n">date_baseline</span> <span class="o">-</span> <span class="n">row_screening</span><span class="p">[</span><span class="n">COL_DATE_INFO</span><span class="p">]</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="n">pd</span><span class="o">.</span><span class="n">isna</span><span class="p">(</span><span class="n">new_value</span><span class="p">):</span>
+                        <span class="k">break</span>
+
+                <span class="c1"># replace</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">pd</span><span class="o">.</span><span class="n">isna</span><span class="p">(</span><span class="n">new_value</span><span class="p">):</span>
+                    <span class="n">df_assessments_baseline</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx_row_baseline</span><span class="p">,</span> <span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_value</span>
+                    <span class="n">date_diffs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">date_diff</span><span class="o">.</span><span class="n">days</span><span class="p">)</span>  <span class="c1"># for plotting</span>
+
+    <span class="c1"># plot baseline-screening date difference</span>
+    <span class="n">date_diffs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">date_diffs</span><span class="p">)</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">date_diffs</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span>
+        <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">cohort_name</span><span class="si">}</span><span class="s2"> (mean=</span><span class="si">{</span><span class="n">date_diffs</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">)&quot;</span>
+    <span class="p">)</span>
+
+    <span class="c1"># pick latest follow-up visit</span>
+    <span class="n">df_assessments_followup</span> <span class="o">=</span> <span class="n">df_assessments_cohort</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+        <span class="p">(</span><span class="n">df_assessments_cohort</span><span class="p">[</span><span class="n">COL_PAT_ID</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">df_assessments_baseline</span><span class="p">[</span><span class="n">COL_PAT_ID</span><span class="p">]))</span>
+        <span class="o">&amp;</span> <span class="p">(</span>
+            <span class="n">df_assessments_cohort</span><span class="p">[</span><span class="n">COL_VISIT_TYPE</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+                <span class="k">lambda</span> <span class="n">v</span><span class="p">:</span> <span class="n">re_followup_compiled</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+    <span class="p">]</span>
+
+    <span class="c1"># keep most recent follow-up data up to retrieval date in original paper</span>
+    <span class="n">df_assessments_followup</span> <span class="o">=</span> <span class="n">filter_date</span><span class="p">(</span>
+        <span class="n">df_assessments_followup</span><span class="p">,</span> <span class="n">max_date</span><span class="o">=</span><span class="n">max_date_followup</span>
+    <span class="p">)</span>
+    <span class="n">df_assessments_followup</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">df_assessments_followup</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">COL_PAT_ID</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">df</span><span class="p">:</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">COL_DATE_INFO</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+        <span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="c1"># we keep subjects who have both baseline and follow-up data</span>
+    <span class="n">subjects_common</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">df_assessments_cohort</span><span class="p">[</span><span class="n">COL_PAT_ID</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">df_visit</span> <span class="ow">in</span> <span class="p">[</span><span class="n">df_assessments_baseline</span><span class="p">,</span> <span class="n">df_assessments_followup</span><span class="p">]:</span>
+        <span class="n">subjects_common</span> <span class="o">=</span> <span class="n">subjects_common</span> <span class="o">&amp;</span> <span class="nb">set</span><span class="p">(</span><span class="n">df_visit</span><span class="p">[</span><span class="n">COL_PAT_ID</span><span class="p">])</span>
+
+    <span class="c1"># print cohort composition</span>
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="n">df_status</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+            <span class="n">df_status</span><span class="p">[</span><span class="n">COL_PAT_ID</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">subjects_common</span><span class="p">),</span> <span class="n">COL_STATUS</span>
+        <span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+    <span class="p">)</span>
+
+    <span class="c1"># combine baseline and follow-up</span>
+    <span class="n">df_assessments_baseline</span><span class="p">[</span><span class="n">COL_FOLLOWUP</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">df_assessments_followup</span><span class="p">[</span><span class="n">COL_FOLLOWUP</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">df_assessments_merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+        <span class="p">[</span><span class="n">df_assessments_baseline</span><span class="p">,</span> <span class="n">df_assessments_followup</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="s2">&quot;index&quot;</span>
+    <span class="p">)</span>
+    <span class="n">df_assessments_merged</span> <span class="o">=</span> <span class="n">df_assessments_merged</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+        <span class="n">df_assessments_merged</span><span class="p">[</span><span class="n">COL_PAT_ID</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">subjects_common</span><span class="p">)</span>
+    <span class="p">]</span>
+
+    <span class="c1"># impute remaining missing MoCA values</span>
+    <span class="n">df_assessments_merged</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+        <span class="n">df_assessments_merged</span><span class="p">[</span><span class="n">COL_MOCA</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">(),</span> <span class="n">COL_MOCA</span>
+    <span class="p">]</span> <span class="o">=</span> <span class="n">mean_moca</span>
+
+    <span class="n">cohort_assessments_map</span><span class="p">[</span><span class="n">cohort_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_assessments_merged</span>
+
+<span class="c1"># NOTE: date resolution is months</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Number of days between baseline and screening visits&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>========== MAIN COHORT ==========
+Parkinson&#39;s Disease    223
+Healthy Control        109
+Name: COHORT_DEFINITION, dtype: int64
+========== VALIDATION COHORT ==========
+Parkinson&#39;s Disease    124
+Name: COHORT_DEFINITION, dtype: int64
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x103bfdf90&gt;
+</pre></div>
+</div>
+<img alt="../../_images/9481071ef759f766f4c99e363ea66f51f305d653cedbf3fa9d3b3a6d6c558c6c.png" src="../../_images/9481071ef759f766f4c99e363ea66f51f305d653cedbf3fa9d3b3a6d6c558c6c.png" />
+</div>
+</div>
+</section>
+<section id="global-composite-outcome-gco-measure">
+<h3>Global composite outcome (GCO) measure<a class="headerlink" href="#global-composite-outcome-gco-measure" title="Link to this heading">#</a></h3>
+<p>The global composite outcome is the average of the z-scores of the other measures. Following the original paper, we use the mean and standard deviation of the baseline session to compute the z-scores.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">cohort_name</span><span class="p">,</span> <span class="n">df_assessments</span> <span class="ow">in</span> <span class="n">cohort_assessments_map</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">df_assessments_baseline</span> <span class="o">=</span> <span class="n">df_assessments</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+        <span class="o">~</span><span class="n">df_assessments</span><span class="p">[</span><span class="n">COL_FOLLOWUP</span><span class="p">],</span> <span class="n">COLS_SCORES_WITHOUT_GCO</span>
+    <span class="p">]</span>
+    <span class="n">gco_means</span> <span class="o">=</span> <span class="n">df_assessments_baseline</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="n">gco_stds</span> <span class="o">=</span> <span class="n">df_assessments_baseline</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+    <span class="n">gco</span> <span class="o">=</span> <span class="p">((</span><span class="n">df_assessments</span><span class="p">[</span><span class="n">COLS_SCORES_WITHOUT_GCO</span><span class="p">]</span> <span class="o">-</span> <span class="n">gco_means</span><span class="p">)</span> <span class="o">/</span> <span class="n">gco_stds</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span>
+        <span class="n">axis</span><span class="o">=</span><span class="s2">&quot;columns&quot;</span>
+    <span class="p">)</span>
+    <span class="n">cohort_assessments_map</span><span class="p">[</span><span class="n">cohort_name</span><span class="p">][</span><span class="n">COL_GCO</span><span class="p">]</span> <span class="o">=</span> <span class="n">gco</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="final-cohorts">
+<h3>Final cohorts<a class="headerlink" href="#final-cohorts" title="Link to this heading">#</a></h3>
+<p>We check the average time between baseline and follow-up visits. In the original paper they report an average of 4.5 years.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs_duration</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">df_assessments</span> <span class="ow">in</span> <span class="n">cohort_assessments_map</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+    <span class="n">dfs_duration</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+        <span class="n">df_assessments</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">COL_PAT_ID</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+            <span class="k">lambda</span> <span class="n">df</span><span class="p">:</span> <span class="p">(</span>
+                <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="n">COL_FOLLOWUP</span><span class="p">],</span> <span class="n">COL_DATE_INFO</span><span class="p">]</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+                <span class="o">-</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="o">~</span><span class="n">df</span><span class="p">[</span><span class="n">COL_FOLLOWUP</span><span class="p">],</span> <span class="n">COL_DATE_INFO</span><span class="p">]</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+
+<span class="n">df_duration</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">dfs_duration</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">df_duration</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">days</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">365</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> &quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;(</span><span class="se">\u00B1</span><span class="s2"> </span><span class="si">{</span><span class="n">df_duration</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="o">.</span><span class="n">days</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">365</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">) years&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.616 (± 1.134) years
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, we create a demographics table similar to the one in the original paper:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">to_1_decimal_str</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+
+<span class="n">df_age</span> <span class="o">=</span> <span class="n">load_ppmi_csv</span><span class="p">(</span><span class="n">utils</span><span class="p">,</span> <span class="n">FILENAME_AGE</span><span class="p">)</span>
+<span class="n">df_demographics</span> <span class="o">=</span> <span class="n">load_ppmi_csv</span><span class="p">(</span><span class="n">utils</span><span class="p">,</span> <span class="n">FILENAME_DEMOGRAPHICS</span><span class="p">)</span>
+<span class="n">df_pd_history</span> <span class="o">=</span> <span class="n">load_ppmi_csv</span><span class="p">(</span><span class="n">utils</span><span class="p">,</span> <span class="n">FILENAME_PD_HISTORY</span><span class="p">)</span>
+
+<span class="n">col_male</span> <span class="o">=</span> <span class="s2">&quot;is_male&quot;</span>
+<span class="n">col_cohort</span> <span class="o">=</span> <span class="s2">&quot;cohort&quot;</span>
+<span class="n">col_age_diag</span> <span class="o">=</span> <span class="s2">&quot;age_diag&quot;</span>
+
+<span class="n">dfs_summary</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">cohort_name</span><span class="p">,</span> <span class="n">df_assessments</span> <span class="ow">in</span> <span class="n">cohort_assessments_map</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+
+    <span class="n">subjects</span> <span class="o">=</span> <span class="n">df_assessments</span><span class="p">[</span><span class="n">COL_PAT_ID</span><span class="p">]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+    <span class="n">subjects_pd</span> <span class="o">=</span> <span class="n">df_status</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+        <span class="p">(</span><span class="n">df_status</span><span class="p">[</span><span class="n">COL_PAT_ID</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">subjects</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_status</span><span class="p">[</span><span class="n">COL_STATUS</span><span class="p">]</span> <span class="o">==</span> <span class="n">STATUS_PD</span><span class="p">),</span>
+        <span class="n">COL_PAT_ID</span><span class="p">,</span>
+    <span class="p">]</span>
+
+    <span class="c1"># the paper only report measures for the PD patients</span>
+    <span class="n">df_assessments</span> <span class="o">=</span> <span class="n">df_assessments</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_assessments</span><span class="p">[</span><span class="n">COL_PAT_ID</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">subjects_pd</span><span class="p">)]</span>
+
+    <span class="n">df_summary</span> <span class="o">=</span> <span class="n">df_demographics</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+        <span class="n">df_pd_history</span><span class="p">,</span>
+        <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="n">COL_PAT_ID</span><span class="p">],</span>
+    <span class="p">)</span>
+    <span class="n">df_summary</span><span class="p">[</span><span class="n">col_age_diag</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">df_summary</span><span class="p">[</span><span class="n">COL_DATE_PD</span><span class="p">]</span> <span class="o">-</span> <span class="n">df_summary</span><span class="p">[</span><span class="n">COL_DATE_BIRTH</span><span class="p">]</span>
+    <span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">timedelta64</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Y&quot;</span><span class="p">)</span>
+    <span class="n">df_summary</span><span class="p">[</span><span class="n">col_male</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_summary</span><span class="p">[</span><span class="n">COL_SEX</span><span class="p">]</span> <span class="o">==</span> <span class="n">SEX_MALE</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">v</span><span class="p">:</span> <span class="mi">100</span> <span class="k">if</span> <span class="n">v</span> <span class="k">else</span> <span class="mi">0</span>
+    <span class="p">)</span>
+    <span class="n">df_summary</span> <span class="o">=</span> <span class="n">df_summary</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+        <span class="n">df_summary</span><span class="p">[</span><span class="n">COL_PAT_ID</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">subjects_pd</span><span class="p">),</span>
+        <span class="p">[</span><span class="n">COL_PAT_ID</span><span class="p">,</span> <span class="n">col_age_diag</span><span class="p">,</span> <span class="n">col_male</span><span class="p">],</span>
+    <span class="p">]</span>
+    <span class="n">df_summary</span><span class="p">[</span><span class="n">COL_FOLLOWUP</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="c1"># combine with clinical/cognitive scores</span>
+    <span class="n">df_summary</span> <span class="o">=</span> <span class="n">df_summary</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+        <span class="n">df_assessments</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="n">COL_PAT_ID</span><span class="p">,</span> <span class="n">COL_FOLLOWUP</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;outer&quot;</span>
+    <span class="p">)</span>
+    <span class="n">df_summary</span> <span class="o">=</span> <span class="n">df_summary</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">COL_PAT_ID</span><span class="p">)</span>
+
+    <span class="c1"># append</span>
+    <span class="n">df_summary</span><span class="p">[</span><span class="n">col_cohort</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">cohort_name</span><span class="si">}</span><span class="s2"> (n = </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">subjects_pd</span><span class="p">)</span><span class="si">}</span><span class="s2">)&quot;</span>
+    <span class="n">dfs_summary</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df_summary</span><span class="p">)</span>
+
+<span class="n">df_summary</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">dfs_summary</span><span class="p">)</span>
+<span class="n">df_summary_means</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">df_summary</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">col_cohort</span><span class="p">,</span> <span class="n">COL_FOLLOWUP</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">applymap</span><span class="p">(</span><span class="n">to_1_decimal_str</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">df_summary_stds</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">df_summary</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">col_cohort</span><span class="p">,</span> <span class="n">COL_FOLLOWUP</span><span class="p">])</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="o">.</span><span class="n">applymap</span><span class="p">(</span><span class="n">to_1_decimal_str</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">df_summary_stds</span> <span class="o">=</span> <span class="s2">&quot; (&quot;</span> <span class="o">+</span> <span class="n">df_summary_stds</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span>
+<span class="n">df_summary_stds</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">col_male</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="n">df_summary_combined</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_summary_means</span> <span class="o">+</span> <span class="n">df_summary_stds</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+<span class="n">df_summary_combined</span> <span class="o">=</span> <span class="n">df_summary_combined</span><span class="o">.</span><span class="n">applymap</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s2">&quot;-&quot;</span> <span class="k">if</span> <span class="s2">&quot;nan&quot;</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">else</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">df_summary_combined</span> <span class="o">=</span> <span class="n">df_summary_combined</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+    <span class="n">index</span><span class="o">=</span><span class="p">{</span>
+        <span class="n">col_age_diag</span><span class="p">:</span> <span class="s2">&quot;Age at diagnosis&quot;</span><span class="p">,</span>
+        <span class="n">col_male</span><span class="p">:</span> <span class="s2">&quot;Male (%)&quot;</span><span class="p">,</span>
+        <span class="n">COL_UPDRS2</span><span class="p">:</span> <span class="s2">&quot;UPDRS Part II&quot;</span><span class="p">,</span>
+        <span class="n">COL_UPDRS3</span><span class="p">:</span> <span class="s2">&quot;UPDRS Part III&quot;</span><span class="p">,</span>
+        <span class="n">COL_ADL</span><span class="p">:</span> <span class="s2">&quot;S&amp;E ADL&quot;</span><span class="p">,</span>
+        <span class="n">COL_PIGD</span><span class="p">:</span> <span class="s2">&quot;PIGD&quot;</span><span class="p">,</span>
+        <span class="n">COL_UPDRS1</span><span class="p">:</span> <span class="s2">&quot;UPDRS Part I&quot;</span><span class="p">,</span>
+        <span class="n">COL_MOCA</span><span class="p">:</span> <span class="s2">&quot;MoCA&quot;</span><span class="p">,</span>
+        <span class="n">COL_GCO</span><span class="p">:</span> <span class="s2">&quot;Global composite outcome&quot;</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+<span class="n">df_summary_combined</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th>cohort</th>
+      <th colspan="2" halign="left">main (n = 223)</th>
+      <th colspan="2" halign="left">validation (n = 124)</th>
+    </tr>
+    <tr>
+      <th>is_followup</th>
+      <th>False</th>
+      <th>True</th>
+      <th>False</th>
+      <th>True</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Age at diagnosis</th>
+      <td>60.5 (9.3)</td>
+      <td>-</td>
+      <td>62.0 (10.2)</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>Male (%)</th>
+      <td>64.6</td>
+      <td>-</td>
+      <td>59.7</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>UPDRS Part II</th>
+      <td>5.7 (4.0)</td>
+      <td>10.8 (7.4)</td>
+      <td>6.2 (4.3)</td>
+      <td>10.6 (6.9)</td>
+    </tr>
+    <tr>
+      <th>UPDRS Part III</th>
+      <td>21.5 (9.0)</td>
+      <td>23.4 (12.1)</td>
+      <td>19.4 (8.2)</td>
+      <td>27.4 (13.4)</td>
+    </tr>
+    <tr>
+      <th>S&amp;E ADL</th>
+      <td>93.5 (5.6)</td>
+      <td>86.0 (12.1)</td>
+      <td>92.0 (6.0)</td>
+      <td>81.9 (12.8)</td>
+    </tr>
+    <tr>
+      <th>PIGD</th>
+      <td>0.2 (0.2)</td>
+      <td>0.6 (0.6)</td>
+      <td>0.3 (0.2)</td>
+      <td>0.7 (0.7)</td>
+    </tr>
+    <tr>
+      <th>UPDRS Part I</th>
+      <td>5.4 (3.7)</td>
+      <td>9.5 (6.3)</td>
+      <td>6.2 (4.6)</td>
+      <td>9.9 (6.0)</td>
+    </tr>
+    <tr>
+      <th>MoCA</th>
+      <td>27.3 (2.2)</td>
+      <td>26.4 (3.3)</td>
+      <td>26.4 (2.7)</td>
+      <td>26.1 (3.1)</td>
+    </tr>
+    <tr>
+      <th>Global composite outcome</th>
+      <td>0.2 (0.4)</td>
+      <td>0.3 (0.6)</td>
+      <td>0.0 (0.4)</td>
+      <td>0.2 (0.6)</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The values in the table above are generally similar to those obtained in the original paper, though not exactly the same. We were unable to obtain the same number of PD patients as the original paper: we have 223 instead of 222 for the main cohort, and 124 instead of 140 for the validation cohort. Our validation cohort has a smaller percentage of males (59.7%) compared to the original paper (67.9%). Mean clinical and cognitive assessment scores are generally close to those reported in the original paper, with some exceptions (e.g., UPDRS Parts I and III in the follow-up visits for both cohorts).</p>
+<section id="cohort-id">
+<h4>Cohort ID<a class="headerlink" href="#cohort-id" title="Link to this heading">#</a></h4>
+<p>We generate a cohort ID that uniquely identifies the main/validation cohorts. We will use these IDs to avoid recomputing the same results multiple times.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cohort_ids</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">fpaths_cohort</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">cohort_name</span><span class="p">,</span> <span class="n">df_assessments</span> <span class="ow">in</span> <span class="n">cohort_assessments_map</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+
+    <span class="c1"># get cohort ID</span>
+    <span class="n">cohort_id</span> <span class="o">=</span> <span class="n">livingpark_utils</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">ppmi</span><span class="o">.</span><span class="n">cohort_id</span><span class="p">(</span>
+        <span class="n">df_assessments</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">COL_PAT_ID</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">cohort_name</span><span class="si">}</span><span class="s2"> cohort id: </span><span class="si">{</span><span class="n">cohort_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">df_t1</span> <span class="o">=</span> <span class="n">cohort_t1_map</span><span class="p">[</span><span class="n">cohort_name</span><span class="p">]</span>
+
+    <span class="c1"># save patient ids</span>
+    <span class="n">filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;zeighami-etal-2019-cohort-</span><span class="si">{</span><span class="n">cohort_id</span><span class="si">}</span><span class="s2">.csv&quot;</span>
+    <span class="n">df_to_save</span> <span class="o">=</span> <span class="n">df_t1</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_t1</span><span class="p">[</span><span class="n">COL_PAT_ID</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">df_assessments</span><span class="p">[</span><span class="n">COL_PAT_ID</span><span class="p">])]</span>
+    <span class="n">df_to_save</span><span class="p">[</span><span class="n">COL_PAT_ID</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_to_save</span><span class="p">[</span><span class="n">COL_PAT_ID</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
+    <span class="n">df_to_save</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="n">COL_PAT_ID</span><span class="p">)</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span>
+        <span class="n">filename</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span>
+    <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Cohort patient ids saved in </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">cohort_ids</span><span class="p">[</span><span class="n">cohort_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">cohort_id</span>
+    <span class="n">fpaths_cohort</span><span class="p">[</span><span class="n">cohort_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">filename</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Do not share these files publicly!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>main cohort id: _1606091907888136448
+	Cohort patient ids saved in zeighami-etal-2019-cohort-_1606091907888136448.csv
+validation cohort id: _7192068301964860554
+	Cohort patient ids saved in zeighami-etal-2019-cohort-_7192068301964860554.csv
+Do not share these files publicly!
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="download-dbm-ica-results-from-bic-server">
+<h2>Download DBM/ICA results from BIC server<a class="headerlink" href="#download-dbm-ica-results-from-bic-server" title="Link to this heading">#</a></h2>
+<p>Given the large number of subjects in our cohorts, it would be too computationally expensive to compute DBM maps from the notebook. Instead, we will use pre-computed results available from the BIC (the Montreal Neurological Institute’s Brain Imaging Center) server.</p>
+<p>The code for preprocessing the T1 images and computing the DBM maps is available in the <code class="docutils literal notranslate"><span class="pre">dbm_ica</span></code> directory of this repository. We attempted to follow the original paper’s methods as closely possible, though software names and exact versions were not always specified. We implemented the DBM workflow using the MINC toolkit. For the ICA, we used FSL MELODIC to obtain z-statistic maps for each ICA component, as described in the original paper. The complete MRI processing workflow is summarized in the following diagrams:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>DBM pipeline</p></th>
+<th class="head text-center"><p>ICA pipeline</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><img src="images/dbm_minc_pipeline.svg" width=500/></p></td>
+<td class="text-center"><p><img src="images/ica_fsl_pipeline.svg" width=400/></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>We used a Singularity container with the MINC toolkit <code class="docutils literal notranslate"><span class="pre">1.19.16</span></code>, FSL <code class="docutils literal notranslate"><span class="pre">5.0.11</span></code> (for the ICA), and some Python packages. The recipe file for this container is available in the <code class="docutils literal notranslate"><span class="pre">dbm_ica</span></code> directory.</p>
+<p><strong>Prerequisites for getting the DBM/ICA results</strong></p>
+<ol class="arabic">
+<li><p>A BIC account</p></li>
+<li><p>Set up SSH key authentication. There are plenty on online tutorials on how to do this, for example <a class="reference external" href="https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server">here</a>.</p>
+<ol class="arabic simple">
+<li><p>To login from your local machine (on which this notebook is running) to <code class="docutils literal notranslate"><span class="pre">login.bic.mni.mcgill.ca</span></code></p>
+<ul class="simple">
+<li><p><strong>Note</strong>: If you decide to use a passphrase, make sure to use <code class="docutils literal notranslate"><span class="pre">ssh-add</span></code> to avoid being prompted for it when running the notebook. See <a class="reference external" href="https://www.ssh.com/academy/ssh/agent#:~:text=The%20ssh%2Dagent%20is%20a,sign%2Don%20(SSO).">here</a> for instructions.</p></li>
+</ul>
+</li>
+<li><p>To login from <code class="docutils literal notranslate"><span class="pre">login.bic.mni.mcgill.ca</span></code> to <code class="docutils literal notranslate"><span class="pre">ducky.bic-node.mni.mcgill.ca</span></code></p>
+<ul class="simple">
+<li><p>This is because we need <code class="docutils literal notranslate"><span class="pre">singularity</span></code>, which isn’t available from <code class="docutils literal notranslate"><span class="pre">login.bic.mni.mcgill.ca</span></code></p></li>
+<li><p><em><strong>IMPORTANT</strong></em>: Do not use a passphrase here</p></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>Clone this repository on the BIC server in your home directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="n">cd</span> <span class="o">~</span>
+<span class="o">&gt;&gt;</span> <span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">LivingPark</span><span class="o">-</span><span class="n">MRI</span><span class="o">/</span><span class="n">zeighami</span><span class="o">-</span><span class="n">etal</span><span class="o">-</span><span class="mf">2019.</span><span class="n">git</span>
+</pre></div>
+</div>
+</li>
+<li><p>Build the Singularity container using the recipe file in <code class="docutils literal notranslate"><span class="pre">zeighami-etal-2019/dbm_ica</span></code> and copy it to the BIC server in the <code class="docutils literal notranslate"><span class="pre">zeighami-etal-2019/dbm_ica</span></code> directory</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">run_singularity_on_bic</span><span class="p">(</span>
+    <span class="n">args</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">fpath_container</span><span class="p">,</span>
+    <span class="n">username</span><span class="p">,</span>
+    <span class="n">dpaths_mount</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">host</span><span class="o">=</span><span class="s2">&quot;login.bic.mni.mcgill.ca&quot;</span><span class="p">,</span>
+<span class="p">):</span>
+
+    <span class="k">if</span> <span class="n">dpaths_mount</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">dpaths_mount</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="n">components</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;ssh </span><span class="si">{</span><span class="n">username</span><span class="si">}</span><span class="s2">@</span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s2"> ssh ducky nice -n 10 singularity run&quot;</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">dpath_mount</span> <span class="ow">in</span> <span class="n">dpaths_mount</span><span class="p">:</span>
+        <span class="n">components</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;--bind </span><span class="si">{</span><span class="n">dpath_mount</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">dpath_mount</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">components</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fpath_container</span><span class="p">)</span>
+    <span class="n">components</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+
+    <span class="n">components</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">component</span><span class="p">)</span> <span class="k">for</span> <span class="n">component</span> <span class="ow">in</span> <span class="n">components</span> <span class="k">if</span> <span class="n">component</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">]</span>
+    <span class="c1"># print(&#39; &#39;.join(components))</span>
+    <span class="n">components</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">components</span><span class="p">))</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>  <span class="c1"># split on whitespace</span>
+
+    <span class="c1"># ssh to BIC and run command</span>
+    <span class="k">return</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">components</span><span class="p">,</span> <span class="n">capture_output</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
+<span class="c1"># TODO store username in file</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">check_result_availability</span><span class="p">(</span>
+    <span class="n">cohort_id</span><span class="p">,</span>
+    <span class="n">cohort_file</span><span class="p">,</span>
+    <span class="n">dpath_repo</span><span class="p">,</span>
+    <span class="n">dpath_outputs</span><span class="o">=</span><span class="s2">&quot;outputs&quot;</span><span class="p">,</span>
+    <span class="n">fpath_container_rel</span><span class="o">=</span><span class="s2">&quot;dbm_ica/nd-minc_1_9_16-fsl_5_0_11-click_livingpark_pandas_pybids.sif&quot;</span><span class="p">,</span>
+    <span class="n">dpath_bids</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">dpath_out_dbm</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">username</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">host</span><span class="o">=</span><span class="s2">&quot;login.bic.mni.mcgill.ca&quot;</span><span class="p">,</span>
+    <span class="n">varname_dpath_ica</span><span class="o">=</span><span class="s2">&quot;DPATH_ICA_RESULTS&quot;</span><span class="p">,</span>
+    <span class="n">varname_cohort_id</span><span class="o">=</span><span class="s2">&quot;FINAL_COHORT_ID&quot;</span><span class="p">,</span>
+    <span class="n">varname_fpath_proc_status</span><span class="o">=</span><span class="s2">&quot;FPATH_PROC_STATUS_COHORT&quot;</span><span class="p">,</span>
+    <span class="n">varname_fpath_dbm_list</span><span class="o">=</span><span class="s2">&quot;FPATH_DBM_LIST_COHORT&quot;</span><span class="p">,</span>
+<span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">run_scp</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">dest</span><span class="p">,</span> <span class="n">from_remote</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">from_remote</span><span class="p">:</span>
+            <span class="n">source</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">username</span><span class="si">}</span><span class="s2">@</span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">source</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">dest</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">username</span><span class="si">}</span><span class="s2">@</span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">dest</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="n">args</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s2">&quot;scp&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;-r&quot;</span><span class="p">,</span>
+            <span class="n">source</span><span class="p">,</span>
+            <span class="n">dest</span><span class="p">,</span>
+        <span class="p">]</span>
+        <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_var</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">):</span>
+        <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}{</span><span class="n">sep</span><span class="si">}</span><span class="s2">(.*)</span><span class="si">{</span><span class="n">end</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">match</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">groups</span><span class="p">())</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Did not find name in command output&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">match</span><span class="o">.</span><span class="n">groups</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="c1"># TODO first check if results are already available locally</span>
+    <span class="c1"># NOTE: cohort IDs might be different, in that case we will have to run things on the BIC server</span>
+
+    <span class="k">if</span> <span class="n">username</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">username</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please enter your BIC username: &quot;</span><span class="p">)</span>
+
+    <span class="n">dpaths_mount</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">dpath</span> <span class="k">for</span> <span class="n">dpath</span> <span class="ow">in</span> <span class="p">[</span><span class="n">dpath_repo</span><span class="p">,</span> <span class="n">dpath_bids</span><span class="p">,</span> <span class="n">dpath_out_dbm</span><span class="p">]</span> <span class="k">if</span> <span class="n">dpath</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+    <span class="p">]</span>
+
+    <span class="n">dpath_repo</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">dpath_repo</span><span class="p">)</span>
+    <span class="n">fpath_container</span> <span class="o">=</span> <span class="n">dpath_repo</span> <span class="o">/</span> <span class="n">fpath_container_rel</span>
+    <span class="n">fpath_script</span> <span class="o">=</span> <span class="n">dpath_repo</span> <span class="o">/</span> <span class="s2">&quot;dbm_ica&quot;</span> <span class="o">/</span> <span class="s2">&quot;check_results_availability.sh&quot;</span>
+
+    <span class="c1"># copy cohort file to BIC</span>
+    <span class="n">run_scp</span><span class="p">(</span><span class="n">cohort_file</span><span class="p">,</span> <span class="n">dpath_repo</span><span class="p">,</span> <span class="n">from_remote</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="n">completed</span> <span class="o">=</span> <span class="n">run_singularity_on_bic</span><span class="p">(</span>
+        <span class="n">args</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">fpath_script</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">cohort_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="n">fpath_container</span><span class="o">=</span><span class="n">fpath_container</span><span class="p">,</span>
+        <span class="n">dpaths_mount</span><span class="o">=</span><span class="n">dpaths_mount</span><span class="p">,</span>
+        <span class="n">username</span><span class="o">=</span><span class="n">username</span><span class="p">,</span>
+        <span class="n">host</span><span class="o">=</span><span class="n">host</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">completed</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">completed</span><span class="o">.</span><span class="n">returncode</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">error</span> <span class="o">=</span> <span class="n">completed</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;STDERR:</span><span class="se">\n</span><span class="si">{</span><span class="n">error</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Error running script on BIC (returned </span><span class="si">{</span><span class="n">completed</span><span class="o">.</span><span class="n">returncode</span><span class="si">}</span><span class="s2">)&quot;</span>
+        <span class="p">)</span>
+
+    <span class="c1"># parse output</span>
+    <span class="n">dpath_results_remote</span> <span class="o">=</span> <span class="n">get_var</span><span class="p">(</span><span class="n">varname_dpath_ica</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
+    <span class="n">final_cohort_id</span> <span class="o">=</span> <span class="n">get_var</span><span class="p">(</span><span class="n">varname_cohort_id</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
+    <span class="n">fpath_proc_status_remote</span> <span class="o">=</span> <span class="n">get_var</span><span class="p">(</span><span class="n">varname_fpath_proc_status</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
+    <span class="n">fpath_dbm_list_remote</span> <span class="o">=</span> <span class="n">get_var</span><span class="p">(</span><span class="n">varname_fpath_dbm_list</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
+
+    <span class="c1"># copy ICA results from BIC</span>
+    <span class="n">dpath_results_local</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">dpath_outputs</span><span class="p">)</span> <span class="o">/</span> <span class="n">Path</span><span class="p">(</span><span class="n">dpath_results_remote</span><span class="p">)</span><span class="o">.</span><span class="n">name</span>
+    <span class="n">fpath_proc_status_local</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">Path</span><span class="p">(</span><span class="n">dpath_results_local</span><span class="p">)</span> <span class="o">/</span> <span class="n">Path</span><span class="p">(</span><span class="n">fpath_proc_status_remote</span><span class="p">)</span><span class="o">.</span><span class="n">name</span>
+    <span class="p">)</span>
+    <span class="n">fpath_dbm_list_local</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">dpath_results_local</span><span class="p">)</span> <span class="o">/</span> <span class="n">Path</span><span class="p">(</span><span class="n">fpath_dbm_list_remote</span><span class="p">)</span><span class="o">.</span><span class="n">name</span>
+
+    <span class="k">if</span> <span class="n">fpath_dbm_list_local</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ICA results have already been downloaded, skipping scp&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">run_scp</span><span class="p">(</span><span class="n">dpath_results_remote</span><span class="p">,</span> <span class="n">dpath_results_local</span><span class="p">,</span> <span class="n">from_remote</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="n">final_cohort_id</span><span class="p">,</span>
+        <span class="n">dpath_results_local</span><span class="p">,</span>
+        <span class="n">fpath_proc_status_local</span><span class="p">,</span>
+        <span class="n">fpath_dbm_list_local</span><span class="p">,</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We download ICA results for the main cohort. If the DBM maps are available but the ICA results are not, this will compute the ICA (which could take a few hours), and it might be necessary to rerun this cell once the ICA is done.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span><span class="p">,</span> <span class="n">dpath_outputs</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">check_result_availability</span><span class="p">(</span>
+    <span class="n">cohort_id</span><span class="o">=</span><span class="n">cohort_ids</span><span class="p">[</span><span class="n">MAIN_COHORT</span><span class="p">],</span>
+    <span class="n">cohort_file</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;zeighami-etal-2019-cohort-</span><span class="si">{</span><span class="n">cohort_ids</span><span class="p">[</span><span class="n">MAIN_COHORT</span><span class="p">]</span><span class="si">}</span><span class="s2">.csv&quot;</span><span class="p">,</span>
+    <span class="n">dpath_repo</span><span class="o">=</span><span class="s2">&quot;/data/origami/livingpark/zeighami-etal-2019/&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Some packages in this Docker container are non-free
+If you are considering commercial use of this container, please consult the relevant license:
+https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Licence
+-----------------------------------
+| COHORT_ID: _1606091907888136448 |
+-----------------------------------
+---------------
+| BIDS-FILTER |
+---------------
+<span class=" -Color -Color-Yellow">[RUN] date</span>
+Thu Jan 26 17:27:06 EST 2023
+--------------------
+Loaded BIDS list:		(2065, 8)
+Loaded cohort info:		(332, 40) (ID=_1606091907888136448)
+<span class=" -Color -Color-Yellow">4 subjects are not in the BIDS list</span>
+Filtered BIDS list:		(338, 48)
+Removed up to 14 bad scans:	(328, 48)
+COHORT_ID=2228656744226345740
+<span class=" -Color -Color-Blue">Wrote filtered BIDS list to: /data/origami/livingpark/zeighami-etal-2019/out/dbm/bids_list-_1606091907888136448.txt</span>
+<span class=" -Color -Color-Green">[SUCCESS]</span>
+--------------------
+<span class=" -Color -Color-Yellow">[RUN] date</span>
+Thu Jan 26 17:27:08 EST 2023
+-----------------------------------------------------------------------
+| COHORT ID CHANGED TO 2228656744226345740 AFTER GENERATING BIDS LIST |
+-----------------------------------------------------------------------
+&#39;/data/origami/livingpark/zeighami-etal-2019/out/dbm/bids_list-_1606091907888136448.txt&#39; -&gt; &#39;/data/origami/livingpark/zeighami-etal-2019/out/dbm/bids_list-2228656744226345740.txt&#39;
+--------------
+| DBM-STATUS |
+--------------
+<span class=" -Color -Color-Yellow">[RUN] date</span>
+Thu Jan 26 17:27:10 EST 2023
+--------------------
+Checking processing status for steps:
+	denoised:	.denoised.mnc
+	lin_reg:	.denoised.norm_lr.masked.mnc
+	lin_reg_mask:	.denoised.norm_lr_mask.mnc
+	nonlin_reg:	.denoised.norm_lr.masked.nlr.mnc
+	dbm_nii:	.denoised.norm_lr.masked.nlr.dbm.reshaped.masked.nii.gz
+328 input files total:
+	326	files with all results available
+	2	files with some results available
+	0	files with no results available
+<span class=" -Color -Color-Blue">Wrote file to /data/origami/livingpark/zeighami-etal-2019/out/dbm/proc_status.csv</span>
+<span class=" -Color -Color-Green">[SUCCESS]</span>
+--------------------
+<span class=" -Color -Color-Yellow">[RUN] date</span>
+Thu Jan 26 17:27:20 EST 2023
+-----------
+| COPYING |
+-----------
+&#39;/data/origami/livingpark/zeighami-etal-2019/out/dbm/proc_status.csv&#39; -&gt; &#39;/data/origami/livingpark/zeighami-etal-2019/out/dbm/proc_status-_1606091907888136448.csv&#39;
+------------
+| DBM-LIST |
+------------
+<span class=" -Color -Color-Yellow">[RUN] date</span>
+Thu Jan 26 17:27:23 EST 2023
+--------------------
+Loaded status file: (328, 14)
+	Cohort ID: 2228656744226345740
+Selected 326 files
+COHORT_ID=_8939046573348885543
+<span class=" -Color -Color-Blue">Wrote DBM filename list to /data/origami/livingpark/zeighami-etal-2019/out/ica/dbm_list.txt</span>
+<span class=" -Color -Color-Green">[SUCCESS]</span>
+--------------------
+<span class=" -Color -Color-Yellow">[RUN] date</span>
+Thu Jan 26 17:27:23 EST 2023
+-----------------------------------------------------------------------
+| COHORT ID CHANGED TO _8939046573348885543 AFTER GENERATING DBM LIST |
+-----------------------------------------------------------------------
+-----------
+| COPYING |
+-----------
+&#39;/data/origami/livingpark/zeighami-etal-2019/out/ica/dbm_list.txt&#39; -&gt; &#39;/data/origami/livingpark/zeighami-etal-2019/out/ica/dbm_list-_8939046573348885543.txt&#39;
+----------------------
+| Found ICA results! |
+----------------------
+------------------------
+| COPYING COHORT FILES |
+------------------------
+FPATH_PROC_STATUS_COHORT=/data/origami/livingpark/zeighami-etal-2019/out/dbm/proc_status-_1606091907888136448.csv
+FPATH_DBM_LIST_COHORT=/data/origami/livingpark/zeighami-etal-2019/out/ica/dbm_list-_8939046573348885543.txt
+DPATH_ICA_RESULTS=/data/origami/livingpark/zeighami-etal-2019/out/ica/output-_8939046573348885543-30
+FINAL_COHORT_ID=_8939046573348885543
+
+ICA results have already been downloaded, skipping scp
+</pre></div>
+</div>
+</div>
+</div>
+<p>We load the scores (average DBM value for each ICA component for each subject) and split them into a PD group and a healthy control group:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_scores</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">dpath_outputs</span> <span class="o">/</span> <span class="s2">&quot;scores.csv&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">df_scores</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">df_status</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">COL_PAT_ID</span><span class="p">)</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+    <span class="n">df_scores</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">),</span> <span class="n">COL_STATUS</span>
+<span class="p">]</span>
+<span class="n">df_scores</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parkinson&#39;s Disease    219
+Healthy Control        107
+Name: COHORT_DEFINITION, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>As in the original study, we use t-tests to determine whether any component is significantly different between the two groups. We apply Bonferonni correction to the p-values to account for multiple comparisons.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">ttest_ind</span>
+
+<span class="n">correct</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">p_values_data</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">for</span> <span class="n">component</span> <span class="ow">in</span> <span class="n">df_scores</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+    <span class="n">t_stat</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">ttest_ind</span><span class="p">(</span>
+        <span class="n">df_scores</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">STATUS_PD</span><span class="p">,</span> <span class="n">component</span><span class="p">],</span>
+        <span class="n">df_scores</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">STATUS_HC</span><span class="p">,</span> <span class="n">component</span><span class="p">],</span>
+    <span class="p">)</span>
+    <span class="n">p_values_data</span><span class="p">[</span><span class="n">component</span><span class="p">]</span> <span class="o">=</span> <span class="n">p</span>
+
+<span class="n">p_values</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">p_values_data</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">correct</span><span class="p">:</span>
+    <span class="n">p_values</span> <span class="o">=</span> <span class="n">p_values</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">p_values</span><span class="p">)</span>  <span class="c1"># Bonferroni correction</span>
+
+<span class="n">i_components_sorted</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">p_values</span><span class="p">))</span>
+<span class="n">i_component_top</span> <span class="o">=</span> <span class="n">i_components_sorted</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">p_values</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>IC14     3.174376
+IC24     6.299118
+IC28     7.507985
+IC30     7.653876
+IC6      7.657949
+IC25     8.287577
+IC29     8.656146
+IC22     9.143906
+IC12     9.805824
+IC16    10.195953
+IC21    13.910982
+IC10    14.441574
+IC18    15.022137
+IC9     18.135936
+IC1     19.096704
+IC7     19.595994
+IC13    20.371846
+IC27    20.685240
+IC19    22.113971
+IC15    23.497549
+IC23    23.553747
+IC11    23.670163
+IC2     24.100165
+IC4     25.550303
+IC26    25.668745
+IC17    25.975309
+IC20    26.523785
+IC8     27.226697
+IC5     29.231923
+IC3     29.512377
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>We plot the DBM score distributions for each IC:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+
+<span class="n">x_label</span> <span class="o">=</span> <span class="s2">&quot;IC&quot;</span>
+<span class="n">y_label</span> <span class="o">=</span> <span class="s2">&quot;Mean DBM value&quot;</span>
+
+<span class="n">df_scores_to_plot</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span>
+    <span class="n">df_scores</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(),</span>
+    <span class="n">id_vars</span><span class="o">=</span><span class="p">[</span><span class="n">COL_STATUS</span><span class="p">],</span>
+    <span class="n">var_name</span><span class="o">=</span><span class="n">x_label</span><span class="p">,</span>
+    <span class="n">value_name</span><span class="o">=</span><span class="n">y_label</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">stripplot</span><span class="p">(</span>
+    <span class="n">df_scores_to_plot</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">x_label</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">y_label</span><span class="p">,</span>
+    <span class="n">hue</span><span class="o">=</span><span class="n">COL_STATUS</span><span class="p">,</span>
+    <span class="n">order</span><span class="o">=</span><span class="n">p_values</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/ef83d71b532079932fa0d3553dcfac28666fc5bc686f8353e7801c032f77f72c.png" src="../../_images/ef83d71b532079932fa0d3553dcfac28666fc5bc686f8353e7801c032f77f72c.png" />
+</div>
+</div>
+<p>None of the corrected p-values reach significance: our lowest p-value is 3.37 compared to 0.003 in the original paper. This means that our replication has failed at this stage, since we are unable to obtain the PD-ICA component presented in the original paper.</p>
+<p>Our top ICA component looks like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">nilearn</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">nibabel</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nib</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_IC</span><span class="p">(</span><span class="n">fpath</span><span class="p">,</span> <span class="n">i_component</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">display_mode</span><span class="o">=</span><span class="s2">&quot;z&quot;</span><span class="p">):</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">nib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fpath</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">i_component</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">nilearn</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">index_img</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">i_component</span><span class="p">)</span>
+    <span class="n">display</span> <span class="o">=</span> <span class="n">nilearn</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">plot_stat_map</span><span class="p">(</span>
+        <span class="n">img</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="n">threshold</span><span class="p">,</span> <span class="n">display_mode</span><span class="o">=</span><span class="n">display_mode</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">display</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig_IC</span> <span class="o">=</span> <span class="n">plot_IC</span><span class="p">(</span>
+    <span class="n">dpath_outputs</span> <span class="o">/</span> <span class="s2">&quot;melodic_results&quot;</span> <span class="o">/</span> <span class="s2">&quot;melodic_IC.nii.gz&quot;</span><span class="p">,</span>
+    <span class="n">i_component</span><span class="o">=</span><span class="n">i_components_sorted</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/9d5fea0398af2ea7b649116c0815730780e78bf3cabe3ec8d735ff7760fe7eb9.png" src="../../_images/9d5fea0398af2ea7b649116c0815730780e78bf3cabe3ec8d735ff7760fe7eb9.png" />
+</div>
+</div>
+<p>We compare our top ICA component with the PD-ICA component from the original paper (available <a class="reference external" href="https://identifiers.org/neurovault.image:12551">here</a>):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+if [ ! -f ${FNAME_PD_ICA} ]
+then
+    wget &quot;https://neurovault.org/media/images/860/melodic_IC_0007.nii.gz&quot;
+else
+    echo &#39;ICA file already exists, skipping download&#39;
+fi
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ICA file already exists, skipping download
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig_IC_orig</span> <span class="o">=</span> <span class="n">plot_IC</span><span class="p">(</span><span class="s2">&quot;melodic_IC_0007.nii.gz&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/10a22f6ff02485115097367bcce8c632cdea87353384d4a79e2ad7e9eb2b581c.png" src="../../_images/10a22f6ff02485115097367bcce8c632cdea87353384d4a79e2ad7e9eb2b581c.png" />
+</div>
+</div>
+<p>Our most significant component does not match the PD-ICA component described in the original study: we obtain regions mostly in the frontal lobe, while the original ICA component mainly includes subcortical regions. Moreover, our clusters tend to be bigger than those in the PD-ICA component, suggesting that there could be inconsistencies in spatial smoothing procedures between our pipeline and the one used in the original study.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./replications/zeighami-etal-2019"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="README.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Replication of [Paper name &amp; link]</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../packages/ppmi_downloader.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">PPMI_Downloader</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-setup">Initial setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ppmi-cohort-preparation">PPMI cohort preparation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#study-data-download">Study data download</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subjects-with-t1-mri-available">Subjects with T1 MRI available</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-subjects-with-no-follow-up-data-available">Remove subjects with no follow-up data available</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#global-composite-outcome-gco-measure">Global composite outcome (GCO) measure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-cohorts">Final cohorts</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cohort-id">Cohort ID</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-dbm-ica-results-from-bic-server">Download DBM/ICA results from BIC server</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The LivingPark Project
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
