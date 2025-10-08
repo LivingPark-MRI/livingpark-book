@@ -1,33 +1,33 @@
-# [submodule "book/replications/agosta-etal-2013"]
-# 	path = book/replications/agosta-etal-2013
-# 	url = https://github.com/LivingPark-MRI/agosta-etal
-# [submodule "book/replications/hanganu-etal-2014"]
-# 	path = book/replications/hanganu-etal-2014
-# 	url = https://github.com/LivingPark-MRI/hanganu-etal-2014
-# [submodule "book/replications/mak-etal-2015"]
-# 	path = book/replications/mak-etal-2015
-# 	url = https://github.com/LivingPark-MRI/mak-etal-2015
+[submodule "book/replications/agosta-etal-2013"]
+	path = book/replications/agosta-etal-2013
+	url = https://github.com/mathdugre/agosta-etal
+[submodule "book/replications/hanganu-etal-2014"]
+	path = book/replications/hanganu-etal-2014
+	url = https://github.com/mathdugre/hanganu-etal-2014
+[submodule "book/replications/mak-etal-2015"]
+	path = book/replications/mak-etal-2015
+	url = https://github.com/mathdugre/mak-etal-2015
 [submodule "book/replications/mak-etal-2017"]
 	path = book/replications/mak-etal-2017
 	url = https://github.com/mathdugre/mak-etal
-# [submodule "book/replications/rahayel-etal-2018"]
-# 	path = book/replications/rahayel-etal-2018
-# 	url = https://github.com/LivingPark-MRI/rahayel-etal
-# [submodule "book/replications/scherfler-etal-2011"]
-# 	path = book/replications/scherfler-etal-2011
-# 	url = https://github.com/LivingPark-MRI/scherfler-etal
-# [submodule "book/replications/shu-etal-2021"]
-# 	path = book/replications/shu-etal-2021
-# 	url = https://github.com/LivingPark-MRI/shu-etal
-# [submodule "book/replications/sterling-etal-2016"]
-# 	path = book/replications/sterling-etal-2016
-# 	url = https://github.com/LivingPark-MRI/sterling-etal-2016
-# [submodule "book/replications/tessa-etal-2014"]
-# 	path = book/replications/tessa-etal-2014
-# 	url = https://github.com/LivingPark-MRI/tessa-etal-2014
-# [submodule "book/replications/zeighami-etal-2015"]
-# 	path = book/replications/zeighami-etal-2015
-# 	url = https://github.com/LivingPark-MRI/zeighami-etal-2015
-# [submodule "book/replications/zeighami-etal-2019"]
-# 	path = book/replications/zeighami-etal-2019
-# 	url = https://github.com/LivingPark-MRI/zeighami-etal-2019
+[submodule "book/replications/rahayel-etal-2018"]
+	path = book/replications/rahayel-etal-2018
+	url = https://github.com/mathdugre/rahayel-etal
+[submodule "book/replications/scherfler-etal-2011"]
+	path = book/replications/scherfler-etal-2011
+	url = https://github.com/mathdugre/scherfler-etal
+[submodule "book/replications/shu-etal-2021"]
+	path = book/replications/shu-etal-2021
+	url = https://github.com/mathdugre/shu-etal
+[submodule "book/replications/sterling-etal-2016"]
+	path = book/replications/sterling-etal-2016
+	url = https://github.com/mathdugre/sterling-etal-2016
+[submodule "book/replications/tessa-etal-2014"]
+	path = book/replications/tessa-etal-2014
+	url = https://github.com/mathdugre/tessa-etal-2014
+[submodule "book/replications/zeighami-etal-2015"]
+	path = book/replications/zeighami-etal-2015
+	url = https://github.com/mathdugre/zeighami-etal-2015
+[submodule "book/replications/zeighami-etal-2019"]
+	path = book/replications/zeighami-etal-2019
+	url = https://github.com/mathdugre/zeighami-etal-2019
